@@ -1,0 +1,132 @@
+@font-face {
+  font-family: 'Gotham Pro';
+  src: url('./fonts/GothamPro/GothamPro.woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham Pro';
+  src: url('./fonts/GothamPro/GothamProNarrow-Medium.woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham Pro';
+  src: url('./fonts/GothamPro/GothamProNarrow-Bold.woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+#app *:not(.material-icons) {
+  font-family: 'Gotham Pro' !important;
+}
+
+.header-btn {
+  height: 37px !important;
+}
+
+.header-btn.active {
+  border: 1px solid #fff;
+  border-radius: 20px;
+}
+
+.header-search-btn {
+  background-color: #FFD401 !important;
+  border-radius: 20px !important;
+  border: 1px solid #fff !important;
+  transition: opacity 0.2s ease-out !important;
+}
+
+.header-search-btn:hover {
+  opacity: 0.8;
+}
+
+.header-search-btn p {
+  color: #001E7F;
+  font-weight: 500;
+}
+
+.c-loading {
+  background-color: #97dcff !important;
+}
+
+.c-loading > * {
+  background-color: #0A97DE !important;
+}
+
+.c-home-btns {
+  transition: opacity 0.2s ease-out !important;
+}
+
+.c-home-btns p {
+  margin-bottom: -3px;
+}
+
+.c-home-btns:hover {
+  background-color: #FFD401 !important;
+  opacity: 0.8 !important;
+}
+
+.home-title-h2 {
+  color: #001E7F !important;
+  font-size: 1.25rem !important;
+}
+
+.home-table {
+  background-color: #fff;
+}
+
+.home-table-column > *:first-child {
+  height: 32px;
+  background-color: rgba(7, 134, 213, 0.46);
+}
+
+.home-table-column > *:first-child p {
+  color: #fff;
+}
+
+.home-table-column:nth-child(1) p,
+.home-table-column:nth-child(4) p {
+  color: #001E7F;
+}
+
+.c-footer {
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  padding-top: 23px !important;
+  padding-bottom: 23px !important;
+}
+
+.c-footer__link {
+  margin: 0 0 0 55px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.c-footer__link li {
+  margin-right: 30px;
+  list-style: none;
+  font-size: 0.875rem;
+  color: white;
+  font-weight: 500;
+}
+
+.c-footer__link li:last-child {
+  margin-right: 0;
+}
+
+.c-footer__link li a {
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: opacity 0.2s ease-out;
+}
+
+.c-footer__link li a:hover {
+  opacity: 0.8;
+}
+
+.home-table-wrap {
+  border-radius: unset !important;
+}

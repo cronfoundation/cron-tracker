@@ -1,0 +1,30 @@
+{
+  "name": "@neotracker/server-db",
+  "version": "0.0.1-alpha.0",
+  "keywords": ["neo", "blockchain", "neotracker"],
+  "description": "NEO Tracker db definitions.",
+  "repository": "https://github.com/neotracker/neotracker",
+  "bugs": "https://github.com/neotracker/neotracker/issues",
+  "license": "MIT",
+  "main": "./src/index.ts",
+  "dependencies": {
+    "@neo-one/client-core": "^1.0.0-alpha.77",
+    "@neo-one/monitor": "^1.0.0-alpha.59",
+    "@neo-one/node-neo-settings": "^1.0.0-alpha.77",
+    "@neotracker/server-utils": "^0.0.1-alpha.0",
+    "@neotracker/shared-utils": "^0.0.1-alpha.0",
+    "bignumber.js": "^7.2.0",
+    "bn.js": "^4.11.8",
+    "change-case": "^3.0.2",
+    "dataloader": "^1.4.0",
+    "graphql": "0.13.2",
+    "knex": "^0.15.2",
+    "lodash": "^4.17.10",
+    "lru-cache": "^4.1.1",
+    "objection": "^1.2.6",
+    "pg": "^7.4.1",
+    "rxjs": "^6.3.2",
+    "sql-summary": "^1.0.1"
+  },
+  "sideEffects": false
+}

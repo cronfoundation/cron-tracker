@@ -1,0 +1,84 @@
+aliases:
+  - &restore-yarn-cache
+    keys:
+      - v4-yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      # Fallback in case checksum fails
+      - v4-yarn-{{ .Branch }}-
+
+  - &save-yarn-cache
+    paths:
+      - node_modules
+      - ~/.cache/yarn
+      - ~/.cache/Cypress
+    key: v4-yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
+
+  - &yarn
+    |
+      yarn install --non-interactive --cache-folder ~/.cache/yarn
+
+  - &defaults
+    docker:
+      - image: neotracker/circleci-test-10.9.0:1
+        environment:
+          TERM: xterm
+        user: postgres
+    working_directory: ~/neotracker
+
+  - &test
+    steps:
+      - checkout
+      - restore-cache: *restore-yarn-cache
+      - run: *yarn
+      - save-cache: *save-yarn-cache
+      - run:
+          name: Analyze
+          command: yarn analyze --ci
+      - store_artifacts:
+          path: dist
+      - run:
+          name: Size Limit
+          command: yarn size
+      - run:
+          name: Prettier
+          command: yarn nit
+      - run:
+          name: Typescript
+          command: yarn tsc
+      - run:
+          name: Flow
+          command: yarn flow
+      - run:
+          name: Lint
+          command: yarn lint
+      - run:
+          name: Unit
+          command: yarn test:unit-ci
+      - run:
+          name: Browser
+          command: yarn test:browser-ci
+      - run:
+          name: E2E
+          command: yarn test:e2e-ci
+      - run:
+          name: Cypress
+          command: yarn test:cypress-ci
+      - store_test_results:
+          path: reports
+      - store_artifacts:
+          path: reports
+      - store_artifacts:
+          path: cypress/videos
+      - store_artifacts:
+          path: cypress/screenshots
+
+version: 2
+jobs:
+  test10:
+    <<: *defaults
+    <<: *test
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test10

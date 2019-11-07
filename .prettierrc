@@ -1,0 +1,37 @@
+{
+  "arrowParens": "always",
+  "parser": "typescript",
+  "printWidth": 120,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "overrides": [
+    {
+      "files": "*.js",
+      "options": {
+        "parser": "flow",
+        "printWidth": 80
+      }
+    },
+    {
+      "files": "*.md",
+      "options": {
+        "parser": "markdown",
+        "printWidth": 120
+      }
+    },
+    {
+      "files": "*rc",
+      "options": {
+        "parser": "json",
+        "printWidth": 80
+      }
+    },
+    {
+      "files": "*.json",
+      "options": {
+        "parser": "json",
+        "printWidth": 240
+      }
+    }
+  ]
+}
