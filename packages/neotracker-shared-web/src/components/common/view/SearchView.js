@@ -27,7 +27,7 @@ function SearchView({
 }: Props): React.Element<*> {
   return (
     <CenteredView className={className}>
-      <Card>
+      <Card className="transaction-page-table">
         <CommonHeader name={name} pluralName={pluralName} />
         {content}
       </Card>

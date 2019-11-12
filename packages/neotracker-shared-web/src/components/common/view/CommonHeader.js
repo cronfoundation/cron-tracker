@@ -58,21 +58,22 @@ const styles = (theme: Theme) => ({
     marginRight: theme.spacing.unit,
   },
   text: {
-    color: theme.custom.colors.common.white,
+    color: '#001E7F',
   },
   link: {
-    color: theme.custom.colors.common.white,
+    color: '#001E7F',
     textDecoration: 'underline',
     '&:hover': {
-      color: theme.custom.colors.common.darkWhite,
+      opacity: 0.8
     },
   },
   linkSelected: {
-    color: theme.custom.colors.common.darkWhite,
+    color: '#001E7F',
+    opacity: 0.8,
     textDecoration: 'underline',
   },
   backgroundColor: {
-    backgroundColor: theme.palette.primary[500],
+    backgroundColor: 'rgba(255, 255, 255, 0.85)',
   },
 });
 

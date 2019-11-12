@@ -93,7 +93,8 @@ const styles = (theme: Theme) => ({
   card: {
     display: 'flex',
     flexDirection: 'column',
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
+    borderRadius: 0
   },
   cardHeader: {
     alignItems: 'center',
@@ -115,15 +116,32 @@ const styles = (theme: Theme) => ({
     marginTop: -8,
     paddingBottom: 0,
     paddingTop: 0,
-    backgroundColor: '#FFD401',
+    backgroundColor: '#FFD401 !important',
     borderRadius: 20,
     border: '1px solid #fff',
     width: 104,
+    transition: 'opacity 0.2s ease-out',
+    '&:hover': {
+      opacity: 0.8
+    }
   },
   viewMoreText: {
     color: '#001E7F',
-    fontWeight: '500'
+    fontWeight: '500',
+    marginBottom: -3
   },
+  typography: {
+    color: '#001E7F',
+    fontSize: '1.25rem'
+  },
+  tableContentBlock: {
+    backgroundColor: '#fff'
+  },
+  tableContentBlockTransactions: {
+    '& > *:nth-child(even)': {
+      backgroundColor: 'rgba(7, 134, 213, 0.07)'
+    }
+  }
 });
 
 const safeRetry = createSafeRetry();
@@ -173,10 +191,10 @@ function Home({
     cardSpacerClassName,
   ) => (
     <div className={cardClassName}>
-      <div className={`${cardSpacerClassName} home-table-wrap`}>
+      <div className={cardSpacerClassName}>
         <Card className={classes.card}>
           <div className={classes.cardHeader}>
-            <Typography className="home-title-h2" variant="title">{title}</Typography>
+            <Typography className={classes.typography} variant="title">{title}</Typography>
             {rightElement}
           </div>
           {content}
@@ -188,7 +206,7 @@ function Home({
   const makeViewAllButton = (path: string) => (
     <Link className={classes.link} to={path}>
       <Button
-        className={`${classes.viewMoreButton} c-home-btns`}
+        className={classes.viewMoreButton}
         size="small"
         variant="raised"
         color="primary"
@@ -210,6 +228,7 @@ function Home({
             blocks={props.blocks.edges.map((edge) => edge.node)}
             sizeVisibleAt="xs"
             validatorVisibleAt="md"
+            className={classes.tableContentBlock}
           />,
           classes.blocks,
           classes.blocksSpacer,
@@ -220,6 +239,7 @@ function Home({
           <TransactionTable
             transactions={props.transactions.edges.map((edge) => edge.node)}
             dense
+            className={classNames(classes.tableContentBlock, classes.tableContentBlockTransactions)}
           />,
           classes.transactions,
           classes.transactionsSpacer,

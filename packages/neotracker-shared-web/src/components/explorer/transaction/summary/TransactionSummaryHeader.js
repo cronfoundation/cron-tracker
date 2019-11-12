@@ -30,11 +30,12 @@ const styles = (theme: Theme) => ({
   },
   root: {
     alignItems: 'center',
-    borderBottom: `1px solid ${theme.custom.lightDivider}`,
+    // borderBottom: `1px solid ${theme.custom.lightDivider}`,
     display: 'flex',
     justifyContent: 'space-between',
-    paddingBottom: theme.spacing.unit,
-    paddingTop: theme.spacing.unit,
+    paddingBottom: 11,
+    paddingTop: 11,
+    borderLeft: 'none'
   },
   leftHeader: {
     flex: '1 100 auto',
@@ -47,6 +48,7 @@ const styles = (theme: Theme) => ({
     flex: '1 1 208px',
     justifyContent: 'flex-end',
     minWidth: '0',
+    maxWidth: 200
   },
   // TODO: Keep in sync with ExpandoCard and/or extract out
   chevronButton: {
@@ -57,7 +59,7 @@ const styles = (theme: Theme) => ({
     marginTop: -theme.spacing.unit,
   },
   blockTime: {
-    marginRight: theme.spacing.unit,
+    marginRight: 'auto',
   },
 });
 

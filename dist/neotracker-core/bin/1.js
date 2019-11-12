@@ -11,7 +11,7 @@ __webpack_require__.r(__webpack_exports__);
 var external_react_ = __webpack_require__(0);
 
 // EXTERNAL MODULE: external "reakit"
-var external_reakit_ = __webpack_require__(133);
+var external_reakit_ = __webpack_require__(93);
 
 // EXTERNAL MODULE: external "lodash"
 var external_lodash_ = __webpack_require__(3);
@@ -21,7 +21,7 @@ var external_lodash_default = /*#__PURE__*/__webpack_require__.n(external_lodash
 var operators_ = __webpack_require__(5);
 
 // EXTERNAL MODULE: external "apollo-client"
-var external_apollo_client_ = __webpack_require__(141);
+var external_apollo_client_ = __webpack_require__(126);
 
 // EXTERNAL MODULE: external "rxjs"
 var external_rxjs_ = __webpack_require__(7);
@@ -146,10 +146,10 @@ const observeQuery = ({
   };
 });
 // EXTERNAL MODULE: ./packages/neotracker-shared-web-next/src/components/render/FromStream.tsx
-var FromStream = __webpack_require__(142);
+var FromStream = __webpack_require__(128);
 
 // EXTERNAL MODULE: ./packages/neotracker-shared-web-next/src/components/render/WithAppContext.tsx
-var WithAppContext = __webpack_require__(115);
+var WithAppContext = __webpack_require__(127);
 
 // CONCATENATED MODULE: ./packages/neotracker-shared-web-next/src/components/render/Query.tsx
 

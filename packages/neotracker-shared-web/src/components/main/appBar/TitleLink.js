@@ -14,6 +14,9 @@ const styles = () => ({
   link: {
     textDecoration: 'none',
   },
+  linkLogo: {
+    minWidth: 195
+  }
 });
 
 type ExternalProps = {|
@@ -29,7 +32,7 @@ type Props = {|
 |};
 function TitleLink({ id, className, classes }: Props): React.Element<*> {
   return (
-    <Link className={classNames(className, classes.link)} to={routes.HOME}>
+    <Link className={classNames(className, classes.link, classes.linkLogo)} to={routes.HOME}>
       <TitleLogo id={id} />
     </Link>
   );

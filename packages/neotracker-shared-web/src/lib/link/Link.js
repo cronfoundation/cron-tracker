@@ -15,11 +15,11 @@ const styles = (theme: any) => ({
     whiteSpace: 'nowrap',
   },
   link: {
-    color: theme.palette.primary[500],
+    color: '#102C87',
     fontWeight: theme.typography.fontWeightRegular,
     textDecoration: 'none',
     '&:hover': {
-      color: theme.palette.primary[700],
+      // color: theme.palette.primary[700],
       textDecoration: 'underline',
     },
   },

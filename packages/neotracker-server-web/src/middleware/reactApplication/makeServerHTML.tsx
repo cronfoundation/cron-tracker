@@ -62,7 +62,7 @@ export const makeServerHTML = ({
 
   const headerElements = [
     ...css.map(stylesheetTag),
-    <link key="font" rel="stylesheet" type="text/css" href="./public/styles.css"/>,
+    <link key="font" rel="stylesheet" type="text/css" href="/public/styles.css"/>,
     <link key="icons" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />,
     inlineScript(`
       (function(d) {

@@ -29,12 +29,56 @@ const styles = (theme: Theme) => ({
       paddingRight: theme.spacing.unit * 2,
     },
   },
+  [theme.breakpoints.down('sm')]: {
+    root: {
+      flexDirection: 'column',
+      alignItems: 'center'
+    },
+    footerUl: {
+      margin: '15px 0 0 0'
+    },
+    footerLi: {
+      marginRight: 10,
+      marginBottom: 10
+    }
+  },
+  [theme.breakpoints.up('md')]: {
+    footerUl: {
+      margin: '0 0 0 55px'
+    },
+    footerLi: {
+      marginRight: 30
+    }
+  },
   root: {
     background: 'linear-gradient(180deg, #0056BB -22.73%, #0A97DE 130.3%)',
     display: 'flex',
-    flexDirection: 'column',
-    paddingBottom: theme.spacing.unit * 2,
-    paddingTop: theme.spacing.unit * 2,
+    flexWrap: 'wrap',
+    paddingBottom: 23,
+    paddingTop: 23,
+  },
+  footerUl: {
+    padding: 0,
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+  },
+  footerLi: {
+    listStyle: 'none',
+    fontSize: '0.875rem',
+    color: '#fff',
+    fontWeight: 500,
+    '&:last-child': {
+      marginRight: 0
+    }
+  },
+  footerLink: {
+    textDecoration: 'none',
+    color: 'inherit',
+    transition: 'opacity 0.2s ease-out',
+    '&:hover': {
+      opacity: 0.8
+    }
   },
   firstRow: {
     alignItems: 'center',
@@ -42,7 +86,6 @@ const styles = (theme: Theme) => ({
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     paddingLeft: '15px'
-    // marginBottom: theme.spacing.unit,
   },
   secondRow: {
     alignItems: 'center',
@@ -81,21 +124,26 @@ function AppFooter({
   appOptions,
   classes,
 }: Props): React.Element<*> {
+  const FooterLink = ({href, children}) => {
+    return (
+      <li className={classes.footerLi}><a className={classes.footerLink} href={href}>{children}</a></li>
+    );
+  };
   return (
-    <div className={`${classNames(className, classes.root)} c-footer`}>
+    <div className={classNames(className, classes.root)}>
       <div className={classes.firstRow}>
         <Typography className={classes.copyright} variant="caption">
           {`${appOptions.meta.name} © 2019`}
         </Typography>
       </div>
-      <ul className="c-footer__link">
-        <li><a href="#">Where to buy</a></li>
-        <li><a href="#">About CRON</a></li>
-        <li><a href="#">Wallet</a></li>
-        <li><a href="#">Integration</a></li>
-        <li><a href="#">Partnership</a></li>
-        <li><a href="#">Team</a></li>
-        <li><a href="#">Contact</a></li>
+      <ul className={classes.footerUl}>
+        <FooterLink href="#">Where to buy</FooterLink>
+        <FooterLink href="#">About CRON</FooterLink>
+        <FooterLink href="#">Wallet</FooterLink>
+        <FooterLink href="#">Integration</FooterLink>
+        <FooterLink href="#">Partnership</FooterLink>
+        <FooterLink href="#">Team</FooterLink>
+        <FooterLink href="#">Contact</FooterLink>
       </ul>
     </div>
   );

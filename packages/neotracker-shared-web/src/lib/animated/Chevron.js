@@ -5,7 +5,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { compose, hoistStatics, pure } from 'recompose';
 
-import { Icon, withStyles } from '../base';
+import { withStyles } from '../base';
 
 const styles = (theme: any) => ({
   chevron: {
@@ -13,10 +13,10 @@ const styles = (theme: any) => ({
     transition: theme.transitions.create(['transform']),
   },
   chevronUp: {
-    transform: 'rotate(180deg)',
+    transform: 'rotate(0deg)',
   },
   chevronDown: {
-    transform: 'rotate(0deg)',
+    transform: 'rotate(180deg)',
   },
 });
 
@@ -39,9 +39,7 @@ function Chevron({
   ...otherProps
 }: Props): React.Element<*> {
   return (
-    <Icon
-      color={otherProps.color}
-      fontSize={otherProps.fontSize}
+    <i
       className={classNames(
         {
           [classes.chevron]: true,
@@ -51,8 +49,10 @@ function Chevron({
         className,
       )}
     >
-      keyboard_arrow_up
-    </Icon>
+      <svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 1L7.5 7L1 1H13.5938" stroke="#3CBFEF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </i>
   );
 }
 

@@ -57,7 +57,7 @@ function PageLoading({
       })}
     >
       <Logo id="PageLoading" width={48} height={56} />
-      <LinearProgress className={`${classes.progress} c-loading`} />
+      <LinearProgress className={classes.progress} />
     </div>
   );
 }

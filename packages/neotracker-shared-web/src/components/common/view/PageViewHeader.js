@@ -53,6 +53,7 @@ const styles = (theme: Theme) => ({
     alignItems: 'center',
     display: 'flex',
     justifyContent: 'space-between',
+    backgroundColor: 'rgba(255, 255, 255, 0.85)'
   },
   leftHeader: {
     alignItems: 'center',
@@ -71,17 +72,18 @@ const styles = (theme: Theme) => ({
     marginRight: theme.spacing.unit,
   },
   text: {
-    color: theme.custom.colors.common.white,
+    color: '#001E7F',
   },
   link: {
-    color: theme.custom.colors.common.white,
+    color: '#001E7F',
     textDecoration: 'underline',
     '&:hover': {
-      color: theme.custom.colors.common.darkWhite,
+      opacity: 0.8
     },
   },
   linkSelected: {
-    color: theme.custom.colors.common.darkWhite,
+    color: '#001E7F',
+    opacity: 0.8,
     textDecoration: 'underline',
   },
   backgroundColor: {
@@ -133,12 +135,12 @@ function PageViewHeader({
       /
     </Typography>
   );
-  let iconElement = null;
-  if (icon != null) {
-    iconElement = (
-      <Icon className={classNames(classes.margin, classes.text)}>{icon}</Icon>
-    );
-  }
+  // let iconElement = null;
+  // if (icon != null) {
+  //   iconElement = (
+  //     <Icon className={classNames(classes.margin, classes.text)}>{icon}</Icon>
+  //   );
+  // }
   return (
     <div
       className={classNames(
@@ -150,7 +152,7 @@ function PageViewHeader({
       )}
     >
       <div className={classes.leftHeader}>
-        {iconElement}
+        {/*{iconElement}*/}
         <Typography
           className={classNames(classes.margin, classes.text)}
           component="h1"

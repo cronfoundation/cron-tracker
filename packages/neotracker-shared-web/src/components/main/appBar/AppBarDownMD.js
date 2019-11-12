@@ -50,7 +50,7 @@ const styles = (theme: Theme) => ({
   },
   header: {
     alignItems: 'center',
-    backgroundColor: theme.palette.background.paper,
+    backgroundImage: 'linear-gradient(180deg, #0056BB -22.73%, #0A97DE 130.3%)',
     display: 'flex',
     flexDirection: 'row',
     height: theme.spacing.unit * 8,

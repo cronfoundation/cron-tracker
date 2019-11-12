@@ -30,9 +30,17 @@ const styles = (theme: Theme) => ({
   },
   button: {
     height: theme.spacing.unit * 5,
+    backgroundColor: '#FFD401 !important',
+    borderRadius: 20,
+    border: '1px solid #fff',
+    transition: 'opacity 0.2s ease-out',
+    '&:hover': {
+      opacity: 0.8
+    }
   },
   search: {
-    color: theme.custom.colors.common.white,
+    color: '#001E7F',
+    fontWeight: 500
   },
 });
 
@@ -74,7 +82,7 @@ function SearchField({
         setInputRef={setInputRef}
       />
       <Button
-        className={`${classes.button} header-search-btn`}
+        className={classes.button}
         color="primary"
         variant="raised"
         onClick={onSearch}

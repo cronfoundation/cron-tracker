@@ -120,7 +120,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 333);
+/******/ 	return __webpack_require__(__webpack_require__.s = 334);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -230,7 +230,7 @@ module.exports = require("react-helmet");
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(218);
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(204);
 /* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "api", function() { return _api__WEBPACK_IMPORTED_MODULE_0__; });
 
 
@@ -267,13 +267,36 @@ module.exports = require("path");
 /* 24 */
 /***/ (function(module, exports) {
 
+module.exports = require("@material-ui/core/colors/lightBlue");
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports) {
+
 module.exports = require("graphql/execution/execute");
 
 /***/ }),
-/* 25 */,
 /* 26 */,
-/* 27 */,
+/* 27 */
+/***/ (function(module, exports) {
+
+module.exports = require("change-case");
+
+/***/ }),
 /* 28 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux-actions");
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports) {
+
+module.exports = require("serialize-javascript");
+
+/***/ }),
+/* 30 */,
+/* 31 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -282,8 +305,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Transaction", function() { return Transaction; });
 /* harmony import */ var objection__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
 /* harmony import */ var objection__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(objection__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _BlockchainModel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(37);
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(36);
+/* harmony import */ var _BlockchainModel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(32);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(38);
 /* harmony import */ var _convertJSON__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8);
 
 
@@ -569,7 +592,7 @@ Transaction.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(46).Asset;
+        return __webpack_require__(47).Asset;
       },
 
       join: {
@@ -585,7 +608,7 @@ Transaction.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(49).Block;
+        return __webpack_require__(51).Block;
       },
 
       join: {
@@ -602,7 +625,7 @@ Transaction.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(57).Contract;
+        return __webpack_require__(68).Contract;
       },
 
       join: {
@@ -618,7 +641,7 @@ Transaction.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(55).Action;
+        return __webpack_require__(66).Action;
       },
 
       join: {
@@ -647,11 +670,32 @@ Transaction.edgeSchema = {
 };
 
 /***/ }),
-/* 29 */,
-/* 30 */,
-/* 31 */,
-/* 32 */,
-/* 33 */
+/* 32 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BlockchainModel; });
+/* harmony import */ var _neotracker_server_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(368);
+/* harmony import */ var _createPubSub__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(50);
+/* harmony import */ var _BaseVisibleModel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(56);
+
+
+
+class BlockchainModel extends _BaseVisibleModel__WEBPACK_IMPORTED_MODULE_2__[/* BaseVisibleModel */ "a"] {
+  // tslint:disable no-any
+  static observable$(_obj, _args, _context, _info) {
+    return _neotracker_server_utils__WEBPACK_IMPORTED_MODULE_0__[/* pubsub */ "a"].observable$(_createPubSub__WEBPACK_IMPORTED_MODULE_1__[/* PROCESSED_NEXT_INDEX */ "a"]);
+  }
+
+}
+BlockchainModel.cacheType = 'blockchain';
+
+/***/ }),
+/* 33 */,
+/* 34 */,
+/* 35 */,
+/* 36 */,
+/* 37 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -664,7 +708,7 @@ var constants = __webpack_require__(365);
 var external_objection_ = __webpack_require__(6);
 
 // EXTERNAL MODULE: ./packages/neotracker-shared-utils/src/utils.ts
-var utils = __webpack_require__(121);
+var utils = __webpack_require__(223);
 
 // EXTERNAL MODULE: ./packages/neotracker-shared-utils/src/numbers.ts
 var numbers = __webpack_require__(366);
@@ -677,7 +721,7 @@ var external_bignumber_js_default = /*#__PURE__*/__webpack_require__.n(external_
 var TransactionInputOutput = __webpack_require__(39);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/utils/calculateClaimValueBase.ts
-var calculateClaimValueBase = __webpack_require__(112);
+var calculateClaimValueBase = __webpack_require__(102);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-db/src/utils/calculateClaimValue.ts
 
@@ -737,10 +781,10 @@ const calculateAddressClaimValue = async (address, context, info) => {
   return nonNullClaimValue.plus(nullClaimValue).toFixed(8);
 };
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/models/BlockchainModel.ts
-var BlockchainModel = __webpack_require__(37);
+var BlockchainModel = __webpack_require__(32);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/models/common.ts
-var common = __webpack_require__(36);
+var common = __webpack_require__(38);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/models/convertJSON.ts
 var convertJSON = __webpack_require__(8);
@@ -887,7 +931,7 @@ Address_Address.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(56).Coin;
+        return __webpack_require__(67).Coin;
       },
 
       join: {
@@ -919,7 +963,7 @@ Address_Address.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(28).Transaction;
+        return __webpack_require__(31).Transaction;
       },
 
       join: {
@@ -935,7 +979,7 @@ Address_Address.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(28).Transaction;
+        return __webpack_require__(31).Transaction;
       },
 
       join: {
@@ -943,7 +987,7 @@ Address_Address.edgeSchema = {
         through: {
           get modelClass() {
             // tslint:disable-next-line no-require-imports
-            return __webpack_require__(113).AddressToTransaction;
+            return __webpack_require__(103).AddressToTransaction;
           },
 
           from: 'address_to_transaction.id1',
@@ -968,7 +1012,7 @@ Address_Address.edgeSchema = {
         through: {
           get modelClass() {
             // tslint:disable-next-line no-require-imports
-            return __webpack_require__(58).AddressToTransfer;
+            return __webpack_require__(69).AddressToTransfer;
           },
 
           from: 'address_to_transfer.id1',
@@ -982,9 +1026,7 @@ Address_Address.edgeSchema = {
 };
 
 /***/ }),
-/* 34 */,
-/* 35 */,
-/* 36 */
+/* 38 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1070,28 +1112,6 @@ const NEP5_BLACKLIST_CONTRACT_TYPE = 'NEP5_BLACKLIST';
 const UNKNOWN_CONTRACT_TYPE = 'UNKNOWN';
 
 /***/ }),
-/* 37 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BlockchainModel; });
-/* harmony import */ var _neotracker_server_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(368);
-/* harmony import */ var _createPubSub__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(48);
-/* harmony import */ var _BaseVisibleModel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51);
-
-
-
-class BlockchainModel extends _BaseVisibleModel__WEBPACK_IMPORTED_MODULE_2__[/* BaseVisibleModel */ "a"] {
-  // tslint:disable no-any
-  static observable$(_obj, _args, _context, _info) {
-    return _neotracker_server_utils__WEBPACK_IMPORTED_MODULE_0__[/* pubsub */ "a"].observable$(_createPubSub__WEBPACK_IMPORTED_MODULE_1__[/* PROCESSED_NEXT_INDEX */ "a"]);
-  }
-
-}
-BlockchainModel.cacheType = 'blockchain';
-
-/***/ }),
-/* 38 */,
 /* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1100,8 +1120,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransactionInputOutput", function() { return TransactionInputOutput; });
 /* harmony import */ var objection__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
 /* harmony import */ var objection__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(objection__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _BlockchainModel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(37);
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(36);
+/* harmony import */ var _BlockchainModel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(32);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(38);
 /* harmony import */ var _convertJSON__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8);
 
 
@@ -1300,7 +1320,7 @@ TransactionInputOutput.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(28).Transaction;
+        return __webpack_require__(31).Transaction;
       },
 
       join: {
@@ -1317,7 +1337,7 @@ TransactionInputOutput.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(28).Transaction;
+        return __webpack_require__(31).Transaction;
       },
 
       join: {
@@ -1334,7 +1354,7 @@ TransactionInputOutput.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(28).Transaction;
+        return __webpack_require__(31).Transaction;
       },
 
       join: {
@@ -1351,7 +1371,7 @@ TransactionInputOutput.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(28).Transaction;
+        return __webpack_require__(31).Transaction;
       },
 
       join: {
@@ -1368,7 +1388,7 @@ TransactionInputOutput.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(46).Asset;
+        return __webpack_require__(47).Asset;
       },
 
       join: {
@@ -1385,7 +1405,7 @@ TransactionInputOutput.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(33).Address;
+        return __webpack_require__(37).Address;
       },
 
       join: {
@@ -1407,8 +1427,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Transfer", function() { return Transfer; });
 /* harmony import */ var objection__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
 /* harmony import */ var objection__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(objection__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _BlockchainModel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(37);
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(36);
+/* harmony import */ var _BlockchainModel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(32);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(38);
 /* harmony import */ var _convertJSON__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8);
 
 
@@ -1524,7 +1544,7 @@ Transfer.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(28).Transaction;
+        return __webpack_require__(31).Transaction;
       },
 
       join: {
@@ -1540,7 +1560,7 @@ Transfer.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(46).Asset;
+        return __webpack_require__(47).Asset;
       },
 
       join: {
@@ -1557,7 +1577,7 @@ Transfer.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(55).Action;
+        return __webpack_require__(66).Action;
       },
 
       join: {
@@ -1574,7 +1594,7 @@ Transfer.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(57).Contract;
+        return __webpack_require__(68).Contract;
       },
 
       join: {
@@ -1591,7 +1611,7 @@ Transfer.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(33).Address;
+        return __webpack_require__(37).Address;
       },
 
       join: {
@@ -1607,7 +1627,7 @@ Transfer.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(33).Address;
+        return __webpack_require__(37).Address;
       },
 
       join: {
@@ -1623,7 +1643,7 @@ Transfer.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(33).Address;
+        return __webpack_require__(37).Address;
       },
 
       join: {
@@ -1631,7 +1651,7 @@ Transfer.edgeSchema = {
         through: {
           get modelClass() {
             // tslint:disable-next-line no-require-imports
-            return __webpack_require__(58).AddressToTransfer;
+            return __webpack_require__(69).AddressToTransfer;
           },
 
           from: 'address_to_transfer.id2',
@@ -1648,7 +1668,7 @@ Transfer.edgeSchema = {
 /* 41 */
 /***/ (function(module, exports) {
 
-module.exports = require("change-case");
+module.exports = require("fs-extra");
 
 /***/ }),
 /* 42 */
@@ -1657,15 +1677,11 @@ module.exports = require("change-case");
 module.exports = require("koa-compose");
 
 /***/ }),
-/* 43 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-dom/server");
-
-/***/ }),
+/* 43 */,
 /* 44 */,
 /* 45 */,
-/* 46 */
+/* 46 */,
+/* 47 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1681,7 +1697,7 @@ var external_objection_ = __webpack_require__(6);
 var numbers = __webpack_require__(366);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/utils/calculateClaimValueBase.ts
-var calculateClaimValueBase = __webpack_require__(112);
+var calculateClaimValueBase = __webpack_require__(102);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-db/src/utils/calculateAvailableGAS.ts
 
@@ -1695,10 +1711,10 @@ const calculateAvailableGAS = async maxIndex => Object(calculateClaimValueBase["
   }]
 });
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/models/BlockchainModel.ts
-var BlockchainModel = __webpack_require__(37);
+var BlockchainModel = __webpack_require__(32);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/models/common.ts
-var common = __webpack_require__(36);
+var common = __webpack_require__(38);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/models/convertJSON.ts
 var convertJSON = __webpack_require__(8);
@@ -1933,7 +1949,7 @@ Asset_Asset.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(56).Coin;
+        return __webpack_require__(67).Coin;
       },
 
       join: {
@@ -1965,7 +1981,7 @@ Asset_Asset.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(33).Address;
+        return __webpack_require__(37).Address;
       },
 
       join: {
@@ -1981,7 +1997,7 @@ Asset_Asset.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(28).Transaction;
+        return __webpack_require__(31).Transaction;
       },
 
       join: {
@@ -1998,7 +2014,7 @@ Asset_Asset.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(28).Transaction;
+        return __webpack_require__(31).Transaction;
       },
 
       join: {
@@ -2006,7 +2022,7 @@ Asset_Asset.edgeSchema = {
         through: {
           get modelClass() {
             // tslint:disable-next-line no-require-imports
-            return __webpack_require__(114).AssetToTransaction;
+            return __webpack_require__(104).AssetToTransaction;
           },
 
           from: 'asset_to_transaction.id1',
@@ -2036,7 +2052,13 @@ Asset_Asset.edgeSchema = {
 };
 
 /***/ }),
-/* 47 */
+/* 48 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-dom/server");
+
+/***/ }),
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2080,13 +2102,13 @@ function isUniqueError(db, error) {
 }
 
 /***/ }),
-/* 48 */
+/* 50 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PROCESSED_NEXT_INDEX; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return createPubSub; });
-/* harmony import */ var pg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(230);
+/* harmony import */ var pg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(219);
 /* harmony import */ var pg__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(pg__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(rxjs__WEBPACK_IMPORTED_MODULE_1__);
@@ -2243,7 +2265,7 @@ const createPubSub = ({
 };
 
 /***/ }),
-/* 49 */
+/* 51 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2251,9 +2273,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Block", function() { return Block; });
 /* harmony import */ var objection__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
 /* harmony import */ var objection__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(objection__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _knexUtils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(47);
-/* harmony import */ var _BlockchainModel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(37);
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(36);
+/* harmony import */ var _knexUtils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(49);
+/* harmony import */ var _BlockchainModel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(38);
 /* harmony import */ var _convertJSON__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
 
 
@@ -2439,7 +2461,7 @@ Block.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(28).Transaction;
+        return __webpack_require__(31).Transaction;
       },
 
       join: {
@@ -2455,7 +2477,7 @@ Block.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(33).Address;
+        return __webpack_require__(37).Address;
       },
 
       join: {
@@ -2470,7 +2492,7 @@ Block.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(33).Address;
+        return __webpack_require__(37).Address;
       },
 
       join: {
@@ -2486,7 +2508,7 @@ Block.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(49).Block;
+        return __webpack_require__(51).Block;
       },
 
       join: {
@@ -2501,7 +2523,7 @@ Block.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(49).Block;
+        return __webpack_require__(51).Block;
       },
 
       join: {
@@ -2513,25 +2535,43 @@ Block.edgeSchema = {
 };
 
 /***/ }),
-/* 50 */
+/* 52 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux-actions");
+module.exports = require("yargs");
 
 /***/ }),
-/* 51 */
+/* 53 */
+/***/ (function(module, exports) {
+
+module.exports = require("graphql/type/definition");
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports) {
+
+module.exports = require("graphql/jsutils/isPromise");
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports) {
+
+module.exports = require("reselect");
+
+/***/ }),
+/* 56 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 
 // EXTERNAL MODULE: ./packages/neotracker-server-utils/src/errors/CodedError.ts
-var CodedError = __webpack_require__(111);
+var CodedError = __webpack_require__(101);
 
 // EXTERNAL MODULE: external "change-case"
-var external_change_case_ = __webpack_require__(41);
+var external_change_case_ = __webpack_require__(27);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/lib/Base.ts + 1 modules
-var Base = __webpack_require__(72);
+var Base = __webpack_require__(73);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-db/src/lib/IFace.ts
 // tslint:disable-next-line no-unnecessary-class
@@ -2641,11 +2681,29 @@ class BaseVisibleModel_BaseVisibleModel extends BaseModel_BaseModel {
 }
 
 /***/ }),
-/* 52 */
+/* 57 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-jss");
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports) {
+
+module.exports = require("relay-runtime");
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports) {
+
+module.exports = require("koa-helmet");
+
+/***/ }),
+/* 60 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(92);
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(85);
 /* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "routes", function() { return _routes__WEBPACK_IMPORTED_MODULE_0__; });
 
 
@@ -2656,19 +2714,27 @@ class BaseVisibleModel_BaseVisibleModel extends BaseModel_BaseModel {
 
 
 /***/ }),
-/* 53 */
+/* 61 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-loadable");
 
 /***/ }),
-/* 54 */
+/* 62 */
+/***/ (function(module, exports) {
+
+module.exports = require("safe-stable-stringify");
+
+/***/ }),
+/* 63 */,
+/* 64 */,
+/* 65 */
 /***/ (function(module, exports) {
 
 module.exports = require("tslib");
 
 /***/ }),
-/* 55 */
+/* 66 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2676,8 +2742,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Action", function() { return Action; });
 /* harmony import */ var objection__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
 /* harmony import */ var objection__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(objection__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _BlockchainModel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(37);
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(36);
+/* harmony import */ var _BlockchainModel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(32);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(38);
 /* harmony import */ var _convertJSON__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8);
 
 
@@ -2785,7 +2851,7 @@ Action.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(28).Transaction;
+        return __webpack_require__(31).Transaction;
       },
 
       join: {
@@ -2815,7 +2881,7 @@ Action.edgeSchema = {
 };
 
 /***/ }),
-/* 56 */
+/* 67 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2823,9 +2889,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Coin", function() { return Coin; });
 /* harmony import */ var objection__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
 /* harmony import */ var objection__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(objection__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _knexUtils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(47);
-/* harmony import */ var _BlockchainModel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(37);
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(36);
+/* harmony import */ var _knexUtils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(49);
+/* harmony import */ var _BlockchainModel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(38);
 /* harmony import */ var _convertJSON__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
 
 
@@ -2927,7 +2993,7 @@ Coin.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(33).Address;
+        return __webpack_require__(37).Address;
       },
 
       join: {
@@ -2944,7 +3010,7 @@ Coin.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(46).Asset;
+        return __webpack_require__(47).Asset;
       },
 
       join: {
@@ -2958,7 +3024,7 @@ Coin.edgeSchema = {
 };
 
 /***/ }),
-/* 57 */
+/* 68 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2966,8 +3032,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Contract", function() { return Contract; });
 /* harmony import */ var objection__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
 /* harmony import */ var objection__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(objection__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _BlockchainModel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(37);
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(36);
+/* harmony import */ var _BlockchainModel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(32);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(38);
 /* harmony import */ var _convertJSON__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8);
 
 
@@ -3110,7 +3176,7 @@ Contract.edgeSchema = {
 
       get modelClass() {
         // tslint:disable-next-line no-require-imports
-        return __webpack_require__(28).Transaction;
+        return __webpack_require__(31).Transaction;
       },
 
       join: {
@@ -3140,20 +3206,20 @@ Contract.edgeSchema = {
 };
 
 /***/ }),
-/* 58 */
+/* 69 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddressToTransfer", function() { return AddressToTransfer; });
-/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(132);
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(125);
 /* harmony import */ var _convertJSON__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
 
 
 class AddressToTransfer extends _lib__WEBPACK_IMPORTED_MODULE_0__[/* BaseEdge */ "a"] {
   static get id1Type() {
     // tslint:disable-next-line no-require-imports
-    return __webpack_require__(33).Address;
+    return __webpack_require__(37).Address;
   }
 
   static get id2Type() {
@@ -3183,91 +3249,31 @@ AddressToTransfer.modelName = 'AddressToTransfer';
 AddressToTransfer.id2Desc = true;
 
 /***/ }),
-/* 59 */
-/***/ (function(module, exports) {
-
-module.exports = require("serialize-javascript");
-
-/***/ }),
-/* 60 */
-/***/ (function(module, exports) {
-
-module.exports = require("fs-extra");
-
-/***/ }),
-/* 61 */
-/***/ (function(module, exports) {
-
-module.exports = require("yargs");
-
-/***/ }),
-/* 62 */
-/***/ (function(module, exports) {
-
-module.exports = require("graphql/type/definition");
-
-/***/ }),
-/* 63 */
-/***/ (function(module, exports) {
-
-module.exports = require("graphql/jsutils/isPromise");
-
-/***/ }),
-/* 64 */
-/***/ (function(module, exports) {
-
-module.exports = require("reselect");
-
-/***/ }),
-/* 65 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-jss");
-
-/***/ }),
-/* 66 */
-/***/ (function(module, exports) {
-
-module.exports = require("relay-runtime");
-
-/***/ }),
-/* 67 */
-/***/ (function(module, exports) {
-
-module.exports = require("koa-helmet");
-
-/***/ }),
-/* 68 */
-/***/ (function(module, exports) {
-
-module.exports = require("safe-stable-stringify");
-
-/***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports) {
 
 module.exports = require("graphql");
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports) {
 
 module.exports = require("cross-fetch");
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-compress");
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 
 // EXTERNAL MODULE: ./packages/neotracker-server-utils/src/errors/CodedError.ts
-var CodedError = __webpack_require__(111);
+var CodedError = __webpack_require__(101);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-utils/src/errors/ValidationError.ts
 
@@ -3280,16 +3286,16 @@ class ValidationError_ValidationError extends CodedError["a" /* CodedError */] {
 
 }
 // EXTERNAL MODULE: external "change-case"
-var external_change_case_ = __webpack_require__(41);
+var external_change_case_ = __webpack_require__(27);
 
 // EXTERNAL MODULE: external "objection"
 var external_objection_ = __webpack_require__(6);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/knexUtils.ts
-var knexUtils = __webpack_require__(47);
+var knexUtils = __webpack_require__(49);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/lib/common.ts
-var common = __webpack_require__(117);
+var common = __webpack_require__(217);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-db/src/lib/Base.ts
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Base_Base; });
@@ -3467,66 +3473,18 @@ Base_Base.pickJsonSchemaProperties = true; // tslint:disable-next-line readonly-
 Base_Base.jsonAttributes = [];
 
 /***/ }),
-/* 73 */
-/***/ (function(module, exports) {
-
-module.exports = require("graphql/error");
-
-/***/ }),
 /* 74 */,
 /* 75 */,
 /* 76 */,
 /* 77 */,
-/* 78 */
-/***/ (function(module, exports) {
-
-module.exports = require("graphql/jsutils/invariant");
-
-/***/ }),
-/* 79 */
-/***/ (function(module, exports) {
-
-module.exports = require("styled-components");
-
-/***/ }),
-/* 80 */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/styles/createGenerateClassName");
-
-/***/ }),
-/* 81 */
-/***/ (function(module, exports) {
-
-module.exports = require("jss");
-
-/***/ }),
-/* 82 */
-/***/ (function(module, exports) {
-
-module.exports = require("jss-preset-default");
-
-/***/ }),
-/* 83 */
-/***/ (function(module, exports) {
-
-module.exports = require("toobusy-js");
-
-/***/ }),
-/* 84 */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/colors/red");
-
-/***/ }),
-/* 85 */,
-/* 86 */,
-/* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3541,90 +3499,37 @@ const GRAPHQL = '/graphql-next';
 const CLIENT = '/client-next';
 
 /***/ }),
-/* 93 */
+/* 86 */
 /***/ (function(module, exports) {
 
 module.exports = require("lru-cache");
 
 /***/ }),
-/* 94 */
+/* 87 */
 /***/ (function(module, exports) {
 
 module.exports = require("@neo-one/client-core");
 
 /***/ }),
-/* 95 */
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */
 /***/ (function(module, exports) {
 
-module.exports = require("koa-convert");
+module.exports = require("reakit");
 
 /***/ }),
-/* 96 */
-/***/ (function(module, exports) {
-
-module.exports = require("fs");
-
-/***/ }),
-/* 97 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-router-config");
-
-/***/ }),
-/* 98 */
-/***/ (function(module, exports) {
-
-module.exports = require("uuid/v4");
-
-/***/ }),
-/* 99 */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/colors/blue");
-
-/***/ }),
-/* 100 */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/colors/blueGrey");
-
-/***/ }),
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
 /* 101 */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/colors/green");
-
-/***/ }),
-/* 102 */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/colors/indigo");
-
-/***/ }),
-/* 103 */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/colors/lime");
-
-/***/ }),
-/* 104 */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/colors/purple");
-
-/***/ }),
-/* 105 */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/colors/teal");
-
-/***/ }),
-/* 106 */,
-/* 107 */,
-/* 108 */,
-/* 109 */,
-/* 110 */,
-/* 111 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3688,19 +3593,19 @@ CodedError.INVALID_GITHUB_FIELDS_OBJECT = 'INVALID_GITHUB_FIELDS_OBJECT';
 CodedError.INVALID_GITHUB_EVENT = 'INVALID_GITHUB_EVENT';
 
 /***/ }),
-/* 112 */
+/* 102 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return calculateClaimValueBase; });
-/* harmony import */ var _neo_one_client_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(94);
+/* harmony import */ var _neo_one_client_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(87);
 /* harmony import */ var _neo_one_client_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_neo_one_client_core__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _neo_one_node_neo_settings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(120);
+/* harmony import */ var _neo_one_node_neo_settings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(116);
 /* harmony import */ var _neo_one_node_neo_settings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_neo_one_node_neo_settings__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _neotracker_shared_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(366);
 /* harmony import */ var bignumber_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(13);
 /* harmony import */ var bignumber_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(bignumber_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var bn_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(232);
+/* harmony import */ var bn_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(222);
 /* harmony import */ var bn_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(bn_js__WEBPACK_IMPORTED_MODULE_4__);
 
 
@@ -3730,25 +3635,25 @@ const calculateClaimValueBase = async ({
 };
 
 /***/ }),
-/* 113 */
+/* 103 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddressToTransaction", function() { return AddressToTransaction; });
-/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(132);
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(125);
 /* harmony import */ var _convertJSON__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
 
 
 class AddressToTransaction extends _lib__WEBPACK_IMPORTED_MODULE_0__[/* BaseEdge */ "a"] {
   static get id1Type() {
     // tslint:disable-next-line no-require-imports
-    return __webpack_require__(33).Address;
+    return __webpack_require__(37).Address;
   }
 
   static get id2Type() {
     // tslint:disable-next-line no-require-imports
-    return __webpack_require__(28).Transaction;
+    return __webpack_require__(31).Transaction;
   }
 
   static async insertAll(db, context, values) {
@@ -3773,25 +3678,25 @@ AddressToTransaction.modelName = 'AddressToTransaction';
 AddressToTransaction.id2Desc = true;
 
 /***/ }),
-/* 114 */
+/* 104 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AssetToTransaction", function() { return AssetToTransaction; });
-/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(132);
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(125);
 /* harmony import */ var _convertJSON__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
 
 
 class AssetToTransaction extends _lib__WEBPACK_IMPORTED_MODULE_0__[/* BaseEdge */ "a"] {
   static get id1Type() {
     // tslint:disable-next-line no-require-imports
-    return __webpack_require__(46).Asset;
+    return __webpack_require__(47).Asset;
   }
 
   static get id2Type() {
     // tslint:disable-next-line no-require-imports
-    return __webpack_require__(28).Transaction;
+    return __webpack_require__(31).Transaction;
   }
 
   static async insertAll(db, context, values) {
@@ -3816,980 +3721,132 @@ AssetToTransaction.modelName = 'AssetToTransaction';
 AssetToTransaction.id2Desc = true;
 
 /***/ }),
+/* 105 */
+/***/ (function(module, exports) {
+
+module.exports = require("graphql/error");
+
+/***/ }),
+/* 106 */
+/***/ (function(module, exports) {
+
+module.exports = require("graphql/jsutils/invariant");
+
+/***/ }),
+/* 107 */
+/***/ (function(module, exports) {
+
+module.exports = require("styled-components");
+
+/***/ }),
+/* 108 */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/styles/createGenerateClassName");
+
+/***/ }),
+/* 109 */
+/***/ (function(module, exports) {
+
+module.exports = require("jss");
+
+/***/ }),
+/* 110 */
+/***/ (function(module, exports) {
+
+module.exports = require("jss-preset-default");
+
+/***/ }),
+/* 111 */
+/***/ (function(module, exports) {
+
+module.exports = require("toobusy-js");
+
+/***/ }),
+/* 112 */
+/***/ (function(module, exports) {
+
+module.exports = require("koa-convert");
+
+/***/ }),
+/* 113 */
+/***/ (function(module, exports) {
+
+module.exports = require("fs");
+
+/***/ }),
+/* 114 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-router-config");
+
+/***/ }),
 /* 115 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppContextProvider; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return WithAppContext; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
- // tslint:disable-next-line no-any
-
-const WithAppContextBase = react__WEBPACK_IMPORTED_MODULE_0__["createContext"](undefined);
-const AppContextProvider = WithAppContextBase.Provider;
-const WithAppContext = WithAppContextBase.Consumer;
+module.exports = require("uuid/v4");
 
 /***/ }),
 /* 116 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXTERNAL MODULE: external "react"
-var external_react_ = __webpack_require__(0);
-
-// EXTERNAL MODULE: external "react-loadable"
-var external_react_loadable_ = __webpack_require__(53);
-var external_react_loadable_default = /*#__PURE__*/__webpack_require__.n(external_react_loadable_);
-
-// EXTERNAL MODULE: external "react-router"
-var external_react_router_ = __webpack_require__(17);
-
-// EXTERNAL MODULE: external "react-helmet"
-var external_react_helmet_ = __webpack_require__(15);
-var external_react_helmet_default = /*#__PURE__*/__webpack_require__.n(external_react_helmet_);
-
-// EXTERNAL MODULE: external "reakit"
-var external_reakit_ = __webpack_require__(133);
-
-// EXTERNAL MODULE: external "styled-components"
-var external_styled_components_ = __webpack_require__(79);
-var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
-
-// EXTERNAL MODULE: ./packages/neotracker-shared-web-next/src/components/render/WithAppContext.tsx
-var WithAppContext = __webpack_require__(115);
-
-// EXTERNAL MODULE: ./packages/neotracker-shared-web-next/src/components/render/FromStream.tsx
-var FromStream = __webpack_require__(142);
-
-// CONCATENATED MODULE: ./packages/neotracker-shared-web-next/src/components/render/WithAppOptions.tsx
-
-
-
-const WithAppOptions = ({
-  children
-}) => external_react_["createElement"](WithAppContext["b" /* WithAppContext */], null, ({
-  options$
-}) => external_react_["createElement"](FromStream["a" /* FromStream */], {
-  "props$": options$
-}, children));
-// EXTERNAL MODULE: external "tslib"
-var external_tslib_ = __webpack_require__(54);
-
-// CONCATENATED MODULE: ./packages/neotracker-shared-web-next/src/components/render/WithRouter.tsx
-
-
-
-
-class WithRouter_WithRouterComponent extends external_react_["Component"] {
-  render() {
-    const _a = this.props,
-          {
-      children
-    } = _a,
-          props = external_tslib_["__rest"](_a, ["children"]);
-
-    return children(props);
-  }
-
-}
-
-const WithRouter = Object(external_react_router_["withRouter"])(WithRouter_WithRouterComponent);
-// CONCATENATED MODULE: ./packages/neotracker-shared-web-next/src/theme/Theme.ts
-const createTheme = () => ({
-  primary: 'blue',
-  secondary: 'green'
-});
-// CONCATENATED MODULE: ./packages/neotracker-shared-web-next/src/AppShell.tsx
-
-
-
-
-
-
-const theme = createTheme();
-const Root = external_styled_components_default()(external_reakit_["Base"]).withConfig({
-  displayName: "AppShell__Root",
-  componentId: "go7srg-0"
-})(["height:100%;"]);
-const AppShell = ({
-  appContext,
-  children
-}) => external_react_["createElement"](external_react_["StrictMode"], null, external_react_["createElement"](WithAppContext["a" /* AppContextProvider */], {
-  value: appContext
-}, external_react_["createElement"](external_styled_components_["ThemeProvider"], {
-  theme: theme
-}, external_react_["createElement"](Root, null, external_react_["createElement"](WithAppOptions, null, appOptions => external_react_["createElement"](WithRouter, null, ({
-  location
-}) => {
-  const {
-    title
-  } = appOptions.meta;
-  const path = location.pathname.endsWith('/') ? location.pathname.slice(0, -1) : location.pathname;
-  const canonicalURL = `${appOptions.url}${path}`;
-  return external_react_["createElement"](external_react_["Fragment"], null, external_react_["createElement"](external_react_helmet_default.a, {
-    titleTemplate: `%s - ${title}`,
-    defaultTitle: title
-  }, external_react_["createElement"]("html", {
-    lang: "en"
-  }), external_react_["createElement"]("meta", {
-    name: "application-name",
-    content: appOptions.meta.name
-  }), external_react_["createElement"]("meta", {
-    name: "description",
-    content: appOptions.meta.description
-  }), external_react_["createElement"]("meta", {
-    charSet: "utf-8"
-  }), external_react_["createElement"]("meta", {
-    httpEquiv: "X-UA-Compatible",
-    content: "IE=edge"
-  }), external_react_["createElement"]("meta", {
-    name: "viewport",
-    content: "width=device-width, initial-scale=1"
-  }), external_react_["createElement"]("link", {
-    rel: "apple-touch-icon",
-    sizes: "180x180",
-    href: "/apple-touch-icon.png"
-  }), external_react_["createElement"]("link", {
-    rel: "icon",
-    type: "image/png",
-    sizes: "32x32",
-    href: "/favicon-32x32.png"
-  }), external_react_["createElement"]("link", {
-    rel: "icon",
-    type: "image/png",
-    sizes: "16x16",
-    href: "/favicon-16x16.png"
-  }), external_react_["createElement"]("link", {
-    rel: "manifest",
-    href: "/manifest.json"
-  }), external_react_["createElement"]("link", {
-    rel: "mask-icon",
-    href: "/safari-pinned-tab.svg",
-    color: theme.primary
-  }), external_react_["createElement"]("meta", {
-    name: "theme-color",
-    content: theme.secondary
-  }), external_react_["createElement"]("link", {
-    rel: "canonical",
-    href: canonicalURL
-  }), external_react_["createElement"]("script", {
-    type: "application/ld+json"
-  }, `{
-                      "@context": "http://schema.org",
-                      "@type": "WebSite",
-                      "name": "${appOptions.meta.name}",
-                      "url": "${canonicalURL}"
-                    }`)), children);
-}))))));
-// EXTERNAL MODULE: external "@neo-one/monitor"
-var monitor_ = __webpack_require__(14);
-
-// CONCATENATED MODULE: ./packages/neotracker-shared-web-next/src/metrics.ts
- // Note: Remove disable once more metrics have been added
-// tslint:disable-next-line export-name
-
-const NEOTRACKER_SESSION = monitor_["metrics"].createCounter({
-  name: 'neotracker_session'
-});
-// EXTERNAL MODULE: ./packages/neotracker-shared-web-next/src/routes.ts
-var routes = __webpack_require__(92);
-
-// CONCATENATED MODULE: ./packages/neotracker-shared-web-next/src/App.tsx
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ROUTE_CONFIGS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return App_App; });
-
-
-
-
-
-
-const ROUTE_CONFIGS = [{
-  exact: true,
-  path: routes["HOME"],
-  component: external_react_loadable_default()({
-    // tslint:disable-next-line promise-function-async
-    loader: () => __webpack_require__.e(/* import() */ 1).then(__webpack_require__.bind(null, 335)).then(value => value.Home),
-    modules: ['./pages/Home'],
-    webpack: () => [/*require.resolve*/(335)],
-    // tslint:disable-next-line no-null-keyword
-    loading: () => null
-  })
-}, {
-  exact: false,
-  path: undefined,
-  component: external_react_loadable_default()({
-    // tslint:disable-next-line promise-function-async
-    loader: () => __webpack_require__.e(/* import() */ 2).then(__webpack_require__.bind(null, 332)).then(value => value.Error404),
-    modules: ['./pages/Error404'],
-    webpack: () => [/*require.resolve*/(332)],
-    // tslint:disable-next-line no-null-keyword
-    loading: () => null
-  })
-}];
-const ROUTE_CONFIGS_WITH_RENDER = ROUTE_CONFIGS.map(config => Object.assign({}, config, {
-  // tslint:disable-next-line no-any no-unnecessary-type-annotation
-  render: props => {
-    const {
-      component: Component
-    } = config;
-
-    if (props.staticContext !== undefined) {
-      if (config.exact) {
-        // tslint:disable-next-line no-object-mutation no-any
-        props.staticContext.routePath = props.match.path;
-      } else {
-        // tslint:disable-next-line no-object-mutation no-any
-        props.staticContext.missed = true;
-      }
-    }
-
-    return external_react_["createElement"](Component, Object.assign({}, props));
-  }
-}));
-class App_App extends external_react_["Component"] {
-  render() {
-    return external_react_["createElement"](AppShell, {
-      appContext: this.props.appContext
-    }, external_react_["createElement"](external_react_router_["Switch"], null, ROUTE_CONFIGS_WITH_RENDER.map(config => external_react_["createElement"](external_react_router_["Route"], {
-      key: config.path === undefined ? 'nopath' : config.path,
-      exact: config.exact,
-      path: config.path,
-      render: config.render
-    }))));
-  }
-
-  componentDidMount() {
-    NEOTRACKER_SESSION.inc();
-  }
-
-}
-
-/***/ }),
-/* 117 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return makeJSONSchema; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return makeRelationMappings; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return createTable; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return dropTable; });
-/* unused harmony export dropIndices */
-/* unused harmony export createIndices */
-/* unused harmony export refreshTriggers */
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(54);
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _knexUtils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(47);
-/* harmony import */ var _QueryContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(118);
-
-
-
-
-
-const makeJSONField = field => {
-  const fieldType = field.type;
-  let type;
-
-  switch (fieldType.type) {
-    case 'id':
-    case 'foreignID':
-      type = field.required ? ['string', 'integer'] : ['string', 'integer', 'null'];
-      return Object.assign({}, fieldType, {
-        type
-      });
-
-    case 'string':
-      type = field.required ? 'string' : ['string', 'null'];
-
-      if (fieldType.enum) {
-        // tslint:disable-next-line no-unused
-        const _a = Object.assign({}, fieldType, {
-          type
-        }),
-              {
-          enum: deleted
-        } = _a,
-              copiedFieldType = tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"](_a, ["enum"]); // @ts-ignore
-
-
-        const enumType = field.required ? fieldType.enum : fieldType.enum.concat([undefined]);
-        return {
-          allOf: [copiedFieldType, {
-            enum: enumType
-          }]
-        };
-      }
-
-      return Object.assign({}, fieldType, {
-        type
-      });
-
-    case 'bigInteger':
-      type = field.required ? 'string' : ['string', 'null'];
-      return Object.assign({}, fieldType, {
-        type
-      });
-
-    case 'integer':
-      type = field.required ? 'integer' : ['integer', 'null'];
-      return Object.assign({}, fieldType, {
-        type
-      });
-
-    case 'decimal':
-      type = field.required ? 'string' : ['string', 'null'];
-      return Object.assign({}, fieldType, {
-        type
-      });
-
-    case 'number':
-      type = field.required ? 'number' : ['number', 'null'];
-      return Object.assign({}, fieldType, {
-        type
-      });
-
-    case 'boolean':
-      return fieldType;
-
-    case 'array':
-      return fieldType;
-
-    case 'json':
-      return {
-        type: 'string'
-      };
-
-    case 'tsvector':
-      return undefined;
-
-    default:
-      throw new Error(`Unknown field type: ${JSON.stringify(fieldType)}`);
-  }
-};
-
-const makeJSONSchema = fieldSchema => {
-  const required = Object.entries(fieldSchema).filter( // tslint:disable-next-line no-unused
-  ([__, field]) => field.required && !field.computed && !field.auto && // @ts-ignore
-  field.type.default == undefined) // tslint:disable-next-line no-unused
-  .map(([fieldName, __]) => fieldName);
-  const properties = Object.entries(fieldSchema).reduce((acc, [fieldName, field]) => {
-    if (!field.computed) {
-      const jsonField = makeJSONField(field);
-
-      if (jsonField !== undefined) {
-        return Object.assign({}, acc, {
-          [fieldName]: jsonField
-        });
-      }
-    }
-
-    return acc;
-  }, {});
-  return {
-    type: 'object',
-    required: required.length ? required : undefined,
-    properties
-  };
-};
-const makeRelationMappings = edgeSchema => {
-  if (edgeSchema === undefined) {
-    return {};
-  }
-
-  return Object.entries(edgeSchema).reduce((acc, [edgeName, edge]) => Object.assign({}, acc, {
-    [edgeName]: edge.relation
-  }), {});
-};
-
-const getColumnType = fieldType => {
-  switch (fieldType.type) {
-    case 'id':
-    case 'foreignID':
-    case 'integer':
-      return 'integer';
-
-    case 'bigInteger':
-      return 'bigInteger';
-
-    case 'decimal':
-      return 'numeric';
-
-    case 'string':
-      return `varchar(${fieldType.maxLength === undefined ? 255 : fieldType.maxLength})`;
-
-    case 'number':
-      return 'float8';
-
-    case 'boolean':
-      return 'boolean';
-
-    default:
-      throw new Error(`Unknown field type: ${fieldType.type}`);
-  }
-};
-
-const isBigIntID = (modelSchemas, modelType) => // tslint:disable-next-line strict-type-predicates
-modelSchemas[modelType].fields.id !== undefined && modelSchemas[modelType].fields.id.type.type === 'id' && // @ts-ignore
-modelSchemas[modelType].fields.id.type.big;
-
-const isAnyBigIntID = (modelSchemas, modelType) => {
-  if (typeof modelType === 'string') {
-    return isBigIntID(modelSchemas, modelType);
-  }
-
-  return lodash__WEBPACK_IMPORTED_MODULE_1___default.a.some(modelType.map(modelTpe => isBigIntID(modelSchemas, modelTpe)));
-};
-
-const addColumn = (db, table, fieldName, field, modelSchemas) => {
-  let col;
-  const fieldType = field.type;
-
-  if (fieldName === 'created_at') {
-    col = table.integer(fieldName).unsigned().defaultTo(db.raw('extract(epoch FROM now())'));
-  } else if (fieldName === 'updated_at') {
-    col = table.integer(fieldName).unsigned().defaultTo(db.raw('extract(epoch FROM now())'));
-  } else {
-    switch (fieldType.type) {
-      case 'id':
-        col = fieldType.big ? table.bigIncrements(fieldName) : table.increments(fieldName);
-        col.primary().unique().notNullable().unsigned();
-        break;
-
-      case 'foreignID':
-        col = isAnyBigIntID(modelSchemas, fieldType.modelType) ? table.bigInteger(fieldName) : table.integer(fieldName);
-        col.unsigned();
-        break;
-
-      case 'integer':
-        col = table.integer(fieldName);
-
-        if (fieldType.minimum !== undefined && fieldType.minimum >= 0) {
-          col.unsigned();
-        }
-
-        break;
-
-      case 'bigInteger':
-        col = table.bigInteger(fieldName);
-
-        if (fieldType.minimum !== undefined && fieldType.minimum >= 0) {
-          col.unsigned();
-        }
-
-        break;
-
-      case 'decimal':
-        col = table.specificType(fieldName, 'numeric');
-        break;
-
-      case 'string':
-        col = table.text(fieldName); // col = table.string(fieldName, fieldType.maxLength || 255);
-
-        break;
-
-      case 'number':
-        col = table.float(fieldName);
-        break;
-
-      case 'boolean':
-        col = table.boolean(fieldName);
-        break;
-
-      case 'array':
-        col = table.specificType(fieldName, `${getColumnType(fieldType.items)}[]`);
-        break;
-
-      case 'json':
-        col = table.jsonb(fieldName);
-        break;
-
-      case 'model':
-        throw new Error(`Models/Interfaces cannot be columns in the Model. See ${fieldName}`);
-
-      case 'tsvector':
-        // @ts-ignore
-        col = table.specificType(fieldName, 'tsvector').notNullable().index(undefined, 'GIN');
-        break;
-
-      default:
-        throw new Error(`Unknown field type for ${fieldName}`);
-    }
-  }
-
-  if (field.required || fieldType.type === 'id') {
-    col.notNullable();
-  } else {
-    col.nullable();
-  }
-
-  if (field.unique) {
-    col.unique();
-  } else if (field.index) {
-    col.index();
-  } // @ts-ignore
-
-
-  if (fieldType.default !== undefined) {
-    // @ts-ignore
-    col.defaultTo(fieldType.default);
-  }
-};
-
-const getCreateIndex = (index, tableName) => {
-  if (index.type === 'order') {
-    const orderCols = index.columns.map(col => `${col.name} ${col.order}`).join(', ');
-    let orderUnique = '';
-
-    if (index.unique) {
-      orderUnique = 'UNIQUE ';
-    }
-
-    return `
-      CREATE ${orderUnique}INDEX IF NOT EXISTS ${index.name} ON ${tableName} (${orderCols});
-    `;
-  }
-
-  const cols = index.columnNames.map(col => `${col}`).join(', ');
-  let unique = '';
-
-  if (index.unique) {
-    unique = 'UNIQUE ';
-  }
-
-  return `
-    CREATE ${unique}INDEX IF NOT EXISTS ${index.name} ON ${tableName} (${cols});
-  `;
-};
-
-const createTable = async (db, monitor, modelSchema, modelSchemas, bare) => {
-  const schema = db.schema;
-  let executeSchema;
-
-  if (modelSchema.materializedView !== undefined) {
-    // tslint:disable-next-line no-non-null-assertion
-    executeSchema = currentSchema => currentSchema.raw(modelSchema.materializedView);
-  } else {
-    executeSchema = currentSchema => {
-      currentSchema.createTable(modelSchema.tableName, table => {
-        Object.entries(modelSchema.fields).forEach(([fieldName, field]) => {
-          if (!field.computed) {
-            addColumn(db, table, fieldName, field, modelSchemas);
-          }
-        });
-
-        if (!bare) {
-          if (lodash__WEBPACK_IMPORTED_MODULE_1___default.a.isEqual(modelSchema.id, ['id1', 'id2'])) {
-            table.primary(['id1', 'id2']);
-          }
-
-          modelSchema.indices.forEach(index => {
-            if (index.type === 'simple') {
-              if (index.unique) {
-                table.unique([...index.columnNames], index.name);
-              } else {
-                table.index([...index.columnNames], index.name);
-              }
-            } else if (index.type === 'order' && Object(_knexUtils__WEBPACK_IMPORTED_MODULE_2__[/* isSqlite */ "b"])(db)) {
-              const columns = index.columns.map(col => col.name);
-
-              if (index.unique) {
-                table.unique(columns, index.name);
-              } else {
-                table.index(columns, index.name);
-              }
-            }
-          });
-        }
-      });
-
-      if (!bare && Object(_knexUtils__WEBPACK_IMPORTED_MODULE_2__[/* isPostgres */ "a"])(db)) {
-        modelSchema.indices.forEach(index => {
-          if (index.type === 'order') {
-            currentSchema.raw(getCreateIndex(index, modelSchema.tableName));
-          }
-        });
-      }
-
-      return currentSchema;
-    };
-  }
-
-  const exists = await schema.queryContext(Object(_QueryContext__WEBPACK_IMPORTED_MODULE_3__[/* makeAllPowerfulQueryContext */ "a"])(monitor)).hasTable(modelSchema.tableName);
-
-  if (!exists) {
-    if (bare) {
-      await executeSchema(schema);
-    } else {
-      await modelSchema.chainCustomAfter(executeSchema(modelSchema.chainCustomBefore(schema)));
-    }
-  }
-};
-const dropTable = async (db, monitor, modelSchema, checkEmpty = false) => {
-  const schema = db.schema;
-
-  if (modelSchema.materializedView === undefined) {
-    if (checkEmpty) {
-      const exists = await schema.queryContext(Object(_QueryContext__WEBPACK_IMPORTED_MODULE_3__[/* makeAllPowerfulQueryContext */ "a"])(monitor)).hasTable(modelSchema.tableName);
-
-      if (!exists) {
-        return;
-      }
-
-      const result = await db(modelSchema.tableName).select('*').limit(1).queryContext(Object(_QueryContext__WEBPACK_IMPORTED_MODULE_3__[/* makeAllPowerfulQueryContext */ "a"])(monitor));
-
-      if (result.length === 0) {
-        return;
-      }
-    }
-
-    await schema.dropTableIfExists(modelSchema.tableName).queryContext(Object(_QueryContext__WEBPACK_IMPORTED_MODULE_3__[/* makeAllPowerfulQueryContext */ "a"])(monitor));
-  } else {
-    await schema.raw(`
-      DROP MATERIALIZED VIEW IF EXISTS ${modelSchema.tableName} CASCADE;
-    `).queryContext(Object(_QueryContext__WEBPACK_IMPORTED_MODULE_3__[/* makeAllPowerfulQueryContext */ "a"])(monitor));
-  }
-};
-const EMPTY_DROP_INDICES = 'query string argument of EXECUTE is null';
-const dropIndices = async (db, monitor, tableName) => {
-  if (db.client.driverName !== 'pg') {
-    throw new Error('Not implemented');
-  }
-
-  try {
-    await db.raw(`
-      DO
-      $$BEGIN
-         EXECUTE (
-         SELECT string_agg('ALTER TABLE ${tableName} DROP CONSTRAINT ' || conname, '; ')
-         FROM   pg_constraint
-         WHERE conrelid::regclass::text = '${tableName}'
-         );
-      END$$;
-    `).queryContext(Object(_QueryContext__WEBPACK_IMPORTED_MODULE_3__[/* makeAllPowerfulQueryContext */ "a"])(monitor));
-  } catch (error) {
-    if (!error.message.includes(EMPTY_DROP_INDICES)) {
-      throw error;
-    }
-  }
-
-  try {
-    await db.raw(`
-      DO
-      $$BEGIN
-         EXECUTE (
-         SELECT 'DROP INDEX ' || string_agg(indexname, ', ')
-         FROM   pg_indexes
-         WHERE tablename = '${tableName}'
-         );
-      END$$;
-    `).queryContext(Object(_QueryContext__WEBPACK_IMPORTED_MODULE_3__[/* makeAllPowerfulQueryContext */ "a"])(monitor));
-  } catch (error) {
-    if (!error.message.includes(EMPTY_DROP_INDICES)) {
-      throw error;
-    }
-  }
-};
-const createIndices = async (db, monitor, modelSchema) => {
-  await Promise.all(modelSchema.indices.map(index => db.raw(getCreateIndex(index, modelSchema.tableName)).queryContext(Object(_QueryContext__WEBPACK_IMPORTED_MODULE_3__[/* makeAllPowerfulQueryContext */ "a"])(monitor))));
-};
-const refreshTriggers = async (db, monitor, modelSchema) => {
-  await modelSchema.chainCustomAfter(modelSchema.chainCustomBefore(db.schema)).queryContext(Object(_QueryContext__WEBPACK_IMPORTED_MODULE_3__[/* makeAllPowerfulQueryContext */ "a"])(monitor));
-};
-
-/***/ }),
-/* 118 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return makeQueryContext; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return makeAllPowerfulQueryContext; });
-/* harmony import */ var _Base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72);
-
-
-async function verifyCanView(model, context) {
-  if (model instanceof _Base__WEBPACK_IMPORTED_MODULE_0__[/* Base */ "a"]) {
-    const canView = await model.canView(context);
-    return canView ? model : undefined;
-  }
-
-  return model;
-}
-
-function makeQueryContext({
-  rootLoader,
-  monitor,
-  isAllPowerful
-}) {
-  const queryContext = {
-    type: 'normal',
-
-    get rootLoader() {
-      return rootLoader();
-    },
-
-    monitor,
-    isAllPowerful: !!isAllPowerful,
-    // tslint:disable-next-line no-unused
-    runBefore: (__, queryBuilder) => {
-      queryBuilder.options({
-        queryContext: queryBuilder.context()
-      });
-    },
-    runAfter: undefined
-  }; // @ts-ignore
-
-  queryContext.runAfter = async models => {
-    // tslint:disable no-object-mutation
-    if (isAllPowerful) {
-      return models;
-    }
-
-    if (models == undefined) {
-      return models;
-    }
-
-    if (Array.isArray(models)) {
-      const newModels = await Promise.all(models.map(async model => verifyCanView(model, queryContext)));
-      return newModels.filter(model => model != undefined);
-    }
-
-    return verifyCanView(models, queryContext);
-  };
-
-  return queryContext;
-}
-function makeAllPowerfulQueryContext(monitor) {
-  return {
-    type: 'allPowerful',
-    isAllPowerful: true,
-    monitor,
-    // @ts-ignore
-    runBefore: (__, queryBuilder) => {
-      queryBuilder.options({
-        queryContext: queryBuilder.context()
-      });
-    }
-  };
-}
-
-/***/ }),
-/* 119 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return labels; });
-const labels = {
-  CLUSTER_NAME: 'cluster.name',
-  // Was this for a new keystore or an existing private key?
-  CREATE_KEYSTORE_NEW: 'create.keystore.new',
-  // Differentiates click locations
-  CLICK_SOURCE: 'click.source',
-  // React component stack
-  COMPONENT_STACK: 'react.component_stack',
-  // Websocket related properties
-  WEBSOCKET_URL: 'websocket.url',
-  WEBSOCKET_CLOSE_CODE: 'websocket.close.code',
-  WEBSOCKET_CLOSE_REASON: 'websocket.close.reason',
-  WEBSOCKET_MESSAGE_TYPE: 'websocket.message.type',
-  WEBSOCKET_MESSAGEJSON: 'websocket.message_json',
-  WEBSOCKET_PROTOCOLS: 'websocket.protocols',
-  // GraphQL related propreties
-  GRAPHQL_QUERY: 'graphql.query',
-  GRAPHQL_VARIABLES: 'graphql.variables',
-  GRAPHQL_LIVE_NAME: 'graphql.live.name',
-  GRAPHQL_PATH: 'graphql.path',
-  // User agent
-  UA: 'ua.raw',
-  UA_BROWSER_NAME: 'ua.browser.name',
-  UA_BROWSER_VERSION: 'ua.browser.version',
-  UA_DEVICE_MODEL: 'ua.device.model',
-  UA_DEVICE_TYPE: 'ua.device.type',
-  UA_DEVICE_VENDOR: 'ua.device.vendor',
-  UA_ENGINE_NAME: 'ua.engine.name',
-  UA_ENGINE_VERSION: 'ua.engine.version',
-  UA_OS_NAME: 'ua.os.name',
-  UA_OS_VERSION: 'ua.os.version',
-  UA_CPU_ARCHITECTURE: 'ua.cpu.architecture',
-  // App version
-  APP_VERSION: 'app.version',
-  // Client side stack capture
-  STACK_MESSAGE: 'client_error.stack.message',
-  STACK_LINENUMBER: 'client_error.stack.line_number',
-  STACK_COLUMNNUMBER: 'client_error.stack.column_number',
-  // Kubernetes
-  POD_NAME: 'pod.name',
-  // LetsEncrypt
-  LETSENCRYPT_DOMAINS: 'lets_encrypt.domains',
-  LETSENCRYPT_NAMESPACE: 'lets_encrypt.namespace',
-  LETSENCRYPT_SECRET: 'lets_encrypt.secret',
-  LETSENCRYPT_HOSTNAME: 'lets_encrypt.hostname',
-  // DNS
-  DNS_ID: 'dns.id',
-  DNS_ADD: 'dns.add',
-  DNS_DELETE: 'dns.delete',
-  DNS_SERVICE_KEY: 'dns.service.key',
-  DNS_SERVICE_RECORDS: 'dns.service.records',
-  DNS_SERVICE_DELETE: 'dns.service.delete',
-  DNS_NODE_RECORDS: 'dns.node.records',
-  // Postgre
-  POSTGRES_BACKUPWAL_ISBEHIND: 'postgres.backup_wal.is_behind',
-  POSTGRES_BACKUPWAL_VALUE: 'postgres.backup_wal.value',
-  POSTGRES_BACKUPWAL_LSNOFFSET: 'postgres.backup_wal.lsn_offset',
-  POSTGRES_BACKUPWAL_REDOWAL: 'postgres.backup_wal.redo_wal',
-  POSTGRES_BACKUPWAL_REDOWALLSN: 'postgres.backup_wal.redo_wal_lsn',
-  POSTGRES_DATAEXIST: 'postgres.data_exist',
-  POSTGRES_BACKUPEXIST: 'postgres.backup_exist',
-  POSTGRES_ONSAMETIMELINE: 'postgres.on_same_timeline',
-  POSTGRES_EXIT_CODE: 'postgres.exit.code',
-  POSTGRES_EXIT_SIGNAL: 'postgres.exit.signal',
-  POSTGRES_LOG_FILE: 'postgres.log.file',
-  POSTGRES_REMOTEWALFILE: 'postgres.remote_walfile',
-  // Process
-  EXEC_COMMAND: 'exec.command',
-  EXEC_ARGS: 'exec.args',
-  // Consul
-  CONSUL_PATH: 'consul.path',
-  CONSUL_KEY: 'consul.key',
-  CONSUL_LOCK_REASON: 'consul.lock.reason',
-  // Scrape
-  ACTION_BLOCK_INDEX: 'action.block.index',
-  ACTION_TRANSACTION_INDEX: 'action.transaction.index',
-  ACTION_INDEX: 'action.index',
-  CONTRACT_HASH: 'contract.hash',
-  SCRAPE_REPAIR_NEP5_COINS: 'scrape.repair_nep5.coins',
-  SCRAPE_REPAIR_NEP5_ASSET: 'scrape.repair_nep5.asset.hash',
-  // General
-  QUEUE_SIZE: 'queue.size',
-  OPTIONS: 'options',
-  // NEO
-  NEO_ADDRESS: 'neo.address',
-  // Database
-  DB_TABLE: 'db.table'
-};
-
-/***/ }),
-/* 120 */
 /***/ (function(module, exports) {
 
 module.exports = require("@neo-one/node-neo-settings");
 
 /***/ }),
-/* 121 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return utils; });
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
-
-
-const nowSeconds = () => Math.round(Date.now() / 1000);
-
-function nullthrows(value) {
-  if (value == undefined) {
-    throw new Error('Unexpected null');
-  }
-
-  return value;
-}
-
-function assertNever(_value) {} // do nothing
-// tslint:disable-next-line no-any
-
-
-function isPromise(value) {
-  return value != undefined && value.then != undefined && typeof value.then === 'function';
-}
-
-function notNull(value) {
-  return value != undefined;
-}
-
-function zip(...arrays) {
-  // tslint:disable-next-line no-any
-  return lodash__WEBPACK_IMPORTED_MODULE_0___default.a.zip(...arrays);
-} // tslint:enable readonly-array
-
-
-const utils = {
-  nowSeconds,
-  nullthrows,
-  assertNever,
-  notNull,
-  isPromise,
-  zip
-};
-
-/***/ }),
-/* 122 */
+/* 117 */
 /***/ (function(module, exports) {
 
 module.exports = require("graphql/language");
 
 /***/ }),
-/* 123 */
+/* 118 */
 /***/ (function(module, exports) {
 
 module.exports = require("iterall");
 
 /***/ }),
-/* 124 */
+/* 119 */
 /***/ (function(module, exports) {
 
 module.exports = require("apollo-link");
 
 /***/ }),
-/* 125 */
+/* 120 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux");
 
 /***/ }),
-/* 126 */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/colors/amber");
-
-/***/ }),
-/* 127 */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/colors/deepOrange");
-
-/***/ }),
-/* 128 */
+/* 121 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/colors/deepPurple");
 
 /***/ }),
-/* 129 */
+/* 122 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/colors/lightGreen");
+module.exports = require("@material-ui/core/colors/red");
 
 /***/ }),
-/* 130 */
+/* 123 */
 /***/ (function(module, exports) {
 
 module.exports = require("crypto");
 
 /***/ }),
-/* 131 */
+/* 124 */
 /***/ (function(module, exports) {
 
 module.exports = require("ws");
 
 /***/ }),
-/* 132 */
+/* 125 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BaseEdge; });
-/* harmony import */ var _Base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72);
+/* harmony import */ var _Base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(73);
 
 class BaseEdge extends _Base__WEBPACK_IMPORTED_MODULE_0__[/* Base */ "a"] {
   static get modelSchema() {
@@ -4833,26 +3890,28 @@ BaseEdge.id2Desc = false;
 BaseEdge.indices = [];
 
 /***/ }),
-/* 133 */
-/***/ (function(module, exports) {
-
-module.exports = require("reakit");
-
-/***/ }),
-/* 134 */,
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */,
-/* 141 */
+/* 126 */
 /***/ (function(module, exports) {
 
 module.exports = require("apollo-client");
 
 /***/ }),
-/* 142 */
+/* 127 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppContextProvider; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return WithAppContext; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+ // tslint:disable-next-line no-any
+
+const WithAppContextBase = react__WEBPACK_IMPORTED_MODULE_0__["createContext"](undefined);
+const AppContextProvider = WithAppContextBase.Provider;
+const WithAppContext = WithAppContextBase.Consumer;
+
+/***/ }),
+/* 128 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4956,7 +4015,7 @@ class FromStream extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 }
 
 /***/ }),
-/* 143 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5025,7 +4084,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 144 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5064,7 +4123,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 145 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5110,7 +4169,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 146 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5167,7 +4226,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 147 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5213,7 +4272,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 148 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5278,7 +4337,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 149 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5325,7 +4384,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 150 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5364,7 +4423,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 151 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5660,7 +4719,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 152 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5707,7 +4766,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 153 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5746,7 +4805,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 154 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6042,7 +5101,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 155 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6085,7 +5144,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 156 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6124,7 +5183,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 157 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6420,7 +5479,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 158 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6463,7 +5522,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 159 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6535,7 +5594,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 160 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6573,7 +5632,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 161 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6633,7 +5692,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 162 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6679,7 +5738,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 163 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6717,7 +5776,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 164 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6799,7 +5858,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 165 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6976,7 +6035,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 166 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7046,7 +6105,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 167 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7092,7 +6151,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 168 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7467,7 +6526,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 169 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7512,7 +6571,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 170 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7559,7 +6618,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 171 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8100,7 +7159,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 172 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8166,7 +7225,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 173 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8242,7 +7301,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 174 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8282,7 +7341,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 175 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8644,7 +7703,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 176 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8708,7 +7767,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 177 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8748,7 +7807,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 178 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8787,7 +7846,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 179 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9081,7 +8140,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 180 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9120,7 +8179,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 181 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9205,7 +8264,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 182 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9245,7 +8304,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 183 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9284,7 +8343,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 184 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9600,7 +8659,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 185 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9667,7 +8726,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 186 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9821,7 +8880,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 187 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10119,7 +9178,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 188 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10208,7 +9267,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 189 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10248,7 +9307,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 190 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10531,7 +9590,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 191 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10570,7 +9629,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 192 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10925,7 +9984,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 193 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10964,7 +10023,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 194 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11258,7 +10317,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 195 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11297,7 +10356,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 196 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11612,7 +10671,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 197 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11684,7 +10743,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 198 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11838,7 +10897,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 199 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12131,7 +11190,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 200 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12171,7 +11230,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 201 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12406,7 +11465,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 202 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12445,7 +11504,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 203 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12737,7 +11796,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 204 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12800,7 +11859,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 205 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12908,7 +11967,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 206 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13136,7 +12195,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 207 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13205,7 +12264,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 208 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13245,7 +12304,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 209 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13491,7 +12550,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 210 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13547,7 +12606,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 211 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13648,7 +12707,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 212 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13888,7 +12947,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 213 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14086,7 +13145,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 214 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14350,7 +13409,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 215 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14421,7 +13480,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 216 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14513,7 +13572,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 217 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14946,7 +14005,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 218 */
+/* 204 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14972,7 +14031,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addPrivateKeyAccount", function() { return addPrivateKeyAccount; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isNEP2", function() { return isNEP2; });
 /* harmony import */ var _neotracker_shared_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(336);
-/* harmony import */ var _neotracker_shared_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(119);
+/* harmony import */ var _neotracker_shared_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(221);
 /* harmony import */ var _neotracker_shared_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(365);
 /* harmony import */ var _neotracker_shared_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(366);
 /* harmony import */ var bignumber_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(13);
@@ -14983,7 +14042,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(rxjs__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var recompose__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(1);
 /* harmony import */ var recompose__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(recompose__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var crypto__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(130);
+/* harmony import */ var crypto__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(123);
 /* harmony import */ var crypto__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(crypto__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(5);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__);
@@ -15473,7 +14532,7 @@ const addPrivateKeyAccount = async ({
 const isNEP2 = value => typeof value === 'string' && Object(_neo_one_client__WEBPACK_IMPORTED_MODULE_5__["isNEP2"])(value);
 
 /***/ }),
-/* 219 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15562,7 +14621,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 220 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15600,7 +14659,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 221 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15638,7 +14697,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 222 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15749,7 +14808,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 223 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15787,7 +14846,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 224 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15825,7 +14884,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 225 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15863,7 +14922,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 226 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15901,7 +14960,7 @@ node
 module.exports = node;
 
 /***/ }),
-/* 227 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16175,178 +15234,1119 @@ node
 module.exports = node;
 
 /***/ }),
-/* 228 */
+/* 214 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__(0);
+
+// EXTERNAL MODULE: external "react-loadable"
+var external_react_loadable_ = __webpack_require__(61);
+var external_react_loadable_default = /*#__PURE__*/__webpack_require__.n(external_react_loadable_);
+
+// EXTERNAL MODULE: external "react-router"
+var external_react_router_ = __webpack_require__(17);
+
+// EXTERNAL MODULE: external "react-helmet"
+var external_react_helmet_ = __webpack_require__(15);
+var external_react_helmet_default = /*#__PURE__*/__webpack_require__.n(external_react_helmet_);
+
+// EXTERNAL MODULE: external "reakit"
+var external_reakit_ = __webpack_require__(93);
+
+// EXTERNAL MODULE: external "styled-components"
+var external_styled_components_ = __webpack_require__(107);
+var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
+
+// EXTERNAL MODULE: ./packages/neotracker-shared-web-next/src/components/render/WithAppContext.tsx
+var WithAppContext = __webpack_require__(127);
+
+// EXTERNAL MODULE: ./packages/neotracker-shared-web-next/src/components/render/FromStream.tsx
+var FromStream = __webpack_require__(128);
+
+// CONCATENATED MODULE: ./packages/neotracker-shared-web-next/src/components/render/WithAppOptions.tsx
+
+
+
+const WithAppOptions = ({
+  children
+}) => external_react_["createElement"](WithAppContext["b" /* WithAppContext */], null, ({
+  options$
+}) => external_react_["createElement"](FromStream["a" /* FromStream */], {
+  "props$": options$
+}, children));
+// EXTERNAL MODULE: external "tslib"
+var external_tslib_ = __webpack_require__(65);
+
+// CONCATENATED MODULE: ./packages/neotracker-shared-web-next/src/components/render/WithRouter.tsx
+
+
+
+
+class WithRouter_WithRouterComponent extends external_react_["Component"] {
+  render() {
+    const _a = this.props,
+          {
+      children
+    } = _a,
+          props = external_tslib_["__rest"](_a, ["children"]);
+
+    return children(props);
+  }
+
+}
+
+const WithRouter = Object(external_react_router_["withRouter"])(WithRouter_WithRouterComponent);
+// CONCATENATED MODULE: ./packages/neotracker-shared-web-next/src/theme/Theme.ts
+const createTheme = () => ({
+  primary: 'blue',
+  secondary: 'green'
+});
+// CONCATENATED MODULE: ./packages/neotracker-shared-web-next/src/AppShell.tsx
+
+
+
+
+
+
+const theme = createTheme();
+const Root = external_styled_components_default()(external_reakit_["Base"]).withConfig({
+  displayName: "AppShell__Root",
+  componentId: "go7srg-0"
+})(["height:100%;"]);
+const AppShell = ({
+  appContext,
+  children
+}) => external_react_["createElement"](external_react_["StrictMode"], null, external_react_["createElement"](WithAppContext["a" /* AppContextProvider */], {
+  value: appContext
+}, external_react_["createElement"](external_styled_components_["ThemeProvider"], {
+  theme: theme
+}, external_react_["createElement"](Root, null, external_react_["createElement"](WithAppOptions, null, appOptions => external_react_["createElement"](WithRouter, null, ({
+  location
+}) => {
+  const {
+    title
+  } = appOptions.meta;
+  const path = location.pathname.endsWith('/') ? location.pathname.slice(0, -1) : location.pathname;
+  const canonicalURL = `${appOptions.url}${path}`;
+  return external_react_["createElement"](external_react_["Fragment"], null, external_react_["createElement"](external_react_helmet_default.a, {
+    titleTemplate: `%s - ${title}`,
+    defaultTitle: title
+  }, external_react_["createElement"]("html", {
+    lang: "en"
+  }), external_react_["createElement"]("meta", {
+    name: "application-name",
+    content: appOptions.meta.name
+  }), external_react_["createElement"]("meta", {
+    name: "description",
+    content: appOptions.meta.description
+  }), external_react_["createElement"]("meta", {
+    charSet: "utf-8"
+  }), external_react_["createElement"]("meta", {
+    httpEquiv: "X-UA-Compatible",
+    content: "IE=edge"
+  }), external_react_["createElement"]("meta", {
+    name: "viewport",
+    content: "width=device-width, initial-scale=1"
+  }), external_react_["createElement"]("link", {
+    rel: "apple-touch-icon",
+    sizes: "180x180",
+    href: "/apple-touch-icon.png"
+  }), external_react_["createElement"]("link", {
+    rel: "icon",
+    type: "image/png",
+    sizes: "32x32",
+    href: "/favicon-32x32.png"
+  }), external_react_["createElement"]("link", {
+    rel: "icon",
+    type: "image/png",
+    sizes: "16x16",
+    href: "/favicon-16x16.png"
+  }), external_react_["createElement"]("link", {
+    rel: "manifest",
+    href: "/manifest.json"
+  }), external_react_["createElement"]("link", {
+    rel: "mask-icon",
+    href: "/safari-pinned-tab.svg",
+    color: theme.primary
+  }), external_react_["createElement"]("meta", {
+    name: "theme-color",
+    content: theme.secondary
+  }), external_react_["createElement"]("link", {
+    rel: "canonical",
+    href: canonicalURL
+  }), external_react_["createElement"]("script", {
+    type: "application/ld+json"
+  }, `{
+                      "@context": "http://schema.org",
+                      "@type": "WebSite",
+                      "name": "${appOptions.meta.name}",
+                      "url": "${canonicalURL}"
+                    }`)), children);
+}))))));
+// EXTERNAL MODULE: external "@neo-one/monitor"
+var monitor_ = __webpack_require__(14);
+
+// CONCATENATED MODULE: ./packages/neotracker-shared-web-next/src/metrics.ts
+ // Note: Remove disable once more metrics have been added
+// tslint:disable-next-line export-name
+
+const NEOTRACKER_SESSION = monitor_["metrics"].createCounter({
+  name: 'neotracker_session'
+});
+// EXTERNAL MODULE: ./packages/neotracker-shared-web-next/src/routes.ts
+var routes = __webpack_require__(85);
+
+// CONCATENATED MODULE: ./packages/neotracker-shared-web-next/src/App.tsx
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ROUTE_CONFIGS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return App_App; });
+
+
+
+
+
+
+const ROUTE_CONFIGS = [{
+  exact: true,
+  path: routes["HOME"],
+  component: external_react_loadable_default()({
+    // tslint:disable-next-line promise-function-async
+    loader: () => __webpack_require__.e(/* import() */ 1).then(__webpack_require__.bind(null, 335)).then(value => value.Home),
+    modules: ['./pages/Home'],
+    webpack: () => [/*require.resolve*/(335)],
+    // tslint:disable-next-line no-null-keyword
+    loading: () => null
+  })
+}, {
+  exact: false,
+  path: undefined,
+  component: external_react_loadable_default()({
+    // tslint:disable-next-line promise-function-async
+    loader: () => __webpack_require__.e(/* import() */ 2).then(__webpack_require__.bind(null, 333)).then(value => value.Error404),
+    modules: ['./pages/Error404'],
+    webpack: () => [/*require.resolve*/(333)],
+    // tslint:disable-next-line no-null-keyword
+    loading: () => null
+  })
+}];
+const ROUTE_CONFIGS_WITH_RENDER = ROUTE_CONFIGS.map(config => Object.assign({}, config, {
+  // tslint:disable-next-line no-any no-unnecessary-type-annotation
+  render: props => {
+    const {
+      component: Component
+    } = config;
+
+    if (props.staticContext !== undefined) {
+      if (config.exact) {
+        // tslint:disable-next-line no-object-mutation no-any
+        props.staticContext.routePath = props.match.path;
+      } else {
+        // tslint:disable-next-line no-object-mutation no-any
+        props.staticContext.missed = true;
+      }
+    }
+
+    return external_react_["createElement"](Component, Object.assign({}, props));
+  }
+}));
+class App_App extends external_react_["Component"] {
+  render() {
+    return external_react_["createElement"](AppShell, {
+      appContext: this.props.appContext
+    }, external_react_["createElement"](external_react_router_["Switch"], null, ROUTE_CONFIGS_WITH_RENDER.map(config => external_react_["createElement"](external_react_router_["Route"], {
+      key: config.path === undefined ? 'nopath' : config.path,
+      exact: config.exact,
+      path: config.path,
+      render: config.render
+    }))));
+  }
+
+  componentDidMount() {
+    NEOTRACKER_SESSION.inc();
+  }
+
+}
+
+/***/ }),
+/* 215 */
 /***/ (function(module, exports) {
 
 module.exports = require("http");
 
 /***/ }),
-/* 229 */
+/* 216 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa");
 
 /***/ }),
-/* 230 */
+/* 217 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return makeJSONSchema; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return makeRelationMappings; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return createTable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return dropTable; });
+/* unused harmony export dropIndices */
+/* unused harmony export createIndices */
+/* unused harmony export refreshTriggers */
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(65);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _knexUtils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(49);
+/* harmony import */ var _QueryContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(218);
+
+
+
+
+
+const makeJSONField = field => {
+  const fieldType = field.type;
+  let type;
+
+  switch (fieldType.type) {
+    case 'id':
+    case 'foreignID':
+      type = field.required ? ['string', 'integer'] : ['string', 'integer', 'null'];
+      return Object.assign({}, fieldType, {
+        type
+      });
+
+    case 'string':
+      type = field.required ? 'string' : ['string', 'null'];
+
+      if (fieldType.enum) {
+        // tslint:disable-next-line no-unused
+        const _a = Object.assign({}, fieldType, {
+          type
+        }),
+              {
+          enum: deleted
+        } = _a,
+              copiedFieldType = tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"](_a, ["enum"]); // @ts-ignore
+
+
+        const enumType = field.required ? fieldType.enum : fieldType.enum.concat([undefined]);
+        return {
+          allOf: [copiedFieldType, {
+            enum: enumType
+          }]
+        };
+      }
+
+      return Object.assign({}, fieldType, {
+        type
+      });
+
+    case 'bigInteger':
+      type = field.required ? 'string' : ['string', 'null'];
+      return Object.assign({}, fieldType, {
+        type
+      });
+
+    case 'integer':
+      type = field.required ? 'integer' : ['integer', 'null'];
+      return Object.assign({}, fieldType, {
+        type
+      });
+
+    case 'decimal':
+      type = field.required ? 'string' : ['string', 'null'];
+      return Object.assign({}, fieldType, {
+        type
+      });
+
+    case 'number':
+      type = field.required ? 'number' : ['number', 'null'];
+      return Object.assign({}, fieldType, {
+        type
+      });
+
+    case 'boolean':
+      return fieldType;
+
+    case 'array':
+      return fieldType;
+
+    case 'json':
+      return {
+        type: 'string'
+      };
+
+    case 'tsvector':
+      return undefined;
+
+    default:
+      throw new Error(`Unknown field type: ${JSON.stringify(fieldType)}`);
+  }
+};
+
+const makeJSONSchema = fieldSchema => {
+  const required = Object.entries(fieldSchema).filter( // tslint:disable-next-line no-unused
+  ([__, field]) => field.required && !field.computed && !field.auto && // @ts-ignore
+  field.type.default == undefined) // tslint:disable-next-line no-unused
+  .map(([fieldName, __]) => fieldName);
+  const properties = Object.entries(fieldSchema).reduce((acc, [fieldName, field]) => {
+    if (!field.computed) {
+      const jsonField = makeJSONField(field);
+
+      if (jsonField !== undefined) {
+        return Object.assign({}, acc, {
+          [fieldName]: jsonField
+        });
+      }
+    }
+
+    return acc;
+  }, {});
+  return {
+    type: 'object',
+    required: required.length ? required : undefined,
+    properties
+  };
+};
+const makeRelationMappings = edgeSchema => {
+  if (edgeSchema === undefined) {
+    return {};
+  }
+
+  return Object.entries(edgeSchema).reduce((acc, [edgeName, edge]) => Object.assign({}, acc, {
+    [edgeName]: edge.relation
+  }), {});
+};
+
+const getColumnType = fieldType => {
+  switch (fieldType.type) {
+    case 'id':
+    case 'foreignID':
+    case 'integer':
+      return 'integer';
+
+    case 'bigInteger':
+      return 'bigInteger';
+
+    case 'decimal':
+      return 'numeric';
+
+    case 'string':
+      return `varchar(${fieldType.maxLength === undefined ? 255 : fieldType.maxLength})`;
+
+    case 'number':
+      return 'float8';
+
+    case 'boolean':
+      return 'boolean';
+
+    default:
+      throw new Error(`Unknown field type: ${fieldType.type}`);
+  }
+};
+
+const isBigIntID = (modelSchemas, modelType) => // tslint:disable-next-line strict-type-predicates
+modelSchemas[modelType].fields.id !== undefined && modelSchemas[modelType].fields.id.type.type === 'id' && // @ts-ignore
+modelSchemas[modelType].fields.id.type.big;
+
+const isAnyBigIntID = (modelSchemas, modelType) => {
+  if (typeof modelType === 'string') {
+    return isBigIntID(modelSchemas, modelType);
+  }
+
+  return lodash__WEBPACK_IMPORTED_MODULE_1___default.a.some(modelType.map(modelTpe => isBigIntID(modelSchemas, modelTpe)));
+};
+
+const addColumn = (db, table, fieldName, field, modelSchemas) => {
+  let col;
+  const fieldType = field.type;
+
+  if (fieldName === 'created_at') {
+    col = table.integer(fieldName).unsigned().defaultTo(db.raw('extract(epoch FROM now())'));
+  } else if (fieldName === 'updated_at') {
+    col = table.integer(fieldName).unsigned().defaultTo(db.raw('extract(epoch FROM now())'));
+  } else {
+    switch (fieldType.type) {
+      case 'id':
+        col = fieldType.big ? table.bigIncrements(fieldName) : table.increments(fieldName);
+        col.primary().unique().notNullable().unsigned();
+        break;
+
+      case 'foreignID':
+        col = isAnyBigIntID(modelSchemas, fieldType.modelType) ? table.bigInteger(fieldName) : table.integer(fieldName);
+        col.unsigned();
+        break;
+
+      case 'integer':
+        col = table.integer(fieldName);
+
+        if (fieldType.minimum !== undefined && fieldType.minimum >= 0) {
+          col.unsigned();
+        }
+
+        break;
+
+      case 'bigInteger':
+        col = table.bigInteger(fieldName);
+
+        if (fieldType.minimum !== undefined && fieldType.minimum >= 0) {
+          col.unsigned();
+        }
+
+        break;
+
+      case 'decimal':
+        col = table.specificType(fieldName, 'numeric');
+        break;
+
+      case 'string':
+        col = table.text(fieldName); // col = table.string(fieldName, fieldType.maxLength || 255);
+
+        break;
+
+      case 'number':
+        col = table.float(fieldName);
+        break;
+
+      case 'boolean':
+        col = table.boolean(fieldName);
+        break;
+
+      case 'array':
+        col = table.specificType(fieldName, `${getColumnType(fieldType.items)}[]`);
+        break;
+
+      case 'json':
+        col = table.jsonb(fieldName);
+        break;
+
+      case 'model':
+        throw new Error(`Models/Interfaces cannot be columns in the Model. See ${fieldName}`);
+
+      case 'tsvector':
+        // @ts-ignore
+        col = table.specificType(fieldName, 'tsvector').notNullable().index(undefined, 'GIN');
+        break;
+
+      default:
+        throw new Error(`Unknown field type for ${fieldName}`);
+    }
+  }
+
+  if (field.required || fieldType.type === 'id') {
+    col.notNullable();
+  } else {
+    col.nullable();
+  }
+
+  if (field.unique) {
+    col.unique();
+  } else if (field.index) {
+    col.index();
+  } // @ts-ignore
+
+
+  if (fieldType.default !== undefined) {
+    // @ts-ignore
+    col.defaultTo(fieldType.default);
+  }
+};
+
+const getCreateIndex = (index, tableName) => {
+  if (index.type === 'order') {
+    const orderCols = index.columns.map(col => `${col.name} ${col.order}`).join(', ');
+    let orderUnique = '';
+
+    if (index.unique) {
+      orderUnique = 'UNIQUE ';
+    }
+
+    return `
+      CREATE ${orderUnique}INDEX IF NOT EXISTS ${index.name} ON ${tableName} (${orderCols});
+    `;
+  }
+
+  const cols = index.columnNames.map(col => `${col}`).join(', ');
+  let unique = '';
+
+  if (index.unique) {
+    unique = 'UNIQUE ';
+  }
+
+  return `
+    CREATE ${unique}INDEX IF NOT EXISTS ${index.name} ON ${tableName} (${cols});
+  `;
+};
+
+const createTable = async (db, monitor, modelSchema, modelSchemas, bare) => {
+  const schema = db.schema;
+  let executeSchema;
+
+  if (modelSchema.materializedView !== undefined) {
+    // tslint:disable-next-line no-non-null-assertion
+    executeSchema = currentSchema => currentSchema.raw(modelSchema.materializedView);
+  } else {
+    executeSchema = currentSchema => {
+      currentSchema.createTable(modelSchema.tableName, table => {
+        Object.entries(modelSchema.fields).forEach(([fieldName, field]) => {
+          if (!field.computed) {
+            addColumn(db, table, fieldName, field, modelSchemas);
+          }
+        });
+
+        if (!bare) {
+          if (lodash__WEBPACK_IMPORTED_MODULE_1___default.a.isEqual(modelSchema.id, ['id1', 'id2'])) {
+            table.primary(['id1', 'id2']);
+          }
+
+          modelSchema.indices.forEach(index => {
+            if (index.type === 'simple') {
+              if (index.unique) {
+                table.unique([...index.columnNames], index.name);
+              } else {
+                table.index([...index.columnNames], index.name);
+              }
+            } else if (index.type === 'order' && Object(_knexUtils__WEBPACK_IMPORTED_MODULE_2__[/* isSqlite */ "b"])(db)) {
+              const columns = index.columns.map(col => col.name);
+
+              if (index.unique) {
+                table.unique(columns, index.name);
+              } else {
+                table.index(columns, index.name);
+              }
+            }
+          });
+        }
+      });
+
+      if (!bare && Object(_knexUtils__WEBPACK_IMPORTED_MODULE_2__[/* isPostgres */ "a"])(db)) {
+        modelSchema.indices.forEach(index => {
+          if (index.type === 'order') {
+            currentSchema.raw(getCreateIndex(index, modelSchema.tableName));
+          }
+        });
+      }
+
+      return currentSchema;
+    };
+  }
+
+  const exists = await schema.queryContext(Object(_QueryContext__WEBPACK_IMPORTED_MODULE_3__[/* makeAllPowerfulQueryContext */ "a"])(monitor)).hasTable(modelSchema.tableName);
+
+  if (!exists) {
+    if (bare) {
+      await executeSchema(schema);
+    } else {
+      await modelSchema.chainCustomAfter(executeSchema(modelSchema.chainCustomBefore(schema)));
+    }
+  }
+};
+const dropTable = async (db, monitor, modelSchema, checkEmpty = false) => {
+  const schema = db.schema;
+
+  if (modelSchema.materializedView === undefined) {
+    if (checkEmpty) {
+      const exists = await schema.queryContext(Object(_QueryContext__WEBPACK_IMPORTED_MODULE_3__[/* makeAllPowerfulQueryContext */ "a"])(monitor)).hasTable(modelSchema.tableName);
+
+      if (!exists) {
+        return;
+      }
+
+      const result = await db(modelSchema.tableName).select('*').limit(1).queryContext(Object(_QueryContext__WEBPACK_IMPORTED_MODULE_3__[/* makeAllPowerfulQueryContext */ "a"])(monitor));
+
+      if (result.length === 0) {
+        return;
+      }
+    }
+
+    await schema.dropTableIfExists(modelSchema.tableName).queryContext(Object(_QueryContext__WEBPACK_IMPORTED_MODULE_3__[/* makeAllPowerfulQueryContext */ "a"])(monitor));
+  } else {
+    await schema.raw(`
+      DROP MATERIALIZED VIEW IF EXISTS ${modelSchema.tableName} CASCADE;
+    `).queryContext(Object(_QueryContext__WEBPACK_IMPORTED_MODULE_3__[/* makeAllPowerfulQueryContext */ "a"])(monitor));
+  }
+};
+const EMPTY_DROP_INDICES = 'query string argument of EXECUTE is null';
+const dropIndices = async (db, monitor, tableName) => {
+  if (db.client.driverName !== 'pg') {
+    throw new Error('Not implemented');
+  }
+
+  try {
+    await db.raw(`
+      DO
+      $$BEGIN
+         EXECUTE (
+         SELECT string_agg('ALTER TABLE ${tableName} DROP CONSTRAINT ' || conname, '; ')
+         FROM   pg_constraint
+         WHERE conrelid::regclass::text = '${tableName}'
+         );
+      END$$;
+    `).queryContext(Object(_QueryContext__WEBPACK_IMPORTED_MODULE_3__[/* makeAllPowerfulQueryContext */ "a"])(monitor));
+  } catch (error) {
+    if (!error.message.includes(EMPTY_DROP_INDICES)) {
+      throw error;
+    }
+  }
+
+  try {
+    await db.raw(`
+      DO
+      $$BEGIN
+         EXECUTE (
+         SELECT 'DROP INDEX ' || string_agg(indexname, ', ')
+         FROM   pg_indexes
+         WHERE tablename = '${tableName}'
+         );
+      END$$;
+    `).queryContext(Object(_QueryContext__WEBPACK_IMPORTED_MODULE_3__[/* makeAllPowerfulQueryContext */ "a"])(monitor));
+  } catch (error) {
+    if (!error.message.includes(EMPTY_DROP_INDICES)) {
+      throw error;
+    }
+  }
+};
+const createIndices = async (db, monitor, modelSchema) => {
+  await Promise.all(modelSchema.indices.map(index => db.raw(getCreateIndex(index, modelSchema.tableName)).queryContext(Object(_QueryContext__WEBPACK_IMPORTED_MODULE_3__[/* makeAllPowerfulQueryContext */ "a"])(monitor))));
+};
+const refreshTriggers = async (db, monitor, modelSchema) => {
+  await modelSchema.chainCustomAfter(modelSchema.chainCustomBefore(db.schema)).queryContext(Object(_QueryContext__WEBPACK_IMPORTED_MODULE_3__[/* makeAllPowerfulQueryContext */ "a"])(monitor));
+};
+
+/***/ }),
+/* 218 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return makeQueryContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return makeAllPowerfulQueryContext; });
+/* harmony import */ var _Base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(73);
+
+
+async function verifyCanView(model, context) {
+  if (model instanceof _Base__WEBPACK_IMPORTED_MODULE_0__[/* Base */ "a"]) {
+    const canView = await model.canView(context);
+    return canView ? model : undefined;
+  }
+
+  return model;
+}
+
+function makeQueryContext({
+  rootLoader,
+  monitor,
+  isAllPowerful
+}) {
+  const queryContext = {
+    type: 'normal',
+
+    get rootLoader() {
+      return rootLoader();
+    },
+
+    monitor,
+    isAllPowerful: !!isAllPowerful,
+    // tslint:disable-next-line no-unused
+    runBefore: (__, queryBuilder) => {
+      queryBuilder.options({
+        queryContext: queryBuilder.context()
+      });
+    },
+    runAfter: undefined
+  }; // @ts-ignore
+
+  queryContext.runAfter = async models => {
+    // tslint:disable no-object-mutation
+    if (isAllPowerful) {
+      return models;
+    }
+
+    if (models == undefined) {
+      return models;
+    }
+
+    if (Array.isArray(models)) {
+      const newModels = await Promise.all(models.map(async model => verifyCanView(model, queryContext)));
+      return newModels.filter(model => model != undefined);
+    }
+
+    return verifyCanView(models, queryContext);
+  };
+
+  return queryContext;
+}
+function makeAllPowerfulQueryContext(monitor) {
+  return {
+    type: 'allPowerful',
+    isAllPowerful: true,
+    monitor,
+    // @ts-ignore
+    runBefore: (__, queryBuilder) => {
+      queryBuilder.options({
+        queryContext: queryBuilder.context()
+      });
+    }
+  };
+}
+
+/***/ }),
+/* 219 */
 /***/ (function(module, exports) {
 
 module.exports = require("pg");
 
 /***/ }),
-/* 231 */
+/* 220 */
 /***/ (function(module, exports) {
 
 module.exports = require("dataloader");
 
 /***/ }),
-/* 232 */
+/* 221 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return labels; });
+const labels = {
+  CLUSTER_NAME: 'cluster.name',
+  // Was this for a new keystore or an existing private key?
+  CREATE_KEYSTORE_NEW: 'create.keystore.new',
+  // Differentiates click locations
+  CLICK_SOURCE: 'click.source',
+  // React component stack
+  COMPONENT_STACK: 'react.component_stack',
+  // Websocket related properties
+  WEBSOCKET_URL: 'websocket.url',
+  WEBSOCKET_CLOSE_CODE: 'websocket.close.code',
+  WEBSOCKET_CLOSE_REASON: 'websocket.close.reason',
+  WEBSOCKET_MESSAGE_TYPE: 'websocket.message.type',
+  WEBSOCKET_MESSAGEJSON: 'websocket.message_json',
+  WEBSOCKET_PROTOCOLS: 'websocket.protocols',
+  // GraphQL related propreties
+  GRAPHQL_QUERY: 'graphql.query',
+  GRAPHQL_VARIABLES: 'graphql.variables',
+  GRAPHQL_LIVE_NAME: 'graphql.live.name',
+  GRAPHQL_PATH: 'graphql.path',
+  // User agent
+  UA: 'ua.raw',
+  UA_BROWSER_NAME: 'ua.browser.name',
+  UA_BROWSER_VERSION: 'ua.browser.version',
+  UA_DEVICE_MODEL: 'ua.device.model',
+  UA_DEVICE_TYPE: 'ua.device.type',
+  UA_DEVICE_VENDOR: 'ua.device.vendor',
+  UA_ENGINE_NAME: 'ua.engine.name',
+  UA_ENGINE_VERSION: 'ua.engine.version',
+  UA_OS_NAME: 'ua.os.name',
+  UA_OS_VERSION: 'ua.os.version',
+  UA_CPU_ARCHITECTURE: 'ua.cpu.architecture',
+  // App version
+  APP_VERSION: 'app.version',
+  // Client side stack capture
+  STACK_MESSAGE: 'client_error.stack.message',
+  STACK_LINENUMBER: 'client_error.stack.line_number',
+  STACK_COLUMNNUMBER: 'client_error.stack.column_number',
+  // Kubernetes
+  POD_NAME: 'pod.name',
+  // LetsEncrypt
+  LETSENCRYPT_DOMAINS: 'lets_encrypt.domains',
+  LETSENCRYPT_NAMESPACE: 'lets_encrypt.namespace',
+  LETSENCRYPT_SECRET: 'lets_encrypt.secret',
+  LETSENCRYPT_HOSTNAME: 'lets_encrypt.hostname',
+  // DNS
+  DNS_ID: 'dns.id',
+  DNS_ADD: 'dns.add',
+  DNS_DELETE: 'dns.delete',
+  DNS_SERVICE_KEY: 'dns.service.key',
+  DNS_SERVICE_RECORDS: 'dns.service.records',
+  DNS_SERVICE_DELETE: 'dns.service.delete',
+  DNS_NODE_RECORDS: 'dns.node.records',
+  // Postgre
+  POSTGRES_BACKUPWAL_ISBEHIND: 'postgres.backup_wal.is_behind',
+  POSTGRES_BACKUPWAL_VALUE: 'postgres.backup_wal.value',
+  POSTGRES_BACKUPWAL_LSNOFFSET: 'postgres.backup_wal.lsn_offset',
+  POSTGRES_BACKUPWAL_REDOWAL: 'postgres.backup_wal.redo_wal',
+  POSTGRES_BACKUPWAL_REDOWALLSN: 'postgres.backup_wal.redo_wal_lsn',
+  POSTGRES_DATAEXIST: 'postgres.data_exist',
+  POSTGRES_BACKUPEXIST: 'postgres.backup_exist',
+  POSTGRES_ONSAMETIMELINE: 'postgres.on_same_timeline',
+  POSTGRES_EXIT_CODE: 'postgres.exit.code',
+  POSTGRES_EXIT_SIGNAL: 'postgres.exit.signal',
+  POSTGRES_LOG_FILE: 'postgres.log.file',
+  POSTGRES_REMOTEWALFILE: 'postgres.remote_walfile',
+  // Process
+  EXEC_COMMAND: 'exec.command',
+  EXEC_ARGS: 'exec.args',
+  // Consul
+  CONSUL_PATH: 'consul.path',
+  CONSUL_KEY: 'consul.key',
+  CONSUL_LOCK_REASON: 'consul.lock.reason',
+  // Scrape
+  ACTION_BLOCK_INDEX: 'action.block.index',
+  ACTION_TRANSACTION_INDEX: 'action.transaction.index',
+  ACTION_INDEX: 'action.index',
+  CONTRACT_HASH: 'contract.hash',
+  SCRAPE_REPAIR_NEP5_COINS: 'scrape.repair_nep5.coins',
+  SCRAPE_REPAIR_NEP5_ASSET: 'scrape.repair_nep5.asset.hash',
+  // General
+  QUEUE_SIZE: 'queue.size',
+  OPTIONS: 'options',
+  // NEO
+  NEO_ADDRESS: 'neo.address',
+  // Database
+  DB_TABLE: 'db.table'
+};
+
+/***/ }),
+/* 222 */
 /***/ (function(module, exports) {
 
 module.exports = require("bn.js");
 
 /***/ }),
-/* 233 */
+/* 223 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return utils; });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const nowSeconds = () => Math.round(Date.now() / 1000);
+
+function nullthrows(value) {
+  if (value == undefined) {
+    throw new Error('Unexpected null');
+  }
+
+  return value;
+}
+
+function assertNever(_value) {} // do nothing
+// tslint:disable-next-line no-any
+
+
+function isPromise(value) {
+  return value != undefined && value.then != undefined && typeof value.then === 'function';
+}
+
+function notNull(value) {
+  return value != undefined;
+}
+
+function zip(...arrays) {
+  // tslint:disable-next-line no-any
+  return lodash__WEBPACK_IMPORTED_MODULE_0___default.a.zip(...arrays);
+} // tslint:enable readonly-array
+
+
+const utils = {
+  nowSeconds,
+  nullthrows,
+  assertNever,
+  notNull,
+  isPromise,
+  zip
+};
+
+/***/ }),
+/* 224 */
 /***/ (function(module, exports) {
 
 module.exports = require("knex");
 
 /***/ }),
-/* 234 */
+/* 225 */
 /***/ (function(module, exports) {
 
 module.exports = require("sql-summary");
 
 /***/ }),
-/* 235 */
+/* 226 */
 /***/ (function(module, exports) {
 
 module.exports = require("app-root-dir");
 
 /***/ }),
-/* 236 */
+/* 227 */
 /***/ (function(module, exports) {
 
 module.exports = require("graphql/execution/values");
 
 /***/ }),
-/* 237 */
+/* 228 */
 /***/ (function(module, exports) {
 
 module.exports = require("graphql/utilities");
 
 /***/ }),
-/* 238 */
+/* 229 */
 /***/ (function(module, exports) {
 
 module.exports = require("graphql/jsutils/isInvalid");
 
 /***/ }),
-/* 239 */
+/* 230 */
 /***/ (function(module, exports) {
 
 module.exports = require("graphql/jsutils/isNullish");
 
 /***/ }),
-/* 240 */
+/* 231 */
 /***/ (function(module, exports) {
 
 module.exports = require("graphql/jsutils/memoize3");
 
 /***/ }),
-/* 241 */
+/* 232 */
 /***/ (function(module, exports) {
 
 module.exports = require("graphql-tools");
 
 /***/ }),
-/* 242 */
+/* 233 */
 /***/ (function(module, exports) {
 
 module.exports = require("cryptocompare");
 
 /***/ }),
-/* 243 */
+/* 234 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-better-body");
 
 /***/ }),
-/* 244 */
+/* 235 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-ratelimit-lru");
 
 /***/ }),
-/* 245 */
+/* 236 */
 /***/ (function(module, exports) {
 
 module.exports = require("url");
 
 /***/ }),
-/* 246 */
+/* 237 */
 /***/ (function(module, exports) {
 
 module.exports = require("http-errors");
 
 /***/ }),
-/* 247 */
+/* 238 */
 /***/ (function(module, exports) {
 
 module.exports = require("resolve-path");
 
 /***/ }),
-/* 248 */
+/* 239 */
 /***/ (function(module, exports) {
 
 module.exports = require("sitemap");
 
 /***/ }),
-/* 249 */
+/* 240 */
 /***/ (function(module, exports) {
 
 module.exports = require("apollo-cache-inmemory");
 
 /***/ }),
-/* 250 */
+/* 241 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-loadable/webpack");
 
 /***/ }),
-/* 251 */
+/* 242 */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/colors/amber");
+
+/***/ }),
+/* 243 */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/colors/blue");
+
+/***/ }),
+/* 244 */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/colors/blueGrey");
+
+/***/ }),
+/* 245 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/colors/brown");
 
 /***/ }),
-/* 252 */
+/* 246 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/colors/cyan");
 
 /***/ }),
-/* 253 */
+/* 247 */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/colors/deepOrange");
+
+/***/ }),
+/* 248 */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/colors/green");
+
+/***/ }),
+/* 249 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/colors/grey");
 
 /***/ }),
-/* 254 */
+/* 250 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/colors/lightBlue");
+module.exports = require("@material-ui/core/colors/indigo");
 
 /***/ }),
-/* 255 */
+/* 251 */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/colors/lightGreen");
+
+/***/ }),
+/* 252 */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/colors/lime");
+
+/***/ }),
+/* 253 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/colors/orange");
 
 /***/ }),
-/* 256 */
+/* 254 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/colors/pink");
+
+/***/ }),
+/* 255 */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/colors/purple");
+
+/***/ }),
+/* 256 */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/colors/teal");
 
 /***/ }),
 /* 257 */
@@ -16710,7 +16710,8 @@ module.exports = require("headroom.js");
 
 /***/ }),
 /* 332 */,
-/* 333 */
+/* 333 */,
+/* 334 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16790,7 +16791,7 @@ Object(external_recompose_["setObservableConfig"])({
 var monitor_ = __webpack_require__(14);
 
 // EXTERNAL MODULE: external "yargs"
-var external_yargs_ = __webpack_require__(61);
+var external_yargs_ = __webpack_require__(52);
 var external_yargs_default = /*#__PURE__*/__webpack_require__.n(external_yargs_);
 
 // CONCATENATED MODULE: ./packages/neotracker-core/src/options/common.ts
@@ -17057,7 +17058,7 @@ const getOptions = ({
 var external_path_ = __webpack_require__(23);
 
 // EXTERNAL MODULE: external "tslib"
-var external_tslib_ = __webpack_require__(54);
+var external_tslib_ = __webpack_require__(65);
 
 // EXTERNAL MODULE: external "lodash"
 var external_lodash_ = __webpack_require__(3);
@@ -17103,37 +17104,37 @@ const createConsoleLogger = () => ({
   }
 });
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/lib/common.ts
-var lib_common = __webpack_require__(117);
+var lib_common = __webpack_require__(217);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/models/Action.ts
-var Action = __webpack_require__(55);
+var Action = __webpack_require__(66);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/models/Address.ts + 2 modules
-var Address = __webpack_require__(33);
+var Address = __webpack_require__(37);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/models/AddressToTransaction.ts
-var AddressToTransaction = __webpack_require__(113);
+var AddressToTransaction = __webpack_require__(103);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/models/AddressToTransfer.ts
-var AddressToTransfer = __webpack_require__(58);
+var AddressToTransfer = __webpack_require__(69);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/models/Asset.ts + 1 modules
-var Asset = __webpack_require__(46);
+var Asset = __webpack_require__(47);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/models/AssetToTransaction.ts
-var AssetToTransaction = __webpack_require__(114);
+var AssetToTransaction = __webpack_require__(104);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/models/Block.ts
-var Block = __webpack_require__(49);
+var Block = __webpack_require__(51);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/models/Coin.ts
-var Coin = __webpack_require__(56);
+var Coin = __webpack_require__(67);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/models/Contract.ts
-var Contract = __webpack_require__(57);
+var Contract = __webpack_require__(68);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/models/BaseVisibleModel.ts + 2 modules
-var BaseVisibleModel = __webpack_require__(51);
+var BaseVisibleModel = __webpack_require__(56);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-db/src/models/DataPoint.ts
 // tslint:disable variable-name
@@ -17245,10 +17246,10 @@ Migration_Migration.fieldSchema = {
 var src_pubsub = __webpack_require__(368);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/createPubSub.ts
-var createPubSub = __webpack_require__(48);
+var createPubSub = __webpack_require__(50);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/models/common.ts
-var models_common = __webpack_require__(36);
+var models_common = __webpack_require__(38);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-db/src/models/ProcessedIndex.ts
 // tslint:disable variable-name
@@ -17287,7 +17288,7 @@ ProcessedIndex_ProcessedIndex.fieldSchema = {
   }
 };
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/models/Transaction.ts
-var Transaction = __webpack_require__(28);
+var Transaction = __webpack_require__(31);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/models/TransactionInputOutput.ts
 var TransactionInputOutput = __webpack_require__(39);
@@ -17326,7 +17327,7 @@ const dropTables = async (db, monitor, checkEmpty = false) => {
   await Promise.all(models_models().map(async model => Object(lib_common["b" /* dropTable */])(db, monitor, model.modelSchema, checkEmpty)));
 };
 // EXTERNAL MODULE: ./packages/neotracker-shared-utils/src/utils.ts
-var utils = __webpack_require__(121);
+var utils = __webpack_require__(223);
 
 // CONCATENATED MODULE: ./packages/neotracker-shared-utils/src/finalize.ts
 
@@ -17386,7 +17387,7 @@ function finalize(func) {
   };
 })(finalize || (finalize = {}));
 // EXTERNAL MODULE: external "knex"
-var external_knex_ = __webpack_require__(233);
+var external_knex_ = __webpack_require__(224);
 var external_knex_default = /*#__PURE__*/__webpack_require__.n(external_knex_);
 
 // EXTERNAL MODULE: external "objection"
@@ -17396,7 +17397,7 @@ var external_objection_ = __webpack_require__(6);
 var operators_ = __webpack_require__(5);
 
 // EXTERNAL MODULE: external "sql-summary"
-var external_sql_summary_ = __webpack_require__(234);
+var external_sql_summary_ = __webpack_require__(225);
 var external_sql_summary_default = /*#__PURE__*/__webpack_require__.n(external_sql_summary_);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-db/src/db.ts
@@ -17607,13 +17608,13 @@ async function db_transaction(db, func) {
 var client_ = __webpack_require__(11);
 
 // EXTERNAL MODULE: external "change-case"
-var external_change_case_ = __webpack_require__(41);
+var external_change_case_ = __webpack_require__(27);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/lib/QueryContext.ts
-var QueryContext = __webpack_require__(118);
+var QueryContext = __webpack_require__(218);
 
 // EXTERNAL MODULE: external "lru-cache"
-var external_lru_cache_ = __webpack_require__(93);
+var external_lru_cache_ = __webpack_require__(86);
 var external_lru_cache_default = /*#__PURE__*/__webpack_require__.n(external_lru_cache_);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-db/src/loader/makeCache.ts
@@ -17665,10 +17666,10 @@ function makeCache({
   };
 }
 // EXTERNAL MODULE: ./packages/neotracker-shared-utils/src/labels.ts
-var src_labels = __webpack_require__(119);
+var src_labels = __webpack_require__(221);
 
 // EXTERNAL MODULE: external "dataloader"
-var external_dataloader_ = __webpack_require__(231);
+var external_dataloader_ = __webpack_require__(220);
 var external_dataloader_default = /*#__PURE__*/__webpack_require__.n(external_dataloader_);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-db/src/loader/makeLoader.ts
@@ -18187,7 +18188,7 @@ var external_bignumber_js_ = __webpack_require__(13);
 var external_bignumber_js_default = /*#__PURE__*/__webpack_require__.n(external_bignumber_js_);
 
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/knexUtils.ts
-var knexUtils = __webpack_require__(47);
+var knexUtils = __webpack_require__(49);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-scrape/src/db/SameContextDBUpdater.ts
 class SameContextDBUpdater {}
@@ -19870,7 +19871,7 @@ class ContractsUpdater_ContractsUpdater extends SameContextDBUpdater {
 
 }
 // EXTERNAL MODULE: ./packages/neotracker-server-db/src/utils/calculateClaimValueBase.ts
-var calculateClaimValueBase = __webpack_require__(112);
+var calculateClaimValueBase = __webpack_require__(102);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-scrape/src/utils/calculateClaimAmount.ts
 
@@ -21412,7 +21413,7 @@ const createScraper$ = ({
   return Object(external_rxjs_["combineLatest"])(rootLoader$, Object(external_rxjs_["concat"])(Object(external_rxjs_["of"])(undefined), scrape$)).pipe(Object(operators_["switchMap"])(([rootLoader]) => Object(external_rxjs_["timer"])(0, 5000).pipe(Object(operators_["switchMap"])(async () => isHealthyDB(rootLoader.db, rootMonitor)))));
 };
 // EXTERNAL MODULE: ./packages/neotracker-server-utils/src/errors/CodedError.ts
-var CodedError = __webpack_require__(111);
+var CodedError = __webpack_require__(101);
 
 // EXTERNAL MODULE: ./packages/neotracker-shared-utils/src/errors/ClientError.ts + 1 modules
 var ClientError = __webpack_require__(336);
@@ -21439,10 +21440,10 @@ const tryParseInt = ({
   return result;
 };
 // EXTERNAL MODULE: external "fs-extra"
-var external_fs_extra_ = __webpack_require__(60);
+var external_fs_extra_ = __webpack_require__(41);
 
 // EXTERNAL MODULE: external "graphql"
-var external_graphql_ = __webpack_require__(69);
+var external_graphql_ = __webpack_require__(70);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-graphql/src/QueryMap.ts
 
@@ -21555,7 +21556,7 @@ class RootCall_RootCall {
 
 }
 // EXTERNAL MODULE: external "safe-stable-stringify"
-var external_safe_stable_stringify_ = __webpack_require__(68);
+var external_safe_stable_stringify_ = __webpack_require__(62);
 var external_safe_stable_stringify_default = /*#__PURE__*/__webpack_require__.n(external_safe_stable_stringify_);
 
 // CONCATENATED MODULE: ./packages/neotracker-shared-graphql/src/QueryDeduplicator.ts
@@ -21780,7 +21781,7 @@ OrderByInput_OrderByInput.definition = {
 
 const inputs_inputs = () => [FilterInput_FilterInput, OrderByInput_OrderByInput];
 // EXTERNAL MODULE: external "graphql-tools"
-var external_graphql_tools_ = __webpack_require__(241);
+var external_graphql_tools_ = __webpack_require__(232);
 
 // CONCATENATED MODULE: ./packages/neotracker-shared-graphql/src/ids.ts
 const toGlobalID = (type, id) => [type, id].join(':');
@@ -23094,45 +23095,45 @@ function createQueryDeduplicator(monitorIn, schema, queryMap, rootLoader) {
   return new QueryDeduplicator_QueryDeduplicator(async (queries, monitor) => Promise.all(queries.map(async query => doExecute(schema, queryMap, query.id, query.variables, rootLoader, monitor))), monitorIn);
 }
 // EXTERNAL MODULE: external "graphql/execution/values"
-var values_ = __webpack_require__(236);
+var values_ = __webpack_require__(227);
 
 // EXTERNAL MODULE: external "graphql/language"
-var language_ = __webpack_require__(122);
+var language_ = __webpack_require__(117);
 
 // EXTERNAL MODULE: external "graphql/type/definition"
-var definition_ = __webpack_require__(62);
+var definition_ = __webpack_require__(53);
 
 // EXTERNAL MODULE: external "graphql/utilities"
-var utilities_ = __webpack_require__(237);
+var utilities_ = __webpack_require__(228);
 
 // EXTERNAL MODULE: external "graphql/error"
-var error_ = __webpack_require__(73);
+var error_ = __webpack_require__(105);
 
 // EXTERNAL MODULE: external "graphql/execution/execute"
-var execute_ = __webpack_require__(24);
+var execute_ = __webpack_require__(25);
 
 // EXTERNAL MODULE: external "graphql/jsutils/invariant"
-var invariant_ = __webpack_require__(78);
+var invariant_ = __webpack_require__(106);
 var invariant_default = /*#__PURE__*/__webpack_require__.n(invariant_);
 
 // EXTERNAL MODULE: external "graphql/jsutils/isInvalid"
-var isInvalid_ = __webpack_require__(238);
+var isInvalid_ = __webpack_require__(229);
 var isInvalid_default = /*#__PURE__*/__webpack_require__.n(isInvalid_);
 
 // EXTERNAL MODULE: external "graphql/jsutils/isNullish"
-var isNullish_ = __webpack_require__(239);
+var isNullish_ = __webpack_require__(230);
 var isNullish_default = /*#__PURE__*/__webpack_require__.n(isNullish_);
 
 // EXTERNAL MODULE: external "graphql/jsutils/isPromise"
-var isPromise_ = __webpack_require__(63);
+var isPromise_ = __webpack_require__(54);
 var isPromise_default = /*#__PURE__*/__webpack_require__.n(isPromise_);
 
 // EXTERNAL MODULE: external "graphql/jsutils/memoize3"
-var memoize3_ = __webpack_require__(240);
+var memoize3_ = __webpack_require__(231);
 var memoize3_default = /*#__PURE__*/__webpack_require__.n(memoize3_);
 
 // EXTERNAL MODULE: external "iterall"
-var external_iterall_ = __webpack_require__(123);
+var external_iterall_ = __webpack_require__(118);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-graphql/src/live/utils.ts
 // tslint:disable
@@ -23806,7 +23807,7 @@ const tryParseNumber = ({
   return result;
 };
 // EXTERNAL MODULE: external "cross-fetch"
-var external_cross_fetch_ = __webpack_require__(70);
+var external_cross_fetch_ = __webpack_require__(71);
 var external_cross_fetch_default = /*#__PURE__*/__webpack_require__.n(external_cross_fetch_);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-graphql/src/channels.ts
@@ -23960,7 +23961,7 @@ CurrentPriceRootCall_CurrentPriceRootCall.mutableCurrentPrices = {}; // tslint:d
 
 CurrentPriceRootCall_CurrentPriceRootCall.mutableRefreshing = {};
 // EXTERNAL MODULE: external "cryptocompare"
-var external_cryptocompare_ = __webpack_require__(242);
+var external_cryptocompare_ = __webpack_require__(233);
 var external_cryptocompare_default = /*#__PURE__*/__webpack_require__.n(external_cryptocompare_);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-graphql/src/roots/PricesRootCall.ts
@@ -24362,11 +24363,11 @@ const ua_ua = {
   convertLabels
 };
 // EXTERNAL MODULE: external "uuid/v4"
-var v4_ = __webpack_require__(98);
+var v4_ = __webpack_require__(115);
 var v4_default = /*#__PURE__*/__webpack_require__.n(v4_);
 
 // EXTERNAL MODULE: external "ws"
-var external_ws_ = __webpack_require__(131);
+var external_ws_ = __webpack_require__(124);
 
 // EXTERNAL MODULE: external "graphql/error/locatedError"
 var locatedError_ = __webpack_require__(308);
@@ -24888,7 +24889,7 @@ class LiveServer_LiveServer {
 
 }
 // EXTERNAL MODULE: external "app-root-dir"
-var external_app_root_dir_ = __webpack_require__(235);
+var external_app_root_dir_ = __webpack_require__(226);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-utils/src/resolveRootPath.ts
 
@@ -25217,26 +25218,26 @@ const makeSearch = (value = SEARCH_VALUE_PARAM) => `/search/${value}`;
 
 
 // EXTERNAL MODULE: ./packages/neotracker-shared-web-next/src/index.ts
-var neotracker_shared_web_next_src = __webpack_require__(52);
+var neotracker_shared_web_next_src = __webpack_require__(60);
 
 // EXTERNAL MODULE: external "http"
-var external_http_ = __webpack_require__(228);
+var external_http_ = __webpack_require__(215);
 var external_http_default = /*#__PURE__*/__webpack_require__.n(external_http_);
 
 // EXTERNAL MODULE: external "koa"
-var external_koa_ = __webpack_require__(229);
+var external_koa_ = __webpack_require__(216);
 var external_koa_default = /*#__PURE__*/__webpack_require__.n(external_koa_);
 
 // EXTERNAL MODULE: external "react-loadable"
-var external_react_loadable_ = __webpack_require__(53);
+var external_react_loadable_ = __webpack_require__(61);
 var external_react_loadable_default = /*#__PURE__*/__webpack_require__.n(external_react_loadable_);
 
 // EXTERNAL MODULE: external "koa-better-body"
-var external_koa_better_body_ = __webpack_require__(243);
+var external_koa_better_body_ = __webpack_require__(234);
 var external_koa_better_body_default = /*#__PURE__*/__webpack_require__.n(external_koa_better_body_);
 
 // EXTERNAL MODULE: external "koa-convert"
-var external_koa_convert_ = __webpack_require__(95);
+var external_koa_convert_ = __webpack_require__(112);
 var external_koa_convert_default = /*#__PURE__*/__webpack_require__.n(external_koa_convert_);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-utils-koa/src/middleware/bodyParser.ts
@@ -25249,7 +25250,7 @@ var external_koa_compose_ = __webpack_require__(42);
 var external_koa_compose_default = /*#__PURE__*/__webpack_require__.n(external_koa_compose_);
 
 // EXTERNAL MODULE: external "koa-compress"
-var external_koa_compress_ = __webpack_require__(71);
+var external_koa_compress_ = __webpack_require__(72);
 var external_koa_compress_default = /*#__PURE__*/__webpack_require__.n(external_koa_compress_);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-web/src/middleware/common.ts
@@ -25426,7 +25427,7 @@ const healthCheck = ({
   }
 });
 // EXTERNAL MODULE: external "toobusy-js"
-var external_toobusy_js_ = __webpack_require__(83);
+var external_toobusy_js_ = __webpack_require__(111);
 var external_toobusy_js_default = /*#__PURE__*/__webpack_require__.n(external_toobusy_js_);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-web/src/middleware/toobusy.ts
@@ -25463,7 +25464,7 @@ function toobusy_toobusyMiddleware({
 
 const toobusy = toobusy_toobusyMiddleware;
 // EXTERNAL MODULE: external "koa-ratelimit-lru"
-var external_koa_ratelimit_lru_ = __webpack_require__(244);
+var external_koa_ratelimit_lru_ = __webpack_require__(235);
 var external_koa_ratelimit_lru_default = /*#__PURE__*/__webpack_require__.n(external_koa_ratelimit_lru_);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-web/src/middleware/ratelimit.ts
@@ -25483,10 +25484,10 @@ const ratelimit = ({
   });
 };
 // EXTERNAL MODULE: external "koa-helmet"
-var external_koa_helmet_ = __webpack_require__(67);
+var external_koa_helmet_ = __webpack_require__(59);
 
 // EXTERNAL MODULE: external "url"
-var external_url_ = __webpack_require__(245);
+var external_url_ = __webpack_require__(236);
 var external_url_default = /*#__PURE__*/__webpack_require__.n(external_url_);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-web/src/middleware/enforceHttps.ts
@@ -25636,11 +25637,11 @@ const security = ({
   }), external_koa_helmet_["ieNoOpen"](), external_koa_helmet_["noSniff"](), external_koa_helmet_["xssFilter"]()].filter(utils["a" /* utils */].notNull)));
 };
 // EXTERNAL MODULE: external "http-errors"
-var external_http_errors_ = __webpack_require__(246);
+var external_http_errors_ = __webpack_require__(237);
 var external_http_errors_default = /*#__PURE__*/__webpack_require__.n(external_http_errors_);
 
 // EXTERNAL MODULE: external "resolve-path"
-var external_resolve_path_ = __webpack_require__(247);
+var external_resolve_path_ = __webpack_require__(238);
 var external_resolve_path_default = /*#__PURE__*/__webpack_require__.n(external_resolve_path_);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-web/src/middleware/serve.ts
@@ -25954,7 +25955,7 @@ const rootAssets = ({
   options
 });
 // EXTERNAL MODULE: external "sitemap"
-var external_sitemap_ = __webpack_require__(248);
+var external_sitemap_ = __webpack_require__(239);
 var external_sitemap_default = /*#__PURE__*/__webpack_require__.n(external_sitemap_);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-web/src/middleware/sitemap.ts
@@ -26178,7 +26179,7 @@ const report = ({
   }])
 });
 // EXTERNAL MODULE: external "apollo-link"
-var external_apollo_link_ = __webpack_require__(124);
+var external_apollo_link_ = __webpack_require__(119);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-graphql/src/SchemaLink.ts
 
@@ -26209,42 +26210,42 @@ class SchemaLink_SchemaLink extends external_apollo_link_["ApolloLink"] {
 
 }
 // EXTERNAL MODULE: ./packages/neotracker-shared-web-next/src/App.tsx + 5 modules
-var App = __webpack_require__(116);
+var App = __webpack_require__(214);
 
 // EXTERNAL MODULE: external "apollo-cache-inmemory"
-var external_apollo_cache_inmemory_ = __webpack_require__(249);
+var external_apollo_cache_inmemory_ = __webpack_require__(240);
 
 // EXTERNAL MODULE: external "apollo-client"
-var external_apollo_client_ = __webpack_require__(141);
+var external_apollo_client_ = __webpack_require__(126);
 
 // EXTERNAL MODULE: external "fs"
-var external_fs_ = __webpack_require__(96);
+var external_fs_ = __webpack_require__(113);
 var external_fs_default = /*#__PURE__*/__webpack_require__.n(external_fs_);
 
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(0);
 
 // EXTERNAL MODULE: external "react-dom/server"
-var server_ = __webpack_require__(43);
+var server_ = __webpack_require__(48);
 
 // EXTERNAL MODULE: external "react-helmet"
 var external_react_helmet_ = __webpack_require__(15);
 var external_react_helmet_default = /*#__PURE__*/__webpack_require__.n(external_react_helmet_);
 
 // EXTERNAL MODULE: external "react-loadable/webpack"
-var webpack_ = __webpack_require__(250);
+var webpack_ = __webpack_require__(241);
 
 // EXTERNAL MODULE: external "react-router"
 var external_react_router_ = __webpack_require__(17);
 
 // EXTERNAL MODULE: external "react-router-config"
-var external_react_router_config_ = __webpack_require__(97);
+var external_react_router_config_ = __webpack_require__(114);
 
 // EXTERNAL MODULE: external "styled-components"
-var external_styled_components_ = __webpack_require__(79);
+var external_styled_components_ = __webpack_require__(107);
 
 // EXTERNAL MODULE: external "serialize-javascript"
-var external_serialize_javascript_ = __webpack_require__(59);
+var external_serialize_javascript_ = __webpack_require__(29);
 var external_serialize_javascript_default = /*#__PURE__*/__webpack_require__.n(external_serialize_javascript_);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-web/src/middleware/reactApp/makeServerHTML.tsx
@@ -26552,7 +26553,7 @@ const reactApp = ({
   };
 };
 // EXTERNAL MODULE: external "@material-ui/core/styles/createGenerateClassName"
-var createGenerateClassName_ = __webpack_require__(80);
+var createGenerateClassName_ = __webpack_require__(108);
 var createGenerateClassName_default = /*#__PURE__*/__webpack_require__.n(createGenerateClassName_);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-graphql/src/RelaySSRQueryCache.ts
@@ -26585,7 +26586,7 @@ class RelaySSRQueryCache_RelaySSRQueryCache {
 
 }
 // EXTERNAL MODULE: external "relay-runtime"
-var external_relay_runtime_ = __webpack_require__(66);
+var external_relay_runtime_ = __webpack_require__(58);
 
 // CONCATENATED MODULE: ./packages/neotracker-server-graphql/src/makeRelayEnvironment.ts
 // @ts-ignore
@@ -26628,13 +26629,13 @@ function makeRelayEnvironment({
   });
 }
 // EXTERNAL MODULE: external "redux"
-var external_redux_ = __webpack_require__(125);
+var external_redux_ = __webpack_require__(120);
 
 // EXTERNAL MODULE: external "reselect"
-var external_reselect_ = __webpack_require__(64);
+var external_reselect_ = __webpack_require__(55);
 
 // EXTERNAL MODULE: external "redux-actions"
-var external_redux_actions_ = __webpack_require__(50);
+var external_redux_actions_ = __webpack_require__(28);
 
 // CONCATENATED MODULE: ./packages/neotracker-shared-web/src/redux/claim.js
 
@@ -26837,75 +26838,75 @@ const redux_selectConfirmTransaction = Object(external_reselect_["createSelector
   return store;
 });
 // EXTERNAL MODULE: external "@material-ui/core/colors/amber"
-var amber_ = __webpack_require__(126);
+var amber_ = __webpack_require__(242);
 var amber_default = /*#__PURE__*/__webpack_require__.n(amber_);
 
 // EXTERNAL MODULE: external "@material-ui/core/colors/blue"
-var blue_ = __webpack_require__(99);
+var blue_ = __webpack_require__(243);
 var blue_default = /*#__PURE__*/__webpack_require__.n(blue_);
 
 // EXTERNAL MODULE: external "@material-ui/core/colors/blueGrey"
-var blueGrey_ = __webpack_require__(100);
+var blueGrey_ = __webpack_require__(244);
 var blueGrey_default = /*#__PURE__*/__webpack_require__.n(blueGrey_);
 
 // EXTERNAL MODULE: external "@material-ui/core/colors/brown"
-var brown_ = __webpack_require__(251);
+var brown_ = __webpack_require__(245);
 var brown_default = /*#__PURE__*/__webpack_require__.n(brown_);
 
 // EXTERNAL MODULE: external "@material-ui/core/colors/cyan"
-var cyan_ = __webpack_require__(252);
+var cyan_ = __webpack_require__(246);
 var cyan_default = /*#__PURE__*/__webpack_require__.n(cyan_);
 
 // EXTERNAL MODULE: external "@material-ui/core/colors/deepOrange"
-var deepOrange_ = __webpack_require__(127);
+var deepOrange_ = __webpack_require__(247);
 var deepOrange_default = /*#__PURE__*/__webpack_require__.n(deepOrange_);
 
 // EXTERNAL MODULE: external "@material-ui/core/colors/deepPurple"
-var deepPurple_ = __webpack_require__(128);
+var deepPurple_ = __webpack_require__(121);
 var deepPurple_default = /*#__PURE__*/__webpack_require__.n(deepPurple_);
 
 // EXTERNAL MODULE: external "@material-ui/core/colors/green"
-var green_ = __webpack_require__(101);
+var green_ = __webpack_require__(248);
 var green_default = /*#__PURE__*/__webpack_require__.n(green_);
 
 // EXTERNAL MODULE: external "@material-ui/core/colors/grey"
-var grey_ = __webpack_require__(253);
+var grey_ = __webpack_require__(249);
 var grey_default = /*#__PURE__*/__webpack_require__.n(grey_);
 
 // EXTERNAL MODULE: external "@material-ui/core/colors/indigo"
-var indigo_ = __webpack_require__(102);
+var indigo_ = __webpack_require__(250);
 var indigo_default = /*#__PURE__*/__webpack_require__.n(indigo_);
 
 // EXTERNAL MODULE: external "@material-ui/core/colors/lightBlue"
-var lightBlue_ = __webpack_require__(254);
+var lightBlue_ = __webpack_require__(24);
 var lightBlue_default = /*#__PURE__*/__webpack_require__.n(lightBlue_);
 
 // EXTERNAL MODULE: external "@material-ui/core/colors/lightGreen"
-var lightGreen_ = __webpack_require__(129);
+var lightGreen_ = __webpack_require__(251);
 var lightGreen_default = /*#__PURE__*/__webpack_require__.n(lightGreen_);
 
 // EXTERNAL MODULE: external "@material-ui/core/colors/lime"
-var lime_ = __webpack_require__(103);
+var lime_ = __webpack_require__(252);
 var lime_default = /*#__PURE__*/__webpack_require__.n(lime_);
 
 // EXTERNAL MODULE: external "@material-ui/core/colors/orange"
-var orange_ = __webpack_require__(255);
+var orange_ = __webpack_require__(253);
 var orange_default = /*#__PURE__*/__webpack_require__.n(orange_);
 
 // EXTERNAL MODULE: external "@material-ui/core/colors/pink"
-var pink_ = __webpack_require__(256);
+var pink_ = __webpack_require__(254);
 var pink_default = /*#__PURE__*/__webpack_require__.n(pink_);
 
 // EXTERNAL MODULE: external "@material-ui/core/colors/purple"
-var purple_ = __webpack_require__(104);
+var purple_ = __webpack_require__(255);
 var purple_default = /*#__PURE__*/__webpack_require__.n(purple_);
 
 // EXTERNAL MODULE: external "@material-ui/core/colors/red"
-var red_ = __webpack_require__(84);
+var red_ = __webpack_require__(122);
 var red_default = /*#__PURE__*/__webpack_require__.n(red_);
 
 // EXTERNAL MODULE: external "@material-ui/core/colors/teal"
-var teal_ = __webpack_require__(105);
+var teal_ = __webpack_require__(256);
 var teal_default = /*#__PURE__*/__webpack_require__.n(teal_);
 
 // EXTERNAL MODULE: external "@material-ui/core/colors/yellow"
@@ -26960,7 +26961,7 @@ const titleUpMD = Object.assign({}, titleUpMDNoHorizontalPad, containerUpMDPad);
 /* harmony default export */ var createTheme = (() => {
   const theme = createMuiTheme_default()({
     palette: {
-      primary: lightGreen_default.a,
+      primary: lightBlue_default.a,
       secondary: deepPurple_default.a,
       error: red_default.a,
       type: 'light'
@@ -27028,40 +27029,40 @@ const titleUpMD = Object.assign({}, titleUpMDNoHorizontalPad, containerUpMDPad);
     },
     transactionColors: {
       contract: {
-        color: teal_default.a,
-        backgroundColor: teal_default.a[500]
+        color: lightBlue_default.a,
+        backgroundColor: lightBlue_default.a[500]
       },
       miner: {
-        color: blueGrey_default.a,
-        backgroundColor: blueGrey_default.a[400]
+        color: lightBlue_default.a,
+        backgroundColor: lightBlue_default.a[500]
       },
       issue: {
-        color: green_default.a,
-        backgroundColor: green_default.a[600]
+        color: lightBlue_default.a,
+        backgroundColor: lightBlue_default.a[500]
       },
       claim: {
-        color: purple_default.a,
-        backgroundColor: purple_default.a.A200
+        color: lightBlue_default.a,
+        backgroundColor: lightBlue_default.a[500]
       },
       enrollment: {
-        color: indigo_default.a,
-        backgroundColor: indigo_default.a.A200
+        color: lightBlue_default.a,
+        backgroundColor: lightBlue_default.a[500]
       },
       register: {
-        color: amber_default.a,
-        backgroundColor: deepOrange_default.a.A400
+        color: lightBlue_default.a,
+        backgroundColor: lightBlue_default.a[500]
       },
       publish: {
-        color: red_default.a,
-        backgroundColor: red_default.a.A200
+        color: lightBlue_default.a,
+        backgroundColor: lightBlue_default.a[500]
       },
       invocation: {
-        color: blue_default.a,
-        backgroundColor: blue_default.a.A200
+        color: lightBlue_default.a,
+        backgroundColor: lightBlue_default.a[500]
       },
       state: {
-        color: lime_default.a,
-        backgroundColor: lime_default.a.A200
+        color: lightBlue_default.a,
+        backgroundColor: lightBlue_default.a[500]
       }
     },
     code: {
@@ -27352,7 +27353,19 @@ const TextField_styles = () => ({
     display: 'flex',
     flex: '1 1 auto',
     flexDirection: 'column',
-    width: '100%'
+    width: '100%' // '& label + div:after': {
+    //   borderColor: '#3CBFEF !important'
+    // }
+    // '&$focused': {
+    //   borderColor: '#3CBFEF'
+    // }
+    // '&$focused label': {
+    //   color: '#3CBFEF',
+    // },
+    // '&$focused >div:after': {
+    //   borderColor: '#3CBFEF',
+    // },
+
   },
   subtextArea: {
     alignItems: 'center',
@@ -27366,7 +27379,11 @@ const TextField_styles = () => ({
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
-    maxWidth: '100%'
+    maxWidth: '100%' // color: '#3CBFEF !important'
+    // '&$focused': {
+    //   color: '#3CBFEF'
+    // }
+
   }
 });
 
@@ -27484,10 +27501,18 @@ const SearchField_styles = theme => ({
     marginRight: theme.spacing.unit
   },
   button: {
-    height: theme.spacing.unit * 5
+    height: theme.spacing.unit * 5,
+    backgroundColor: '#FFD401 !important',
+    borderRadius: 20,
+    border: '1px solid #fff',
+    transition: 'opacity 0.2s ease-out',
+    '&:hover': {
+      opacity: 0.8
+    }
   },
   search: {
-    color: theme.custom.colors.common.white
+    color: '#001E7F',
+    fontWeight: 500
   }
 });
 
@@ -27512,7 +27537,7 @@ function SearchField({
     inputClasses: inputClasses,
     setInputRef: setInputRef
   }), external_react_["createElement"](Button, {
-    className: `${classes.button} header-search-btn`,
+    className: classes.button,
     color: "primary",
     variant: "raised",
     onClick: onSearch
@@ -27761,6 +27786,9 @@ const TitleLogo_enhance = Object(external_recompose_["compose"])(external_recomp
 const TitleLink_styles = () => ({
   link: {
     textDecoration: 'none'
+  },
+  linkLogo: {
+    minWidth: 195
   }
 });
 
@@ -27770,7 +27798,7 @@ function TitleLink({
   classes
 }) {
   return external_react_["createElement"](external_react_router_dom_["Link"], {
-    className: external_classnames_default()(className, classes.link),
+    className: external_classnames_default()(className, classes.link, classes.linkLogo),
     to: HOME
   }, external_react_["createElement"](logo_TitleLogo, {
     id: id
@@ -27812,7 +27840,7 @@ const AppBarDownMD_styles = theme => ({
   },
   header: {
     alignItems: 'center',
-    backgroundColor: theme.palette.background.paper,
+    backgroundImage: 'linear-gradient(180deg, #0056BB -22.73%, #0A97DE 130.3%)',
     display: 'flex',
     flexDirection: 'row',
     height: theme.spacing.unit * 8,
@@ -27977,7 +28005,14 @@ const Tabs_styles = () => ({
   },
   link: {
     textDecoration: 'none',
-    height: '37px'
+    height: 37
+  },
+  btn: {
+    height: '37px !important',
+    borderRadius: 20
+  },
+  btnActive: {
+    boxShadow: '0 0 0 1px white'
   }
 });
 
@@ -27993,10 +28028,11 @@ function Tabs({
     className: classes.link,
     to: tab.href
   }, external_react_["createElement"](Button, {
-    className: `${tab.className} header-btn ${tab.selected ? 'active' : ''}` // color={tab.selected ? 'primary' : 'default'}
-    ,
+    className: external_classnames_default()(tab.className, classes.btn, tab.selected ? classes.btnActive : null),
     onClick: tab.onClick
-  }, external_react_["createElement"](Typography, {
+  }, external_react_["createElement"]("i", {
+    className: `icon-${tab.id}`
+  }, " "), external_react_["createElement"](Typography, {
     variant: "body1",
     color: "inherit",
     fontWeight: "500"
@@ -28280,20 +28316,63 @@ const AppFooter_styles = theme => ({
       paddingRight: theme.spacing.unit * 2
     }
   },
+  [theme.breakpoints.down('sm')]: {
+    root: {
+      flexDirection: 'column',
+      alignItems: 'center'
+    },
+    footerUl: {
+      margin: '15px 0 0 0'
+    },
+    footerLi: {
+      marginRight: 10,
+      marginBottom: 10
+    }
+  },
+  [theme.breakpoints.up('md')]: {
+    footerUl: {
+      margin: '0 0 0 55px'
+    },
+    footerLi: {
+      marginRight: 30
+    }
+  },
   root: {
     background: 'linear-gradient(180deg, #0056BB -22.73%, #0A97DE 130.3%)',
     display: 'flex',
-    flexDirection: 'column',
-    paddingBottom: theme.spacing.unit * 2,
-    paddingTop: theme.spacing.unit * 2
+    flexWrap: 'wrap',
+    paddingBottom: 23,
+    paddingTop: 23
+  },
+  footerUl: {
+    padding: 0,
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center'
+  },
+  footerLi: {
+    listStyle: 'none',
+    fontSize: '0.875rem',
+    color: '#fff',
+    fontWeight: 500,
+    '&:last-child': {
+      marginRight: 0
+    }
+  },
+  footerLink: {
+    textDecoration: 'none',
+    color: 'inherit',
+    transition: 'opacity 0.2s ease-out',
+    '&:hover': {
+      opacity: 0.8
+    }
   },
   firstRow: {
     alignItems: 'center',
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    paddingLeft: '15px' // marginBottom: theme.spacing.unit,
-
+    paddingLeft: '15px'
   },
   secondRow: {
     alignItems: 'center',
@@ -28321,30 +28400,42 @@ function AppFooter({
   appOptions,
   classes
 }) {
+  const FooterLink = ({
+    href,
+    children
+  }) => {
+    return external_react_["createElement"]("li", {
+      className: classes.footerLi
+    }, external_react_["createElement"]("a", {
+      className: classes.footerLink,
+      href: href
+    }, children));
+  };
+
   return external_react_["createElement"]("div", {
-    className: `${external_classnames_default()(className, classes.root)} c-footer`
+    className: external_classnames_default()(className, classes.root)
   }, external_react_["createElement"]("div", {
     className: classes.firstRow
   }, external_react_["createElement"](Typography, {
     className: classes.copyright,
     variant: "caption"
   }, `${appOptions.meta.name} © 2019`)), external_react_["createElement"]("ul", {
-    className: "c-footer__link"
-  }, external_react_["createElement"]("li", null, external_react_["createElement"]("a", {
+    className: classes.footerUl
+  }, external_react_["createElement"](FooterLink, {
     href: "#"
-  }, "Where to buy")), external_react_["createElement"]("li", null, external_react_["createElement"]("a", {
+  }, "Where to buy"), external_react_["createElement"](FooterLink, {
     href: "#"
-  }, "About CRON")), external_react_["createElement"]("li", null, external_react_["createElement"]("a", {
+  }, "About CRON"), external_react_["createElement"](FooterLink, {
     href: "#"
-  }, "Wallet")), external_react_["createElement"]("li", null, external_react_["createElement"]("a", {
+  }, "Wallet"), external_react_["createElement"](FooterLink, {
     href: "#"
-  }, "Integration")), external_react_["createElement"]("li", null, external_react_["createElement"]("a", {
+  }, "Integration"), external_react_["createElement"](FooterLink, {
     href: "#"
-  }, "Partnership")), external_react_["createElement"]("li", null, external_react_["createElement"]("a", {
+  }, "Partnership"), external_react_["createElement"](FooterLink, {
     href: "#"
-  }, "Team")), external_react_["createElement"]("li", null, external_react_["createElement"]("a", {
+  }, "Team"), external_react_["createElement"](FooterLink, {
     href: "#"
-  }, "Contact"))));
+  }, "Contact")));
 }
 
 const AppFooter_enhance = Object(external_recompose_["compose"])(external_react_router_["withRouter"], withStyles(AppFooter_styles), mapAppOptions, external_recompose_["pure"]);
@@ -28565,9 +28656,9 @@ const Leaderboard_enhance = Object(external_recompose_["compose"])(withStyles(Le
 const AppShell_styles = theme => ({
   '@global': {
     body: {
-      backgroundImage: "url('./moscow-city.png')",
-      backgroundSize: 'cover',
-      margin: 0
+      margin: 0,
+      backgroundImage: 'url(/public/moscow-city.png)',
+      backgroundSize: 'cover'
     }
   },
   root: {
@@ -28846,7 +28937,7 @@ function PageLoading({
     width: 48,
     height: 56
   }), external_react_["createElement"](LinearProgress, {
-    className: `${classes.progress} c-loading`
+    className: classes.progress
   }));
 }
 
@@ -29057,11 +29148,11 @@ const Link_styles = theme => ({
     whiteSpace: 'nowrap'
   },
   link: {
-    color: theme.palette.primary[500],
+    color: '#102C87',
     fontWeight: theme.typography.fontWeightRegular,
     textDecoration: 'none',
     '&:hover': {
-      color: theme.palette.primary[700],
+      // color: theme.palette.primary[700],
       textDecoration: 'underline'
     }
   },
@@ -29619,13 +29710,13 @@ function CoinTable({
 
 const CoinTable_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   coins: function () {
-    const node = __webpack_require__(172);
+    const node = __webpack_require__(158);
 
     if (node.hash && node.hash !== "5f37ed94f05475d317875207c85ed7c2") {
       console.error("The definition of 'CoinTable_coins' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(172);
+    return __webpack_require__(158);
   }
 }), withStyles(CoinTable_styles), external_recompose_["pure"]);
 /* harmony default export */ var lib_CoinTable = (CoinTable_enhance(CoinTable));
@@ -29693,13 +29784,13 @@ function Coin_Coin({
 
 const Coin_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   coin: function () {
-    const node = __webpack_require__(176);
+    const node = __webpack_require__(162);
 
     if (node.hash && node.hash !== "7691f2ac39f1a671f2314d1d44270415") {
       console.error("The definition of 'Coin_coin' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(176);
+    return __webpack_require__(162);
   }
 }), external_recompose_["pure"]);
 /* harmony default export */ var lib_Coin = (Coin_enhance(Coin_Coin));
@@ -29810,7 +29901,8 @@ const PageViewHeader_styles = theme => ({
   root: {
     alignItems: 'center',
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    backgroundColor: 'rgba(255, 255, 255, 0.85)'
   },
   leftHeader: {
     alignItems: 'center',
@@ -29829,17 +29921,18 @@ const PageViewHeader_styles = theme => ({
     marginRight: theme.spacing.unit
   },
   text: {
-    color: theme.custom.colors.common.white
+    color: '#001E7F'
   },
   link: {
-    color: theme.custom.colors.common.white,
+    color: '#001E7F',
     textDecoration: 'underline',
     '&:hover': {
-      color: theme.custom.colors.common.darkWhite
+      opacity: 0.8
     }
   },
   linkSelected: {
-    color: theme.custom.colors.common.darkWhite,
+    color: '#001E7F',
+    opacity: 0.8,
     textDecoration: 'underline'
   },
   backgroundColor: {
@@ -29869,20 +29962,18 @@ function PageViewHeader({
   const slash = external_react_["createElement"](Typography, {
     className: external_classnames_default()(classes.text, classes.margin, classes.static),
     variant: breadcrumbVariant
-  }, "/");
-  let iconElement = null;
-
-  if (icon != null) {
-    iconElement = external_react_["createElement"](base_Icon, {
-      className: external_classnames_default()(classes.margin, classes.text)
-    }, icon);
-  }
+  }, "/"); // let iconElement = null;
+  // if (icon != null) {
+  //   iconElement = (
+  //     <Icon className={classNames(classes.margin, classes.text)}>{icon}</Icon>
+  //   );
+  // }
 
   return external_react_["createElement"]("div", {
     className: external_classnames_default()(classes.root, className, backgroundColorClassName == null ? classes.backgroundColor : backgroundColorClassName)
   }, external_react_["createElement"]("div", {
     className: classes.leftHeader
-  }, iconElement, external_react_["createElement"](Typography, {
+  }, external_react_["createElement"](Typography, {
     className: external_classnames_default()(classes.margin, classes.text),
     component: "h1",
     variant: "title"
@@ -30041,7 +30132,9 @@ function PageView({
 }) {
   return external_react_["createElement"](layout_CenteredView, {
     className: className
-  }, external_react_["createElement"](Card, null, external_react_["createElement"](view_PageViewHeader, {
+  }, external_react_["createElement"](Card, {
+    className: "table-2level"
+  }, external_react_["createElement"](view_PageViewHeader, {
     id: id,
     title: title,
     name: name,
@@ -30264,10 +30357,10 @@ const Chevron_styles = theme => ({
     transition: theme.transitions.create(['transform'])
   },
   chevronUp: {
-    transform: 'rotate(180deg)'
+    transform: 'rotate(0deg)'
   },
   chevronDown: {
-    transform: 'rotate(0deg)'
+    transform: 'rotate(180deg)'
   }
 });
 
@@ -30277,15 +30370,25 @@ function Chevron({
   classes,
   ...otherProps
 }) {
-  return external_react_["createElement"](base_Icon, {
-    color: otherProps.color,
-    fontSize: otherProps.fontSize,
+  return external_react_["createElement"]("i", {
     className: external_classnames_default()({
       [classes.chevron]: true,
       [classes.chevronUp]: up,
       [classes.chevronDown]: !up
     }, className)
-  }, "keyboard_arrow_up");
+  }, external_react_["createElement"]("svg", {
+    width: "15",
+    height: "8",
+    viewBox: "0 0 15 8",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, external_react_["createElement"]("path", {
+    d: "M14 1L7.5 7L1 1H13.5938",
+    stroke: "#3CBFEF",
+    "stroke-width": "1.5",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+  })));
 }
 
 /* harmony default export */ var animated_Chevron = (Object(external_recompose_["hoistStatics"])(Object(external_recompose_["compose"])(withStyles(Chevron_styles), external_recompose_["pure"]))(Chevron));
@@ -31219,13 +31322,13 @@ function AssetNameLink({
 
 const AssetNameLink_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   asset: function () {
-    const node = __webpack_require__(147);
+    const node = __webpack_require__(133);
 
     if (node.hash && node.hash !== "5444e77732d825ff725a0e4a80c444c2") {
       console.error("The definition of 'AssetNameLink_asset' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(147);
+    return __webpack_require__(133);
   }
 }), external_recompose_["pure"]);
 /* harmony default export */ var lib_AssetNameLink = (AssetNameLink_enhance(AssetNameLink));
@@ -31253,6 +31356,11 @@ const Pager_styles = theme => ({
   },
   error: {
     color: theme.palette.error[500]
+  },
+  loading: {
+    '& circle': {
+      color: '#001E7F !important'
+    }
   },
   margin: {
     marginRight: theme.spacing.unit * 2
@@ -31301,7 +31409,7 @@ function Pager({
   }, error) : null, isLoading ? external_react_["createElement"](CircularProgress, {
     size: 32,
     thickness: 5,
-    className: classes.margin
+    className: external_classnames_default()(classes.margin, classes.loading)
   }) : null, totalElement, external_react_["createElement"](IconButton, {
     disabled: isLoading || !hasPreviousPage,
     onClick: onDecrementPage
@@ -31588,13 +31696,13 @@ function TransactionInputOutputTable({
 
 const TransactionInputOutputTable_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   input_outputs: function () {
-    const node = __webpack_require__(148);
+    const node = __webpack_require__(134);
 
     if (node.hash && node.hash !== "0fe11ffc0199525fa0b56f21ba91937f") {
       console.error("The definition of 'TransactionInputOutputTable_input_outputs' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(148);
+    return __webpack_require__(134);
   }
 }), withStyles(TransactionInputOutputTable_styles), external_recompose_["pure"]);
 /* harmony default export */ var lib_TransactionInputOutputTable = (TransactionInputOutputTable_enhance(TransactionInputOutputTable));
@@ -31664,13 +31772,13 @@ function TransactionInputTable({
 
 const TransactionInputTable_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   inputs: function () {
-    const node = __webpack_require__(149);
+    const node = __webpack_require__(135);
 
     if (node.hash && node.hash !== "77c9a799e6e654743a799976b4ca639c") {
       console.error("The definition of 'TransactionInputTable_inputs' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(149);
+    return __webpack_require__(135);
   }
 }), withStyles(TransactionInputTable_styles), external_recompose_["pure"]);
 /* harmony default export */ var lib_TransactionInputTable = (TransactionInputTable_enhance(TransactionInputTable));
@@ -31746,13 +31854,13 @@ const TransactionClaimPagingTable_mapPropsToVariables = ({
 
 const TransactionClaimPagingTable_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   transaction: function () {
-    const node = __webpack_require__(156);
+    const node = __webpack_require__(142);
 
     if (node.hash && node.hash !== "4df5fd8ad4c4c0ca5743ff1238b554cb") {
       console.error("The definition of 'TransactionClaimPagingTable_transaction' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(156);
+    return __webpack_require__(142);
   }
 }), Object(external_recompose_["withStateHandlers"])(() => ({
   page: 1
@@ -31761,13 +31869,13 @@ const TransactionClaimPagingTable_enhance = Object(external_recompose_["compose"
     page
   })
 }), queryRenderer(function () {
-  const node = __webpack_require__(157);
+  const node = __webpack_require__(143);
 
   if (node.hash && node.hash !== "ae692659f055939aaf59816b7d68ccd6") {
     console.error("The definition of 'TransactionClaimPagingTableQuery' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
   }
 
-  return __webpack_require__(157);
+  return __webpack_require__(143);
 }, {
   mapPropsToVariables: {
     client: TransactionClaimPagingTable_mapPropsToVariables
@@ -31862,13 +31970,13 @@ function TransactionOutputTable({
 
 const TransactionOutputTable_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   outputs: function () {
-    const node = __webpack_require__(152);
+    const node = __webpack_require__(138);
 
     if (node.hash && node.hash !== "4cfd8e09640f506a827b2d643417568a") {
       console.error("The definition of 'TransactionOutputTable_outputs' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(152);
+    return __webpack_require__(138);
   }
 }), withStyles(TransactionOutputTable_styles), external_recompose_["pure"]);
 /* harmony default export */ var lib_TransactionOutputTable = (TransactionOutputTable_enhance(TransactionOutputTable));
@@ -31954,13 +32062,13 @@ const TransactionOutputPagingTable_mapPropsToVariables = ({
 
 const TransactionOutputPagingTable_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   transaction: function () {
-    const node = __webpack_require__(153);
+    const node = __webpack_require__(139);
 
     if (node.hash && node.hash !== "eba61772201449d726f3eb16f6b6a619") {
       console.error("The definition of 'TransactionOutputPagingTable_transaction' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(153);
+    return __webpack_require__(139);
   }
 }), Object(external_recompose_["withStateHandlers"])(() => ({
   page: 1
@@ -31969,13 +32077,13 @@ const TransactionOutputPagingTable_enhance = Object(external_recompose_["compose
     page
   })
 }), queryRenderer(function () {
-  const node = __webpack_require__(154);
+  const node = __webpack_require__(140);
 
   if (node.hash && node.hash !== "2805848e4f4b51f3b9d4e1ee0e9610c1") {
     console.error("The definition of 'TransactionOutputPagingTableQuery' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
   }
 
-  return __webpack_require__(154);
+  return __webpack_require__(140);
 }, {
   mapPropsToVariables: {
     client: TransactionOutputPagingTable_mapPropsToVariables
@@ -32235,13 +32343,13 @@ function TransactionClaimSummaryBody({
 
 const TransactionClaimSummaryBody_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   transaction: function () {
-    const node = __webpack_require__(158);
+    const node = __webpack_require__(144);
 
     if (node.hash && node.hash !== "c65b915902095c38085099160b24503d") {
       console.error("The definition of 'TransactionClaimSummaryBody_transaction' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(158);
+    return __webpack_require__(144);
   }
 }), external_recompose_["pure"]);
 /* harmony default export */ var summary_TransactionClaimSummaryBody = (TransactionClaimSummaryBody_enhance(TransactionClaimSummaryBody));
@@ -32329,13 +32437,13 @@ const TransactionInputPagingTable_mapPropsToVariables = ({
 
 const TransactionInputPagingTable_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   transaction: function () {
-    const node = __webpack_require__(150);
+    const node = __webpack_require__(136);
 
     if (node.hash && node.hash !== "5b1170b2a126b4a955bbb4bc01a13d1f") {
       console.error("The definition of 'TransactionInputPagingTable_transaction' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(150);
+    return __webpack_require__(136);
   }
 }), Object(external_recompose_["withStateHandlers"])(() => ({
   page: 1
@@ -32344,13 +32452,13 @@ const TransactionInputPagingTable_enhance = Object(external_recompose_["compose"
     page
   })
 }), queryRenderer(function () {
-  const node = __webpack_require__(151);
+  const node = __webpack_require__(137);
 
   if (node.hash && node.hash !== "3eb64677838705104a30aa1c4d0bc091") {
     console.error("The definition of 'TransactionInputPagingTableQuery' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
   }
 
-  return __webpack_require__(151);
+  return __webpack_require__(137);
 }, {
   mapPropsToVariables: {
     client: TransactionInputPagingTable_mapPropsToVariables
@@ -32417,13 +32525,13 @@ function TransactionEnrollmentSummaryBody({
 
 const TransactionEnrollmentSummaryBody_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   transaction: function () {
-    const node = __webpack_require__(159);
+    const node = __webpack_require__(145);
 
     if (node.hash && node.hash !== "558bcfd30dd431ca65dc96a7dc758689") {
       console.error("The definition of 'TransactionEnrollmentSummaryBody_transaction' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(159);
+    return __webpack_require__(145);
   }
 }), withStyles(TransactionEnrollmentSummaryBody_styles), external_recompose_["pure"]);
 /* harmony default export */ var summary_TransactionEnrollmentSummaryBody = (TransactionEnrollmentSummaryBody_enhance(TransactionEnrollmentSummaryBody));
@@ -32460,13 +32568,13 @@ function TransactionInputOutputSummaryBody({
 
 const TransactionInputOutputSummaryBody_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   transaction: function () {
-    const node = __webpack_require__(155);
+    const node = __webpack_require__(141);
 
     if (node.hash && node.hash !== "9be699b1d67f1531bc3c37650a8e691a") {
       console.error("The definition of 'TransactionInputOutputSummaryBody_transaction' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(155);
+    return __webpack_require__(141);
   }
 }), external_recompose_["pure"]);
 /* harmony default export */ var summary_TransactionInputOutputSummaryBody = (TransactionInputOutputSummaryBody_enhance(TransactionInputOutputSummaryBody));
@@ -32492,13 +32600,13 @@ function ContractNameLink({
 
 const ContractNameLink_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   contract: function () {
-    const node = __webpack_require__(162);
+    const node = __webpack_require__(148);
 
     if (node.hash && node.hash !== "a09ac64a1862c40345d2222171236317") {
       console.error("The definition of 'ContractNameLink_contract' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(162);
+    return __webpack_require__(148);
   }
 }), external_recompose_["pure"]);
 /* harmony default export */ var lib_ContractNameLink = (ContractNameLink_enhance(ContractNameLink));
@@ -32535,13 +32643,13 @@ function ContractPublished({
 
 const ContractPublished_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   contract: function () {
-    const node = __webpack_require__(163);
+    const node = __webpack_require__(149);
 
     if (node.hash && node.hash !== "df08967a4a1bcacf28431844879c816c") {
       console.error("The definition of 'ContractPublished_contract' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(163);
+    return __webpack_require__(149);
   }
 }), withStyles(ContractPublished_styles), external_recompose_["pure"]);
 /* harmony default export */ var lib_ContractPublished = (ContractPublished_enhance(ContractPublished));
@@ -32582,13 +32690,13 @@ function AssetRegistered({
 
 const AssetRegistered_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   asset: function () {
-    const node = __webpack_require__(160);
+    const node = __webpack_require__(146);
 
     if (node.hash && node.hash !== "aa48c64c28da38d3fcad59bb56d25c64") {
       console.error("The definition of 'AssetRegistered_asset' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(160);
+    return __webpack_require__(146);
   }
 }), withStyles(AssetRegistered_styles), external_recompose_["pure"]);
 /* harmony default export */ var lib_AssetRegistered = (AssetRegistered_enhance(AssetRegistered));
@@ -32672,13 +32780,13 @@ function TransactionInvocationSummaryBody({
 
 const TransactionInvocationSummaryBody_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   transaction: function () {
-    const node = __webpack_require__(165);
+    const node = __webpack_require__(151);
 
     if (node.hash && node.hash !== "8a9f371f7911368cc5e6019afa3b0d9c") {
       console.error("The definition of 'TransactionInvocationSummaryBody_transaction' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(165);
+    return __webpack_require__(151);
   }
 }), withStyles(TransactionInvocationSummaryBody_styles), external_recompose_["pure"]);
 /* harmony default export */ var summary_TransactionInvocationSummaryBody = (TransactionInvocationSummaryBody_enhance(TransactionInvocationSummaryBody));
@@ -32718,13 +32826,13 @@ function TransactionPublishSummaryBody({
 
 const TransactionPublishSummaryBody_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   transaction: function () {
-    const node = __webpack_require__(164);
+    const node = __webpack_require__(150);
 
     if (node.hash && node.hash !== "b51519ca376b607f2cd6012051e1023d") {
       console.error("The definition of 'TransactionPublishSummaryBody_transaction' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(164);
+    return __webpack_require__(150);
   }
 }), external_recompose_["pure"]);
 /* harmony default export */ var summary_TransactionPublishSummaryBody = (TransactionPublishSummaryBody_enhance(TransactionPublishSummaryBody));
@@ -32764,13 +32872,13 @@ function TransactionRegisterSummaryBody({
 
 const TransactionRegisterSummaryBody_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   transaction: function () {
-    const node = __webpack_require__(161);
+    const node = __webpack_require__(147);
 
     if (node.hash && node.hash !== "9d01c6a770ee91979f8ab193881a7edb") {
       console.error("The definition of 'TransactionRegisterSummaryBody_transaction' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(161);
+    return __webpack_require__(147);
   }
 }), external_recompose_["pure"]);
 /* harmony default export */ var summary_TransactionRegisterSummaryBody = (TransactionRegisterSummaryBody_enhance(TransactionRegisterSummaryBody));
@@ -32880,13 +32988,13 @@ function TransactionSummaryBody({
 
 const TransactionSummaryBody_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   transaction: function () {
-    const node = __webpack_require__(166);
+    const node = __webpack_require__(152);
 
     if (node.hash && node.hash !== "0b33975e599bd1f4d39801a32eb742a6") {
       console.error("The definition of 'TransactionSummaryBody_transaction' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(166);
+    return __webpack_require__(152);
   }
 }), withStyles(TransactionSummaryBody_styles), external_recompose_["pure"]);
 /* harmony default export */ var summary_TransactionSummaryBody = (TransactionSummaryBody_enhance(TransactionSummaryBody));
@@ -32953,13 +33061,13 @@ function TransactionSummaryFooter({
 
 const TransactionSummaryFooter_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   transaction: function () {
-    const node = __webpack_require__(167);
+    const node = __webpack_require__(153);
 
     if (node.hash && node.hash !== "5f9b9145461883eafbb8b380b7ef3d40") {
       console.error("The definition of 'TransactionSummaryFooter_transaction' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(167);
+    return __webpack_require__(153);
   }
 }), withStyles(TransactionSummaryFooter_styles), external_recompose_["pure"]);
 /* harmony default export */ var summary_TransactionSummaryFooter = (TransactionSummaryFooter_enhance(TransactionSummaryFooter));
@@ -33045,13 +33153,13 @@ const TransactionSummaryBodyFooter_mapPropsToVariables = ({
 });
 
 const TransactionSummaryBodyFooter_enhance = Object(external_recompose_["compose"])(queryRenderer(function () {
-  const node = __webpack_require__(168);
+  const node = __webpack_require__(154);
 
   if (node.hash && node.hash !== "5e11168484db2040d88f15e42103bcc6") {
     console.error("The definition of 'TransactionSummaryBodyFooterQuery' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
   }
 
-  return __webpack_require__(168);
+  return __webpack_require__(154);
 }, {
   mapPropsToVariables: {
     client: TransactionSummaryBodyFooter_mapPropsToVariables
@@ -33240,13 +33348,13 @@ function TransactionHeaderBackground({
 
 const TransactionHeaderBackground_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   transaction: function () {
-    const node = __webpack_require__(144);
+    const node = __webpack_require__(130);
 
     if (node.hash && node.hash !== "326fb3e339b14cad16630d57a0a4ef07") {
       console.error("The definition of 'TransactionHeaderBackground_transaction' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(144);
+    return __webpack_require__(130);
   }
 }), withStyles(TransactionHeaderBackground_styles), external_recompose_["pure"]);
 /* harmony default export */ var lib_TransactionHeaderBackground = (TransactionHeaderBackground_enhance(TransactionHeaderBackground));
@@ -33323,10 +33431,16 @@ const TransactionTypeAndLink_styles = theme => ({
   title: {
     maxWidth: '76.63px',
     width: '76.63px',
-    minWidth: '76.63px'
+    minWidth: '76.63px',
+    fontSize: '0.875rem',
+    color: '#000',
+    fontWeight: '500'
   },
   margin: {
     marginRight: theme.spacing.unit
+  },
+  svg: {
+    minWidth: 14
   }
 });
 
@@ -33343,9 +33457,34 @@ function TransactionTypeAndLink({
   const title = getTitle(transaction.type);
   return external_react_["createElement"]("div", {
     className: external_classnames_default()(classes.root, className)
-  }, external_react_["createElement"](base_Icon, {
-    className: classes.margin
-  }, icon), external_react_["createElement"](Typography, {
+  }, external_react_["createElement"]("svg", {
+    className: external_classnames_default()(classes.margin, classes.svg),
+    width: "14",
+    height: "18",
+    viewBox: "0 0 14 18",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, external_react_["createElement"]("path", {
+    d: "M5.81018 14.6762C5.62504 14.765 5.41733 14.821 5.20058 14.821C4.40582 14.821 3.76008 14.1531 3.76008 13.3311C3.76008 12.5092 4.40582 11.8413 5.20058 11.8413C5.52571 11.8413 5.81924 11.9534 6.05857 12.1402L6.74945 11.5517C6.33852 11.1688 5.79665 10.9259 5.20058 10.9259C3.91813 10.9259 2.87952 12.0001 2.87952 13.3265C2.87952 14.6529 3.91813 15.7271 5.20058 15.7271C5.61602 15.7271 5.99986 15.6056 6.33854 15.4095L5.81018 14.6762Z",
+    fill: "#3CBFEF"
+  }), external_react_["createElement"]("path", {
+    d: "M7.05198 11.9057L6.37316 12.4846C6.53155 12.7246 6.62206 13.0165 6.62206 13.3271C6.62206 13.7507 6.45463 14.1272 6.18311 14.4002L6.70351 15.1391C7.18773 14.6967 7.50452 14.0519 7.50452 13.3271C7.50452 12.7952 7.33255 12.3058 7.05198 11.9057Z",
+    fill: "#3CBFEF"
+  }), external_react_["createElement"]("path", {
+    d: "M2.87499 4.37501H11V3.50001H2.87499V4.37501Z",
+    fill: "#3CBFEF"
+  }), external_react_["createElement"]("path", {
+    d: "M11 6.87499H2.87499V5.99999H11V6.87499Z",
+    fill: "#3CBFEF"
+  }), external_react_["createElement"]("path", {
+    d: "M2.87499 9.375H11V8.5H2.87499V9.375Z",
+    fill: "#3CBFEF"
+  }), external_react_["createElement"]("path", {
+    "fill-rule": "evenodd",
+    "clip-rule": "evenodd",
+    d: "M13.875 12.8692L13.8692 12.875H13.875L8.75 18V17.9942L8.74416 18H2.7546C1.23327 18 0 16.7637 0 15.2386V2.76136C0 1.23631 1.23327 0 2.7546 0H11.1204C12.6417 0 13.875 1.2363 13.875 2.76136V12.8692ZM2.7546 1.28864H11.1204C11.9318 1.28864 12.5895 1.948 12.5895 2.76136V12.875H11.8665C10.1453 12.875 8.75 14.2737 8.75 15.9992V16.7114H2.7546C1.94322 16.7114 1.28548 16.052 1.28548 15.2386V2.76136C1.28548 1.948 1.94322 1.28864 2.7546 1.28864Z",
+    fill: "#3CBFEF"
+  })), external_react_["createElement"](Typography, {
     className: external_classnames_default()(classes.title, classes.margin),
     component: titleComponent,
     variant: titleVariant || 'subheading'
@@ -33359,13 +33498,13 @@ function TransactionTypeAndLink({
 
 const TransactionTypeAndLink_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   transaction: function () {
-    const node = __webpack_require__(145);
+    const node = __webpack_require__(131);
 
     if (node.hash && node.hash !== "97c14a8c89b675143ae5191806361821") {
       console.error("The definition of 'TransactionTypeAndLink_transaction' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(145);
+    return __webpack_require__(131);
   }
 }), withStyles(TransactionTypeAndLink_styles), external_recompose_["pure"]);
 /* harmony default export */ var lib_TransactionTypeAndLink = (TransactionTypeAndLink_enhance(TransactionTypeAndLink));
@@ -33395,11 +33534,12 @@ const TransactionSummaryHeader_styles = theme => ({
   },
   root: {
     alignItems: 'center',
-    borderBottom: `1px solid ${theme.custom.lightDivider}`,
+    // borderBottom: `1px solid ${theme.custom.lightDivider}`,
     display: 'flex',
     justifyContent: 'space-between',
-    paddingBottom: theme.spacing.unit,
-    paddingTop: theme.spacing.unit
+    paddingBottom: 11,
+    paddingTop: 11,
+    borderLeft: 'none'
   },
   leftHeader: {
     flex: '1 100 auto',
@@ -33411,7 +33551,8 @@ const TransactionSummaryHeader_styles = theme => ({
     display: 'flex',
     flex: '1 1 208px',
     justifyContent: 'flex-end',
-    minWidth: '0'
+    minWidth: '0',
+    maxWidth: 200
   },
   // TODO: Keep in sync with ExpandoCard and/or extract out
   chevronButton: {
@@ -33422,7 +33563,7 @@ const TransactionSummaryHeader_styles = theme => ({
     marginTop: -theme.spacing.unit
   },
   blockTime: {
-    marginRight: theme.spacing.unit
+    marginRight: 'auto'
   }
 });
 
@@ -33465,13 +33606,13 @@ function TransactionSummaryHeader({
 
 const TransactionSummaryHeader_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   transaction: function () {
-    const node = __webpack_require__(146);
+    const node = __webpack_require__(132);
 
     if (node.hash && node.hash !== "813c539ce522231abe530c052c5cd8ca") {
       console.error("The definition of 'TransactionSummaryHeader_transaction' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(146);
+    return __webpack_require__(132);
   }
 }), withStyles(TransactionSummaryHeader_styles), external_recompose_["pure"]);
 /* harmony default export */ var summary_TransactionSummaryHeader = (TransactionSummaryHeader_enhance(TransactionSummaryHeader));
@@ -33515,13 +33656,13 @@ function TransactionSummary({
 
 const TransactionSummary_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   transaction: function () {
-    const node = __webpack_require__(169);
+    const node = __webpack_require__(155);
 
     if (node.hash && node.hash !== "2181b2932df1a1aa8462c2e0cda103d4") {
       console.error("The definition of 'TransactionSummary_transaction' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(169);
+    return __webpack_require__(155);
   }
 }), Object(external_recompose_["withStateHandlers"])(({
   initialShowBody
@@ -33556,7 +33697,7 @@ function TransactionTable({
   className
 }) {
   return external_react_["createElement"]("div", {
-    className: `${className} home-table`
+    className: className
   }, transactions.map(transaction => external_react_["createElement"](summary_TransactionSummary, {
     key: getID_getID(transaction.id),
     transaction: transaction,
@@ -33567,13 +33708,13 @@ function TransactionTable({
 
 const TransactionTable_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   transactions: function () {
-    const node = __webpack_require__(170);
+    const node = __webpack_require__(156);
 
     if (node.hash && node.hash !== "3480e90d25a902ba3bea06d783e3c885") {
       console.error("The definition of 'TransactionTable_transactions' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(170);
+    return __webpack_require__(156);
   }
 }), external_recompose_["pure"]);
 /* harmony default export */ var transaction_TransactionTable = (TransactionTable_enhance(TransactionTable));
@@ -33618,13 +33759,13 @@ function TransactionPagingView({
 
 const TransactionPagingView_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   transactions: function () {
-    const node = __webpack_require__(177);
+    const node = __webpack_require__(163);
 
     if (node.hash && node.hash !== "540a4ffa16dde8ff7ecb57c01c8e19c8") {
       console.error("The definition of 'TransactionPagingView_transactions' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(177);
+    return __webpack_require__(163);
   }
 }), external_recompose_["pure"]);
 /* harmony default export */ var transaction_TransactionPagingView = (TransactionPagingView_enhance(TransactionPagingView));
@@ -33693,13 +33834,13 @@ const AddressTransactionPagingView_mapPropsToVariables = ({
 
 const AddressTransactionPagingView_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   address: function () {
-    const node = __webpack_require__(178);
+    const node = __webpack_require__(164);
 
     if (node.hash && node.hash !== "68d556b946f7a81a2f8f6ef8865349be") {
       console.error("The definition of 'AddressTransactionPagingView_address' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(178);
+    return __webpack_require__(164);
   }
 }), Object(external_recompose_["withStateHandlers"])(() => ({
   page: 1
@@ -33708,13 +33849,13 @@ const AddressTransactionPagingView_enhance = Object(external_recompose_["compose
     page
   })
 }), queryRenderer(function () {
-  const node = __webpack_require__(179);
+  const node = __webpack_require__(165);
 
   if (node.hash && node.hash !== "4a91dd5c45d7bd840e46b623076a7b27") {
     console.error("The definition of 'AddressTransactionPagingViewQuery' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
   }
 
-  return __webpack_require__(179);
+  return __webpack_require__(165);
 }, {
   mapPropsToVariables: {
     client: AddressTransactionPagingView_mapPropsToVariables
@@ -33767,13 +33908,13 @@ function TransferLink({
 
 const TransferLink_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   transfer: function () {
-    const node = __webpack_require__(180);
+    const node = __webpack_require__(166);
 
     if (node.hash && node.hash !== "c6c6f9d7c178facb3cbafc26eb840530") {
       console.error("The definition of 'TransferLink_transfer' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(180);
+    return __webpack_require__(166);
   }
 }), external_recompose_["pure"]);
 /* harmony default export */ var lib_TransferLink = (TransferLink_enhance(TransferLink));
@@ -33819,12 +33960,9 @@ const Column_styles = theme => ({
   baseRow: {
     display: 'flex',
     alignItems: 'center',
-    // borderBottom: `1px solid ${theme.custom.lightDivider}`,
-    // minHeight: 48,
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    // backgroundColor: 'rgba(7, 134, 213, 0.46)',
     height: 58
   },
   row: {
@@ -33836,9 +33974,12 @@ const Column_styles = theme => ({
   header: {
     fontFamily: theme.typography.fontFamily,
     fontSize: 14,
-    fontWeight: theme.typography.fontWeightMedium // color: '#fff',
-    // backgroundColor: 'rgba(7, 134, 213, 0.46)',
-
+    color: '#fff',
+    fontWeight: theme.typography.fontWeightMedium
+  },
+  headerWrap: {
+    height: 32,
+    backgroundColor: 'rgba(7, 134, 213, 0.46)'
   },
   textRowBase: {
     whiteSpace: 'nowrap',
@@ -33848,11 +33989,23 @@ const Column_styles = theme => ({
   oddRow: {
     backgroundColor: 'rgba(7, 134, 213, 0.07)'
   },
-  numeric: {// justifyContent: 'flex-end',
-    // textAlign: 'right',
-  },
+  numeric: {},
   paddingLeft: {},
-  firstCol: {}
+  firstCol: {
+    '&:not(:first-child) p:before': {
+      display: 'inline-block',
+      content: '""',
+      backgroundImage: 'url(/public/icon-block.svg)',
+      width: 13,
+      height: 13,
+      verticalAlign: 'middle',
+      marginRight: 8,
+      marginTop: -2
+    }
+  },
+  firstColHeader: {
+    paddingLeft: 21
+  }
 });
 
 function Column({
@@ -33909,9 +34062,9 @@ function Column({
       [classes.firstCol]: firstCol,
       [classes.baseRow]: true,
       [classes.numeric]: !!numeric
-    })
+    }, classes.headerWrap)
   }, external_react_["createElement"](Typography, {
-    className: external_classnames_default()(classes.textRowBase, classes.header),
+    className: external_classnames_default()(classes.textRowBase, classes.header, firstCol ? classes.firstColHeader : null),
     variant: "body1"
   }, name)), cells); // flowlint-next-line sketchy-null-string:off
 
@@ -33965,10 +34118,10 @@ function Table({
   classes
 }) {
   return external_react_["createElement"]("div", {
-    className: `${external_classnames_default()(className, classes.root)} home-table`
+    className: external_classnames_default()(className, classes.root)
   }, columns.map((col, idx) => external_react_["createElement"](table_Column, {
     key: col.name,
-    className: `${col.className} home-table-column`,
+    className: col.className,
     name: col.name,
     values: col.values,
     numeric: col.numeric,
@@ -34074,13 +34227,13 @@ function TransferTable({
 
 const TransferTable_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   transfers: function () {
-    const node = __webpack_require__(181);
+    const node = __webpack_require__(167);
 
     if (node.hash && node.hash !== "b2ee8cf22e56817d6c66c4f23d20b32c") {
       console.error("The definition of 'TransferTable_transfers' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(181);
+    return __webpack_require__(167);
   }
 }), withStyles(TransferTable_styles), external_recompose_["pure"]);
 /* harmony default export */ var transfer_TransferTable = (TransferTable_enhance(TransferTable));
@@ -34125,13 +34278,13 @@ function TransferPagingView({
 
 const TransferPagingView_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   transfers: function () {
-    const node = __webpack_require__(182);
+    const node = __webpack_require__(168);
 
     if (node.hash && node.hash !== "1625b7afad7dee8b0b0978c55b40b618") {
       console.error("The definition of 'TransferPagingView_transfers' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(182);
+    return __webpack_require__(168);
   }
 }), external_recompose_["pure"]);
 /* harmony default export */ var transfer_TransferPagingView = (TransferPagingView_enhance(TransferPagingView));
@@ -34200,13 +34353,13 @@ const AddressTransferPagingView_mapPropsToVariables = ({
 
 const AddressTransferPagingView_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   address: function () {
-    const node = __webpack_require__(183);
+    const node = __webpack_require__(169);
 
     if (node.hash && node.hash !== "62d33f2b6b8e38668f33e175d07304d9") {
       console.error("The definition of 'AddressTransferPagingView_address' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(183);
+    return __webpack_require__(169);
   }
 }), Object(external_recompose_["withStateHandlers"])(() => ({
   page: 1
@@ -34215,13 +34368,13 @@ const AddressTransferPagingView_enhance = Object(external_recompose_["compose"])
     page
   })
 }), queryRenderer(function () {
-  const node = __webpack_require__(184);
+  const node = __webpack_require__(170);
 
   if (node.hash && node.hash !== "effcce37157ad1a5d4121bb9cd669d91") {
     console.error("The definition of 'AddressTransferPagingViewQuery' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
   }
 
-  return __webpack_require__(184);
+  return __webpack_require__(170);
 }, {
   mapPropsToVariables: {
     client: AddressTransferPagingView_mapPropsToVariables
@@ -34285,13 +34438,13 @@ function AddressViewExtra({
 
 const AddressViewExtra_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   address: function () {
-    const node = __webpack_require__(185);
+    const node = __webpack_require__(171);
 
     if (node.hash && node.hash !== "01c13c763ebbd21178e4f24a4b031de6") {
       console.error("The definition of 'AddressViewExtra_address' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(185);
+    return __webpack_require__(171);
   }
 }), withStyles(AddressViewExtra_styles), external_recompose_["pure"]);
 /* harmony default export */ var address_AddressViewExtra = (AddressViewExtra_enhance(AddressViewExtra));
@@ -34370,13 +34523,13 @@ function AddressView({
 
 const AddressView_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   address: function () {
-    const node = __webpack_require__(186);
+    const node = __webpack_require__(172);
 
     if (node.hash && node.hash !== "e1baa2863d319f3e8e39d4b4cbb7cc2d") {
       console.error("The definition of 'AddressView_address' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(186);
+    return __webpack_require__(172);
   }
 }), withStyles(AddressView_styles), external_recompose_["pure"]);
 /* harmony default export */ var address_AddressView = (AddressView_enhance(AddressView));
@@ -34483,13 +34636,13 @@ const Address_mapPropsToVariables = ({
 });
 
 /* harmony default export */ var pages_Address = (queryRenderer(function () {
-  const node = __webpack_require__(187);
+  const node = __webpack_require__(173);
 
   if (node.hash && node.hash !== "51c3731b6bd28ae1927cbd3bb77c025b") {
     console.error("The definition of 'AddressQuery' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
   }
 
-  return __webpack_require__(187);
+  return __webpack_require__(173);
 }, {
   mapPropsToVariables: {
     client: Address_mapPropsToVariables,
@@ -34565,13 +34718,13 @@ function AddressTable({
 
 const AddressTable_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   addresses: function () {
-    const node = __webpack_require__(173);
+    const node = __webpack_require__(159);
 
     if (node.hash && node.hash !== "77ee13850d14636c20560d3877ec6d17") {
       console.error("The definition of 'AddressTable_addresses' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(173);
+    return __webpack_require__(159);
   }
 }), external_recompose_["pure"]);
 /* harmony default export */ var address_AddressTable = (AddressTable_enhance(AddressTable));
@@ -34618,13 +34771,13 @@ function AddressPagingView({
 
 const AddressPagingView_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   addresses: function () {
-    const node = __webpack_require__(174);
+    const node = __webpack_require__(160);
 
     if (node.hash && node.hash !== "85443bcedd4e9fe8aa5f69f59e98a3ee") {
       console.error("The definition of 'AddressPagingView_addresses' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(174);
+    return __webpack_require__(160);
   }
 }), external_recompose_["pure"]);
 /* harmony default export */ var address_AddressPagingView = (AddressPagingView_enhance(AddressPagingView));
@@ -34684,21 +34837,22 @@ const CommonHeader_styles = theme => ({
     marginRight: theme.spacing.unit
   },
   text: {
-    color: theme.custom.colors.common.white
+    color: '#001E7F'
   },
   link: {
-    color: theme.custom.colors.common.white,
+    color: '#001E7F',
     textDecoration: 'underline',
     '&:hover': {
-      color: theme.custom.colors.common.darkWhite
+      opacity: 0.8
     }
   },
   linkSelected: {
-    color: theme.custom.colors.common.darkWhite,
+    color: '#001E7F',
+    opacity: 0.8,
     textDecoration: 'underline'
   },
   backgroundColor: {
-    backgroundColor: theme.palette.primary[500]
+    backgroundColor: 'rgba(255, 255, 255, 0.85)'
   }
 });
 
@@ -34786,7 +34940,9 @@ function SearchView({
 }) {
   return external_react_["createElement"](layout_CenteredView, {
     className: className
-  }, external_react_["createElement"](Card, null, external_react_["createElement"](view_CommonHeader, {
+  }, external_react_["createElement"](Card, {
+    className: "transaction-page-table"
+  }, external_react_["createElement"](view_CommonHeader, {
     name: name,
     pluralName: pluralName
   }), content));
@@ -34898,13 +35054,13 @@ function AddressSearch({
 }
 
 /* harmony default export */ var pages_AddressSearch = (queryRenderer(function () {
-  const node = __webpack_require__(175);
+  const node = __webpack_require__(161);
 
   if (node.hash && node.hash !== "f393a032080f1d13e44a484710244ff9") {
     console.error("The definition of 'AddressSearchQuery' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
   }
 
-  return __webpack_require__(175);
+  return __webpack_require__(161);
 }, {
   mapPropsToVariables: {
     client: commonSearch_mapPropsToVariables(commonSearch_PAGE_SIZE),
@@ -34988,13 +35144,13 @@ const AssetAddressPagingView_mapPropsToVariables = ({
 
 const AssetAddressPagingView_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   asset: function () {
-    const node = __webpack_require__(191);
+    const node = __webpack_require__(177);
 
     if (node.hash && node.hash !== "c555b39b11659e816a0549cae4e0fb52") {
       console.error("The definition of 'AssetAddressPagingView_asset' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(191);
+    return __webpack_require__(177);
   }
 }), Object(external_recompose_["withStateHandlers"])(() => ({
   page: 1
@@ -35003,13 +35159,13 @@ const AssetAddressPagingView_enhance = Object(external_recompose_["compose"])(re
     page
   })
 }), queryRenderer(function () {
-  const node = __webpack_require__(192);
+  const node = __webpack_require__(178);
 
   if (node.hash && node.hash !== "b2a4ce85cf41d3041da37a0910bb16e7") {
     console.error("The definition of 'AssetAddressPagingViewQuery' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
   }
 
-  return __webpack_require__(192);
+  return __webpack_require__(178);
 }, {
   mapPropsToVariables: {
     client: AssetAddressPagingView_mapPropsToVariables
@@ -35079,13 +35235,13 @@ const AssetTransactionPagingView_mapPropsToVariables = ({
 
 const AssetTransactionPagingView_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   asset: function () {
-    const node = __webpack_require__(193);
+    const node = __webpack_require__(179);
 
     if (node.hash && node.hash !== "98290771581249e8e5e32fcefd92a4a1") {
       console.error("The definition of 'AssetTransactionPagingView_asset' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(193);
+    return __webpack_require__(179);
   }
 }), Object(external_recompose_["withStateHandlers"])(() => ({
   page: 1
@@ -35094,13 +35250,13 @@ const AssetTransactionPagingView_enhance = Object(external_recompose_["compose"]
     page
   })
 }), queryRenderer(function () {
-  const node = __webpack_require__(194);
+  const node = __webpack_require__(180);
 
   if (node.hash && node.hash !== "bd69ebc207cd3673b421e0c694e60d9f") {
     console.error("The definition of 'AssetTransactionPagingViewQuery' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
   }
 
-  return __webpack_require__(194);
+  return __webpack_require__(180);
 }, {
   mapPropsToVariables: {
     client: AssetTransactionPagingView_mapPropsToVariables
@@ -35170,13 +35326,13 @@ const AssetTransferPagingView_mapPropsToVariables = ({
 
 const AssetTransferPagingView_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   asset: function () {
-    const node = __webpack_require__(195);
+    const node = __webpack_require__(181);
 
     if (node.hash && node.hash !== "2543daa0b6f60fe74c0de677ac0280c1") {
       console.error("The definition of 'AssetTransferPagingView_asset' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(195);
+    return __webpack_require__(181);
   }
 }), Object(external_recompose_["withStateHandlers"])(() => ({
   page: 1
@@ -35185,13 +35341,13 @@ const AssetTransferPagingView_enhance = Object(external_recompose_["compose"])(r
     page
   })
 }), queryRenderer(function () {
-  const node = __webpack_require__(196);
+  const node = __webpack_require__(182);
 
   if (node.hash && node.hash !== "950fd2e7c5dbf9d70d6d57ad308a8d5f") {
     console.error("The definition of 'AssetTransferPagingViewQuery' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
   }
 
-  return __webpack_require__(196);
+  return __webpack_require__(182);
 }, {
   mapPropsToVariables: {
     client: AssetTransferPagingView_mapPropsToVariables
@@ -35260,13 +35416,13 @@ function AssetViewExtra({
 
 const AssetViewExtra_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   asset: function () {
-    const node = __webpack_require__(197);
+    const node = __webpack_require__(183);
 
     if (node.hash && node.hash !== "d428eaae6588d99708739ab463f7948e") {
       console.error("The definition of 'AssetViewExtra_asset' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(197);
+    return __webpack_require__(183);
   }
 }), withStyles(AssetViewExtra_styles), external_recompose_["pure"]);
 /* harmony default export */ var asset_AssetViewExtra = (AssetViewExtra_enhance(AssetViewExtra));
@@ -35317,13 +35473,13 @@ function AssetView({
 
 const AssetView_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   asset: function () {
-    const node = __webpack_require__(198);
+    const node = __webpack_require__(184);
 
     if (node.hash && node.hash !== "d443fd0ab5f6cf93050eaaadbf27d489") {
       console.error("The definition of 'AssetView_asset' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(198);
+    return __webpack_require__(184);
   }
 }), external_recompose_["pure"]);
 /* harmony default export */ var asset_AssetView = (AssetView_enhance(AssetView));
@@ -35376,13 +35532,13 @@ const Asset_mapPropsToVariables = ({
 });
 
 /* harmony default export */ var pages_Asset = (queryRenderer(function () {
-  const node = __webpack_require__(199);
+  const node = __webpack_require__(185);
 
   if (node.hash && node.hash !== "34d2ec6a309946235e640aa255f6323b") {
     console.error("The definition of 'AssetQuery' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
   }
 
-  return __webpack_require__(199);
+  return __webpack_require__(185);
 }, {
   mapPropsToVariables: {
     client: Asset_mapPropsToVariables,
@@ -35470,13 +35626,13 @@ function AssetTable({
 
 const AssetTable_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   assets: function () {
-    const node = __webpack_require__(188);
+    const node = __webpack_require__(174);
 
     if (node.hash && node.hash !== "b235794ee6547d1973c7309861ef7bbf") {
       console.error("The definition of 'AssetTable_assets' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(188);
+    return __webpack_require__(174);
   }
 }), external_recompose_["pure"]);
 /* harmony default export */ var asset_AssetTable = (AssetTable_enhance(AssetTable));
@@ -35519,13 +35675,13 @@ function AssetPagingView({
 
 const AssetPagingView_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   assets: function () {
-    const node = __webpack_require__(189);
+    const node = __webpack_require__(175);
 
     if (node.hash && node.hash !== "e6eb9e2ca8fb1d990c6fc3868d6d3819") {
       console.error("The definition of 'AssetPagingView_assets' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(189);
+    return __webpack_require__(175);
   }
 }), external_recompose_["pure"]);
 /* harmony default export */ var asset_AssetPagingView = (AssetPagingView_enhance(AssetPagingView));
@@ -35597,13 +35753,13 @@ function AssetSearch({
 }
 
 /* harmony default export */ var pages_AssetSearch = (queryRenderer(function () {
-  const node = __webpack_require__(190);
+  const node = __webpack_require__(176);
 
   if (node.hash && node.hash !== "3ecfd4b96256e4f43f120ae4d2fac0ae") {
     console.error("The definition of 'AssetSearchQuery' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
   }
 
-  return __webpack_require__(190);
+  return __webpack_require__(176);
 }, {
   mapPropsToVariables: {
     client: commonSearch_mapPropsToVariables(commonSearch_PAGE_SIZE),
@@ -35638,7 +35794,7 @@ function BlockHashLink({
 const BlockHashLink_enhance = Object(external_recompose_["compose"])(external_recompose_["pure"]);
 /* harmony default export */ var lib_BlockHashLink = (BlockHashLink_enhance(BlockHashLink));
 // EXTERNAL MODULE: external "@neo-one/client-core"
-var client_core_ = __webpack_require__(94);
+var client_core_ = __webpack_require__(87);
 
 // CONCATENATED MODULE: ./packages/neotracker-shared-web/src/components/explorer/script/Script.js
 /* eslint-disable */
@@ -35855,13 +36011,13 @@ const BlockTransactionPagingView_mapPropsToVariables = ({
 
 const BlockTransactionPagingView_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   block: function () {
-    const node = __webpack_require__(202);
+    const node = __webpack_require__(188);
 
     if (node.hash && node.hash !== "ed887ca91cf4a69f6ceac3fea21c1903") {
       console.error("The definition of 'BlockTransactionPagingView_block' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(202);
+    return __webpack_require__(188);
   }
 }), Object(external_recompose_["withStateHandlers"])(() => ({
   page: 1
@@ -35870,13 +36026,13 @@ const BlockTransactionPagingView_enhance = Object(external_recompose_["compose"]
     page
   })
 }), queryRenderer(function () {
-  const node = __webpack_require__(203);
+  const node = __webpack_require__(189);
 
   if (node.hash && node.hash !== "f99bc674b14c73bce54abcd354dfddec") {
     console.error("The definition of 'BlockTransactionPagingViewQuery' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
   }
 
-  return __webpack_require__(203);
+  return __webpack_require__(189);
 }, {
   mapPropsToVariables: {
     client: BlockTransactionPagingView_mapPropsToVariables
@@ -35944,13 +36100,13 @@ function BlockViewExtra({
 
 const BlockViewExtra_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   block: function () {
-    const node = __webpack_require__(204);
+    const node = __webpack_require__(190);
 
     if (node.hash && node.hash !== "3f2bb3e8a16d7e3a6460d5c9c37bffdd") {
       console.error("The definition of 'BlockViewExtra_block' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(204);
+    return __webpack_require__(190);
   }
 }), withStyles(BlockViewExtra_styles), external_recompose_["pure"]);
 /* harmony default export */ var block_BlockViewExtra = (BlockViewExtra_enhance(BlockViewExtra));
@@ -36010,13 +36166,13 @@ function BlockView({
 
 const BlockView_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   block: function () {
-    const node = __webpack_require__(205);
+    const node = __webpack_require__(191);
 
     if (node.hash && node.hash !== "952cf7784552d0246a6908510315ff36") {
       console.error("The definition of 'BlockView_block' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(205);
+    return __webpack_require__(191);
   }
 }), external_recompose_["pure"]);
 /* harmony default export */ var block_BlockView = (BlockView_enhance(BlockView));
@@ -36068,13 +36224,13 @@ const Block_mapPropsToVariables = ({
 });
 
 /* harmony default export */ var pages_Block = (queryRenderer(function () {
-  const node = __webpack_require__(206);
+  const node = __webpack_require__(192);
 
   if (node.hash && node.hash !== "5ee7a69c4768655426b47561cad77bba") {
     console.error("The definition of 'BlockQuery' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
   }
 
-  return __webpack_require__(206);
+  return __webpack_require__(192);
 }, {
   mapPropsToVariables: {
     client: Block_mapPropsToVariables,
@@ -36115,7 +36271,8 @@ const BlockIndexLink_enhance = Object(external_recompose_["compose"])(external_r
 
 const BlockTable_styles = () => ({
   transactionsCol: {
-    flex: '1 100 auto'
+    flex: '1 100 auto',
+    maxWidth: 80
   },
   validatorCol: {
     flex: '1 100 auto'
@@ -36178,13 +36335,13 @@ function BlockTable({
 
 const BlockTable_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   blocks: function () {
-    const node = __webpack_require__(143);
+    const node = __webpack_require__(129);
 
     if (node.hash && node.hash !== "fd69e0df7270a37b71222ff2d6a3011f") {
       console.error("The definition of 'BlockTable_blocks' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(143);
+    return __webpack_require__(129);
   }
 }), withStyles(BlockTable_styles), external_recompose_["pure"]);
 /* harmony default export */ var block_BlockTable = (BlockTable_enhance(BlockTable));
@@ -36229,13 +36386,13 @@ function BlockPagingView({
 
 const BlockPagingView_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   blocks: function () {
-    const node = __webpack_require__(200);
+    const node = __webpack_require__(186);
 
     if (node.hash && node.hash !== "6f1fdd679d5091689aa26209e3830778") {
       console.error("The definition of 'BlockPagingView_blocks' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(200);
+    return __webpack_require__(186);
   }
 }), external_recompose_["pure"]);
 /* harmony default export */ var block_BlockPagingView = (BlockPagingView_enhance(BlockPagingView));
@@ -36307,13 +36464,13 @@ function BlockSearch({
 }
 
 /* harmony default export */ var pages_BlockSearch = (queryRenderer(function () {
-  const node = __webpack_require__(201);
+  const node = __webpack_require__(187);
 
   if (node.hash && node.hash !== "6688219afee81069bf3d564ccafc8307") {
     console.error("The definition of 'BlockSearchQuery' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
   }
 
-  return __webpack_require__(201);
+  return __webpack_require__(187);
 }, {
   mapPropsToVariables: {
     client: commonSearch_mapPropsToVariables(commonSearch_PAGE_SIZE),
@@ -36379,13 +36536,13 @@ function ContractViewExtra({
 
 const ContractViewExtra_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   contract: function () {
-    const node = __webpack_require__(210);
+    const node = __webpack_require__(196);
 
     if (node.hash && node.hash !== "6cadf5222dc2039b1b562e0ca765134d") {
       console.error("The definition of 'ContractViewExtra_contract' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(210);
+    return __webpack_require__(196);
   }
 }), withStyles(ContractViewExtra_styles), external_recompose_["pure"]);
 /* harmony default export */ var contract_ContractViewExtra = (ContractViewExtra_enhance(ContractViewExtra));
@@ -36419,13 +36576,13 @@ function ContractView({
 
 const ContractView_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   contract: function () {
-    const node = __webpack_require__(211);
+    const node = __webpack_require__(197);
 
     if (node.hash && node.hash !== "e5664fffbe8b65537b47a17720cd5f6c") {
       console.error("The definition of 'ContractView_contract' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(211);
+    return __webpack_require__(197);
   }
 }), external_recompose_["pure"]);
 /* harmony default export */ var contract_ContractView = (ContractView_enhance(ContractView));
@@ -36476,13 +36633,13 @@ const Contract_mapPropsToVariables = ({
 });
 
 /* harmony default export */ var pages_Contract = (queryRenderer(function () {
-  const node = __webpack_require__(212);
+  const node = __webpack_require__(198);
 
   if (node.hash && node.hash !== "8c98408ee303d4da40179a46eb1378b9") {
     console.error("The definition of 'ContractQuery' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
   }
 
-  return __webpack_require__(212);
+  return __webpack_require__(198);
 }, {
   mapPropsToVariables: {
     client: Contract_mapPropsToVariables,
@@ -36586,13 +36743,13 @@ function ContractTable({
 
 const ContractTable_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   contracts: function () {
-    const node = __webpack_require__(207);
+    const node = __webpack_require__(193);
 
     if (node.hash && node.hash !== "4a5e77019882be5072e6ecde2bc51400") {
       console.error("The definition of 'ContractTable_contracts' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(207);
+    return __webpack_require__(193);
   }
 }), withStyles(ContractTable_styles), external_recompose_["pure"]);
 /* harmony default export */ var contract_ContractTable = (ContractTable_enhance(ContractTable));
@@ -36635,13 +36792,13 @@ function ContractPagingView({
 
 const ContractPagingView_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   contracts: function () {
-    const node = __webpack_require__(208);
+    const node = __webpack_require__(194);
 
     if (node.hash && node.hash !== "2e2e5672ab90a007f96ce7d7c540eeb1") {
       console.error("The definition of 'ContractPagingView_contracts' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(208);
+    return __webpack_require__(194);
   }
 }), external_recompose_["pure"]);
 /* harmony default export */ var contract_ContractPagingView = (ContractPagingView_enhance(ContractPagingView));
@@ -36713,13 +36870,13 @@ function ContractSearch({
 }
 
 /* harmony default export */ var pages_ContractSearch = (queryRenderer(function () {
-  const node = __webpack_require__(209);
+  const node = __webpack_require__(195);
 
   if (node.hash && node.hash !== "49137734fa329ca563e9d6e498bfd773") {
     console.error("The definition of 'ContractSearchQuery' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
   }
 
-  return __webpack_require__(209);
+  return __webpack_require__(195);
 }, {
   mapPropsToVariables: {
     client: commonSearch_mapPropsToVariables(commonSearch_PAGE_SIZE),
@@ -36891,7 +37048,8 @@ const Home_styles = theme => ({
   card: {
     display: 'flex',
     flexDirection: 'column',
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
+    borderRadius: 0
   },
   cardHeader: {
     alignItems: 'center',
@@ -36913,14 +37071,31 @@ const Home_styles = theme => ({
     marginTop: -8,
     paddingBottom: 0,
     paddingTop: 0,
-    backgroundColor: '#FFD401',
+    backgroundColor: '#FFD401 !important',
     borderRadius: 20,
     border: '1px solid #fff',
-    width: 104
+    width: 104,
+    transition: 'opacity 0.2s ease-out',
+    '&:hover': {
+      opacity: 0.8
+    }
   },
   viewMoreText: {
     color: '#001E7F',
-    fontWeight: '500'
+    fontWeight: '500',
+    marginBottom: -3
+  },
+  typography: {
+    color: '#001E7F',
+    fontSize: '1.25rem'
+  },
+  tableContentBlock: {
+    backgroundColor: '#fff'
+  },
+  tableContentBlockTransactions: {
+    '& > *:nth-child(even)': {
+      backgroundColor: 'rgba(7, 134, 213, 0.07)'
+    }
   }
 });
 
@@ -36956,13 +37131,13 @@ function Home({
   const renderCard = (title, rightElement, content, cardClassName, cardSpacerClassName) => external_react_["createElement"]("div", {
     className: cardClassName
   }, external_react_["createElement"]("div", {
-    className: `${cardSpacerClassName} home-table-wrap`
+    className: cardSpacerClassName
   }, external_react_["createElement"](Card, {
     className: classes.card
   }, external_react_["createElement"]("div", {
     className: classes.cardHeader
   }, external_react_["createElement"](Typography, {
-    className: "home-title-h2",
+    className: classes.typography,
     variant: "title"
   }, title), rightElement), content)));
 
@@ -36970,7 +37145,7 @@ function Home({
     className: classes.link,
     to: path
   }, external_react_["createElement"](Button, {
-    className: `${classes.viewMoreButton} c-home-btns`,
+    className: classes.viewMoreButton,
     size: "small",
     variant: "raised",
     color: "primary"
@@ -36986,21 +37161,23 @@ function Home({
   }, renderCard('Explore Blocks', makeViewAllButton(makeBlockSearch(1)), external_react_["createElement"](block_BlockTable, {
     blocks: props.blocks.edges.map(edge => edge.node),
     sizeVisibleAt: "xs",
-    validatorVisibleAt: "md"
+    validatorVisibleAt: "md",
+    className: classes.tableContentBlock
   }), classes.blocks, classes.blocksSpacer), renderCard('Explore Transactions', makeViewAllButton(makeTransactionSearch(1)), external_react_["createElement"](transaction_TransactionTable, {
     transactions: props.transactions.edges.map(edge => edge.node),
-    dense: true
+    dense: true,
+    className: external_classnames_default()(classes.tableContentBlock, classes.tableContentBlockTransactions)
   }), classes.transactions, classes.transactionsSpacer)));
 }
 
 /* harmony default export */ var pages_Home = (queryRenderer(function () {
-  const node = __webpack_require__(171);
+  const node = __webpack_require__(157);
 
   if (node.hash && node.hash !== "c21c6e732bfd9e3192eae7fc06275db3") {
     console.error("The definition of 'HomeQuery' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
   }
 
-  return __webpack_require__(171);
+  return __webpack_require__(157);
 })(Object(external_recompose_["compose"])(Object(external_recompose_["getContext"])({
   relayEnvironment: () => null
 }), external_recompose_["pure"], withStyles(Home_styles))(Home)));
@@ -37107,13 +37284,13 @@ const Search_mapPropsToVariables = ({
 };
 
 /* harmony default export */ var pages_Search = (queryRenderer(function () {
-  const node = __webpack_require__(213);
+  const node = __webpack_require__(199);
 
   if (node.hash && node.hash !== "200bb22a5672885a2a75490b1c024ad2") {
     console.error("The definition of 'SearchQuery' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
   }
 
-  return __webpack_require__(213);
+  return __webpack_require__(199);
 }, {
   mapPropsToVariables: {
     client: Search_mapPropsToVariables,
@@ -37198,13 +37375,13 @@ function TransactionViewExtra({
 
 const TransactionViewExtra_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   transaction: function () {
-    const node = __webpack_require__(215);
+    const node = __webpack_require__(201);
 
     if (node.hash && node.hash !== "5e9f2f42652387dc009f7b7ade1ace4b") {
       console.error("The definition of 'TransactionViewExtra_transaction' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(215);
+    return __webpack_require__(201);
   }
 }), withStyles(TransactionViewExtra_styles), external_recompose_["pure"]);
 /* harmony default export */ var transaction_TransactionViewExtra = (TransactionViewExtra_enhance(TransactionViewExtra));
@@ -37283,13 +37460,13 @@ function TransactionView({
 
 const TransactionView_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   transaction: function () {
-    const node = __webpack_require__(216);
+    const node = __webpack_require__(202);
 
     if (node.hash && node.hash !== "eeb712619bc10ea19ec8e8a7bae352b5") {
       console.error("The definition of 'TransactionView_transaction' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(216);
+    return __webpack_require__(202);
   }
 }), withStyles(TransactionView_styles), external_recompose_["pure"]);
 /* harmony default export */ var transaction_TransactionView = (TransactionView_enhance(TransactionView));
@@ -37340,13 +37517,13 @@ const Transaction_mapPropsToVariables = ({
 });
 
 /* harmony default export */ var pages_Transaction = (queryRenderer(function () {
-  const node = __webpack_require__(217);
+  const node = __webpack_require__(203);
 
   if (node.hash && node.hash !== "496b9e735d6768b6a046e818d2814d21") {
     console.error("The definition of 'TransactionQuery' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
   }
 
-  return __webpack_require__(217);
+  return __webpack_require__(203);
 }, {
   mapPropsToVariables: {
     client: Transaction_mapPropsToVariables,
@@ -37422,13 +37599,13 @@ function TransactionSearch({
 }
 
 /* harmony default export */ var pages_TransactionSearch = (queryRenderer(function () {
-  const node = __webpack_require__(214);
+  const node = __webpack_require__(200);
 
   if (node.hash && node.hash !== "4860721ba4e9f38229ff36fc7e9905a5") {
     console.error("The definition of 'TransactionSearchQuery' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
   }
 
-  return __webpack_require__(214);
+  return __webpack_require__(200);
 }, {
   mapPropsToVariables: {
     client: commonSearch_mapPropsToVariables(TransactionSearch_PAGE_SIZE),
@@ -37826,13 +38003,13 @@ const PasswordField_enhance = Object(external_recompose_["compose"])(Object(exte
 }), withStyles(PasswordField_styles), external_recompose_["pure"]);
 /* harmony default export */ var common_PasswordField = (PasswordField_enhance(PasswordField));
 // EXTERNAL MODULE: external "react-jss"
-var external_react_jss_ = __webpack_require__(65);
+var external_react_jss_ = __webpack_require__(57);
 
 // EXTERNAL MODULE: external "jss"
-var external_jss_ = __webpack_require__(81);
+var external_jss_ = __webpack_require__(109);
 
 // EXTERNAL MODULE: external "jss-preset-default"
-var external_jss_preset_default_ = __webpack_require__(82);
+var external_jss_preset_default_ = __webpack_require__(110);
 var external_jss_preset_default_default = /*#__PURE__*/__webpack_require__.n(external_jss_preset_default_);
 
 // EXTERNAL MODULE: ./packages/neotracker-shared-web/src/errors/CodedClientError.js
@@ -38905,13 +39082,13 @@ function SendTransaction({
 
 const SendTransaction_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   address: function () {
-    const node = __webpack_require__(222);
+    const node = __webpack_require__(208);
 
     if (node.hash && node.hash !== "c292c6bfc5ce1b8aa1c21d4133363939") {
       console.error("The definition of 'SendTransaction_address' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(222);
+    return __webpack_require__(208);
   }
 }), Object(external_recompose_["withPropsOnChange"])(['address'], ({
   address
@@ -39028,13 +39205,13 @@ function TransferView({
 
 const TransferView_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   address: function () {
-    const node = __webpack_require__(223);
+    const node = __webpack_require__(209);
 
     if (node.hash && node.hash !== "8d02dabec2d7824bb6e6cecf8a69a158") {
       console.error("The definition of 'TransferView_address' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(223);
+    return __webpack_require__(209);
   }
 }), external_recompose_["pure"]);
 /* harmony default export */ var account_TransferView = (TransferView_enhance(TransferView));
@@ -39107,13 +39284,13 @@ function TransferCard({
 
 const TransferCard_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   address: function () {
-    const node = __webpack_require__(224);
+    const node = __webpack_require__(210);
 
     if (node.hash && node.hash !== "0bd437c0a4e8562ca65da75348f724ed") {
       console.error("The definition of 'TransferCard_address' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(224);
+    return __webpack_require__(210);
   }
 }), mapAppOptions, withStyles(TransferCard_styles), external_recompose_["pure"]);
 /* harmony default export */ var account_TransferCard = (TransferCard_enhance(TransferCard));
@@ -39665,13 +39842,13 @@ function AccountViewBase({
 
 const AccountViewBase_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   address: function () {
-    const node = __webpack_require__(219);
+    const node = __webpack_require__(205);
 
     if (node.hash && node.hash !== "38dd63f96713136654e5e3774333acd6") {
       console.error("The definition of 'AccountViewBase_address' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(219);
+    return __webpack_require__(205);
   }
 }), mapAppOptions, withStyles(AccountViewBase_styles), external_recompose_["pure"]);
 /* harmony default export */ var account_AccountViewBase = (AccountViewBase_enhance(AccountViewBase));
@@ -39718,13 +39895,13 @@ function AccountView({
 
 const AccountView_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   address: function () {
-    const node = __webpack_require__(220);
+    const node = __webpack_require__(206);
 
     if (node.hash && node.hash !== "c225b160f40579bdde5032d2776c4e1b") {
       console.error("The definition of 'AccountView_address' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(220);
+    return __webpack_require__(206);
   }
 }), external_recompose_["pure"]);
 /* harmony default export */ var account_AccountView = (AccountView_enhance(AccountView));
@@ -40547,13 +40724,13 @@ const SelectCard_enhance = Object(external_recompose_["compose"])(Object(externa
   }
 }), relay_fragmentContainer({
   address: function () {
-    const node = __webpack_require__(221);
+    const node = __webpack_require__(207);
 
     if (node.hash && node.hash !== "468632a3387cc28b19cbb7d75ec69522") {
       console.error("The definition of 'SelectCard_address' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(221);
+    return __webpack_require__(207);
   }
 }), withStyles(SelectCard_styles), external_recompose_["pure"]);
 /* harmony default export */ var select_SelectCard = (SelectCard_enhance(SelectCard));
@@ -40624,13 +40801,13 @@ function WalletTransactionsCard({
 
 const WalletTransactionsCard_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   address: function () {
-    const node = __webpack_require__(225);
+    const node = __webpack_require__(211);
 
     if (node.hash && node.hash !== "9b369c841c295b6f06dc855e0abf8603") {
       console.error("The definition of 'WalletTransactionsCard_address' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(225);
+    return __webpack_require__(211);
   }
 }), withStyles(WalletTransactionsCard_styles), external_recompose_["pure"]);
 /* harmony default export */ var transaction_WalletTransactionsCard = (WalletTransactionsCard_enhance(WalletTransactionsCard));
@@ -40701,13 +40878,13 @@ function WalletTransfersCard({
 
 const WalletTransfersCard_enhance = Object(external_recompose_["compose"])(relay_fragmentContainer({
   address: function () {
-    const node = __webpack_require__(226);
+    const node = __webpack_require__(212);
 
     if (node.hash && node.hash !== "c1c90f1911ddb52fc464ea0b008a56e2") {
       console.error("The definition of 'WalletTransfersCard_address' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
     }
 
-    return __webpack_require__(226);
+    return __webpack_require__(212);
   }
 }), withStyles(WalletTransfersCard_styles), external_recompose_["pure"]);
 /* harmony default export */ var transfer_WalletTransfersCard = (WalletTransfersCard_enhance(WalletTransfersCard));
@@ -40800,13 +40977,13 @@ function MainWalletView({
 }
 
 const MainWalletView_enhance = Object(external_recompose_["compose"])(src_wallet["api"].mapCurrentLocalWallet, queryRenderer(function () {
-  const node = __webpack_require__(227);
+  const node = __webpack_require__(213);
 
   if (node.hash && node.hash !== "647fdbf3ddc446138a9c15d55a74d0b9") {
     console.error("The definition of 'MainWalletViewQuery' appears to have changed. Run `relay-compiler` to update the generated files to receive the expected data.");
   }
 
-  return __webpack_require__(227);
+  return __webpack_require__(213);
 }, {
   skipNullVariables: true,
   mapPropsToVariables: {
@@ -43281,13 +43458,9 @@ const makeServerHTML_makeServerHTML = ({
 
   const headerElements = [...css.map(makeServerHTML_stylesheetTag), external_react_["createElement"]("link", {
     key: "font",
-    href: "https://fonts.googleapis.com/css?family=Roboto:300,400,500",
-    rel: "stylesheet"
-  }), external_react_["createElement"]("link", {
-    key: "font",
     rel: "stylesheet",
     type: "text/css",
-    href: "./public/styles.css"
+    href: "/public/styles.css"
   }), external_react_["createElement"]("link", {
     key: "icons",
     href: "https://fonts.googleapis.com/icon?family=Material+Icons",
@@ -43994,7 +44167,6 @@ const neotracker = new NEOTracker_NEOTracker({
 neotracker.start();
 
 /***/ }),
-/* 334 */,
 /* 335 */,
 /* 336 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {

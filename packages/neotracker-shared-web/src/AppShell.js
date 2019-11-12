@@ -21,9 +21,9 @@ import { Leaderboard } from './components/common/advertising';
 const styles = (theme: Theme) => ({
   '@global': {
     body: {
-      backgroundImage: "url('./moscow-city.png')",
-      backgroundSize: 'cover',
       margin: 0,
+      backgroundImage: 'url(/public/moscow-city.png)',
+      backgroundSize: 'cover'
     },
   },
   root: {

@@ -46,7 +46,7 @@ function PageView({
 }: Props): React.Element<*> {
   return (
     <CenteredView className={className}>
-      <Card>
+      <Card className="table-2level">
         <PageViewHeader
           id={id}
           title={title}

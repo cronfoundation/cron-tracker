@@ -58,11 +58,11 @@ function Table({
   classes,
 }: Props): React.Element<*> {
   return (
-    <div className={`${classNames(className, classes.root)} home-table`}>
+    <div className={classNames(className, classes.root)}>
       {columns.map((col, idx) => (
         <Column
           key={col.name}
-          className={`${col.className} home-table-column`}
+          className={col.className}
           name={col.name}
           values={col.values}
           numeric={col.numeric}

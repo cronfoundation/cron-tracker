@@ -50,7 +50,7 @@ const titleUpMD = Object.assign({}, titleUpMDNoHorizontalPad, containerUpMDPad);
 export default () => {
   const theme = createMuiTheme({
     palette: {
-      primary: lightGreen,
+      primary: lightBlue,
       secondary: deepPurple,
       error: red,
       type: 'light',
@@ -118,40 +118,40 @@ export default () => {
     },
     transactionColors: {
       contract: {
-        color: teal,
-        backgroundColor: teal[500],
+        color: lightBlue,
+        backgroundColor: lightBlue[500],
       },
       miner: {
-        color: blueGrey,
-        backgroundColor: blueGrey[400],
+        color: lightBlue,
+        backgroundColor: lightBlue[500],
       },
       issue: {
-        color: green,
-        backgroundColor: green[600],
+        color: lightBlue,
+        backgroundColor: lightBlue[500],
       },
       claim: {
-        color: purple,
-        backgroundColor: purple.A200,
+        color: lightBlue,
+        backgroundColor: lightBlue[500],
       },
       enrollment: {
-        color: indigo,
-        backgroundColor: indigo.A200,
+        color: lightBlue,
+        backgroundColor: lightBlue[500],
       },
       register: {
-        color: amber,
-        backgroundColor: deepOrange.A400,
+        color: lightBlue,
+        backgroundColor: lightBlue[500],
       },
       publish: {
-        color: red,
-        backgroundColor: red.A200,
+        color: lightBlue,
+        backgroundColor: lightBlue[500],
       },
       invocation: {
-        color: blue,
-        backgroundColor: blue.A200,
+        color: lightBlue,
+        backgroundColor: lightBlue[500],
       },
       state: {
-        color: lime,
-        backgroundColor: lime.A200,
+        color: lightBlue,
+        backgroundColor: lightBlue[500],
       },
     },
     code: {

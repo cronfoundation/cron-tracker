@@ -30,7 +30,7 @@ function TransactionTable({
   className,
 }: Props): React.Element<*> {
   return (
-    <div className={`${className} home-table`}>
+    <div className={className}>
       {transactions.map((transaction) => (
         <TransactionSummary
           key={getID(transaction.id)}

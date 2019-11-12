@@ -13,8 +13,15 @@ const styles = () => ({
   },
   link: {
     textDecoration: 'none',
-    height: '37px'
+    height: 37
   },
+  btn: {
+    height: '37px !important',
+    borderRadius: 20
+  },
+  btnActive: {
+    boxShadow: '0 0 0 1px white'
+  }
 });
 
 type TabType = {
@@ -42,10 +49,10 @@ function Tabs({ tabs, className, classes }: Props): React.Element<*> {
       {tabs.map((tab) => (
         <Link key={tab.id} className={classes.link} to={tab.href}>
           <Button
-            className={`${tab.className} header-btn ${tab.selected ? 'active' : ''}`}
-            // color={tab.selected ? 'primary' : 'default'}
+            className={classNames(tab.className, classes.btn, tab.selected ? classes.btnActive : null)}
             onClick={tab.onClick}
           >
+            <i className={`icon-${tab.id}`}> </i>
             <Typography variant="body1" color="inherit" fontWeight="500">
               {tab.label}
             </Typography>

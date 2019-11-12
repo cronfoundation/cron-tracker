@@ -17,6 +17,7 @@ import { type BlockTable_blocks } from './__generated__/BlockTable_blocks.graphq
 const styles = () => ({
   transactionsCol: {
     flex: '1 100 auto',
+    maxWidth: 80
   },
   validatorCol: {
     flex: '1 100 auto',

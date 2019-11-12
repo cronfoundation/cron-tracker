@@ -43,12 +43,9 @@ const styles = (theme: Theme) => ({
   baseRow: {
     display: 'flex',
     alignItems: 'center',
-    // borderBottom: `1px solid ${theme.custom.lightDivider}`,
-    // minHeight: 48,
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    // backgroundColor: 'rgba(7, 134, 213, 0.46)',
     height: 58
   },
   row: {
@@ -60,9 +57,12 @@ const styles = (theme: Theme) => ({
   header: {
     fontFamily: theme.typography.fontFamily,
     fontSize: 14,
+    color: '#fff',
     fontWeight: theme.typography.fontWeightMedium,
-    // color: '#fff',
-    // backgroundColor: 'rgba(7, 134, 213, 0.46)',
+  },
+  headerWrap: {
+    height: 32,
+    backgroundColor: 'rgba(7, 134, 213, 0.46)'
   },
   textRowBase: {
     whiteSpace: 'nowrap',
@@ -72,12 +72,23 @@ const styles = (theme: Theme) => ({
   oddRow: {
     backgroundColor: 'rgba(7, 134, 213, 0.07)',
   },
-  numeric: {
-    // justifyContent: 'flex-end',
-    // textAlign: 'right',
-  },
+  numeric: {},
   paddingLeft: {},
-  firstCol: {},
+  firstCol: {
+    '&:not(:first-child) p:before': {
+      display: 'inline-block',
+      content: '""',
+      backgroundImage: 'url(/public/icon-block.svg)',
+      width: 13,
+      height: 13,
+      verticalAlign: 'middle',
+      marginRight: 8,
+      marginTop: -2
+    }
+  },
+  firstColHeader: {
+    paddingLeft: 21
+  }
 });
 
 type ExternalProps = {|
@@ -156,15 +167,18 @@ function Column({
       )}
     >
       <div
-        className={classNames({
+        className={classNames(
+          {
           [classes.paddingLeft]: !firstCol,
           [classes.firstCol]: firstCol,
           [classes.baseRow]: true,
           [classes.numeric]: !!numeric,
-        })}
+        },
+          classes.headerWrap
+        )}
       >
         <Typography
-          className={classNames(classes.textRowBase, classes.header)}
+          className={classNames(classes.textRowBase, classes.header, firstCol ? classes.firstColHeader : null)}
           variant="body1"
         >
           {name}

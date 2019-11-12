@@ -25,6 +25,11 @@ const styles = (theme: any) => ({
   error: {
     color: theme.palette.error[500],
   },
+  loading: {
+    '& circle': {
+      color: '#001E7F !important'
+    }
+  },
   margin: {
     marginRight: theme.spacing.unit * 2,
   },
@@ -93,7 +98,7 @@ function Pager({
         </Typography>
       ) : null}
       {isLoading ? (
-        <CircularProgress size={32} thickness={5} className={classes.margin} />
+        <CircularProgress size={32} thickness={5} className={classNames(classes.margin, classes.loading)} />
       ) : null}
       {totalElement}
       <IconButton
