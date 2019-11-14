@@ -32,9 +32,6 @@ const styles = (theme: Theme) => ({
     display: 'flex',
     flexDirection: 'column',
   },
-  value: {
-    textAlign: 'right',
-  },
 });
 
 export const COIN_TABLE_ROW_HEIGHT = 20;
@@ -70,7 +67,7 @@ function CoinTable({
     values.push(
       <CoinValue
         key={idx}
-        className={classNames(classes.value, textClassName)}
+        className={textClassName}
         variant={variant}
         component={component}
         value={coin.value}
