@@ -133,7 +133,7 @@ function AppFooter({
     <div className={classNames(className, classes.root)}>
       <div className={classes.firstRow}>
         <Typography className={classes.copyright} variant="caption">
-          {`${appOptions.meta.name} © 2019`}
+          {`${appOptions.meta.name} © 2020`}
         </Typography>
       </div>
       <ul className={classes.footerUl}>
