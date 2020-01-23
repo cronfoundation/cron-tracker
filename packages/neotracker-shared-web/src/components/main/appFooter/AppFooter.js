@@ -124,9 +124,19 @@ function AppFooter({
   appOptions,
   classes,
 }: Props): React.Element<*> {
-  const FooterLink = ({href, children}) => {
+  const FooterLink = ({href, children, target}) => {
+    if (href.substring(0, 4) === "http") {
+      target = "_blank";
+    }
     return (
-      <li className={classes.footerLi}><a className={classes.footerLink} href={href}>{children}</a></li>
+      <li className={classes.footerLi}>
+        <a
+          className={classes.footerLink}
+          href={href}
+          target={target}
+          rel={target ? "noreferrer noopener" : ""}
+        >{children}</a>
+      </li>
     );
   };
   return (
@@ -137,13 +147,13 @@ function AppFooter({
         </Typography>
       </div>
       <ul className={classes.footerUl}>
-        <FooterLink href="#">Where to buy</FooterLink>
-        <FooterLink href="#">About CRON</FooterLink>
-        <FooterLink href="#">Wallet</FooterLink>
-        <FooterLink href="#">Integration</FooterLink>
-        <FooterLink href="#">Partnership</FooterLink>
-        <FooterLink href="#">Team</FooterLink>
-        <FooterLink href="#">Contact</FooterLink>
+        <FooterLink href="https://bitchange.online/" target="_blank">Where to buy</FooterLink>
+        <FooterLink href="https://cryptocean.io/" target="_blank">About CRON</FooterLink>
+        <FooterLink href="/wallet">Wallet</FooterLink>
+        <FooterLink href="https://github.com/cronfoundation/cron-node" target="_blank">Integration</FooterLink>
+        <FooterLink href="https://cryptocean.io#partners">Partnership</FooterLink>
+        <FooterLink href="https://cryptocean.io#team" target="_blank">Team</FooterLink>
+        <FooterLink href="mailto:support@bitchange.online">Contact</FooterLink>
       </ul>
     </div>
   );
