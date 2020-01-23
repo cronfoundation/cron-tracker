@@ -7,5 +7,5 @@ master:
     when: manual
 
     script: 
-    - sudo docker exec -it test_tracker /home/cron/tracker_ci.sh
+    - sudo docker exec test_tracker /home/cron/tracker_ci.sh
     
