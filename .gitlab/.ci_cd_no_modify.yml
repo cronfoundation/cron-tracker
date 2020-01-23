@@ -1,0 +1,11 @@
+stages:
+  - master
+  
+master:
+    stage: master
+    only: ['master']
+    when: manual
+
+    script: 
+    - docker exec -it test_tracker /home/cron/tracker_ci.sh
+    
