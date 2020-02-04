@@ -20,6 +20,19 @@ import CoinValue from './CoinValue';
 import getSortedCoins from './getSortedCoins';
 
 const styles = (theme: Theme) => ({
+  [theme.breakpoints.down('sm')]: {
+    root: {
+      flexWrap: 'wrap'
+    },
+    thirdCol: {
+      marginLeft: 0
+    }
+  },
+  [theme.breakpoints.up('sm')]: {
+    thirdCol: {
+      marginLeft: 50
+    }
+  },
   root: {
     display: 'flex',
   },
@@ -31,6 +44,17 @@ const styles = (theme: Theme) => ({
   secondCol: {
     display: 'flex',
     flexDirection: 'column',
+  },
+  thirdCol: {
+    fontSize: '1.6rem',
+    fontWeight: 500,
+    alignSelf: 'center',
+    marginTop: 10,
+    marginBottom: 10
+  },
+  thirdCol_adress: {
+    wordBreak: 'break-all',
+    color: '#102C87'
   },
 });
 
@@ -58,6 +82,7 @@ function CoinTable({
   textClassName,
   className,
   classes,
+  account,
 }: Props): React.Element<*> {
   const sortedCoins = getSortedCoins(coins);
 
@@ -87,6 +112,10 @@ function CoinTable({
     <div className={classNames(className, classes.root)}>
       <div className={classes.firstCol}>{values}</div>
       <div className={classes.secondCol}>{assets}</div>
+      <div className={classes.thirdCol}>
+        <div>Your wallet address is:</div>
+        <div className={classes.thirdCol_adress}>{account.id.address}</div>
+      </div>
     </div>
   );
 }
