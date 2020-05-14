@@ -163,7 +163,6 @@ function AccountViewBase({
         variant="display1"
         component="p"
         textClassName={classes.textColor}
-        account={account}
       />
       <div className={classNames(classes.claimArea, classes.borderTop)}>
         <Typography
