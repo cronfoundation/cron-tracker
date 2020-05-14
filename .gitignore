@@ -1,4 +1,56 @@
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# node-waf configuration
+.lock-wscript
+
+# Dependency directory
 node_modules
-yarn.lock
+
+# Debug log from npm
+npm-debug.log
+
+# IntelliJ IDE ignore
 .idea
-dist/
+
+# Visual Studio Code
+.history
+
+# Flow Coverage Report
+flow-coverage/
+
+# Happypack
+.happypack
+
+# OSX Files
+.DS_Store
+
+build
+dist/*
+keys
+.awcache
+db.sqlite
+
+__pycache__
+
+# Hack
+hack/composer.phar
+hack/vendor
+
+
+# Cypress
+cypress/screenshots
+cypress/videos
+reports
+
+# Storybook
+.out

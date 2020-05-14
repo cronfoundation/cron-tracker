@@ -47,7 +47,7 @@ export const common = ({
   server: {
     db: db(database, dbFileName),
     rootLoader: {
-      cacheEnabled: true,
+      cacheEnabled: false,
       cacheSize: 100,
     },
     subscribeProcessedNextIndex: {},
@@ -149,7 +149,7 @@ export const common = ({
   scrape: {
     db: db(database, dbFileName),
     rootLoader: {
-      cacheEnabled: true,
+      cacheEnabled: false,
       cacheSize: 100,
     },
     rpcURL,
