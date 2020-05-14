@@ -127,13 +127,13 @@ const AppBarDownMD = ({
       selected: routes.isTransaction(location.pathname),
       href: routes.makeTransactionSearch(1),
     },
-    // {
-    //   className: classes.button,
-    //   id: 'addresses',
-    //   label: 'Addresses',
-    //   selected: routes.isAddress(location.pathname),
-    //   href: routes.makeAddressSearch(1),
-    // },
+    {
+      className: classes.button,
+      id: 'addresses',
+      label: 'Addresses',
+      selected: routes.isAddress(location.pathname),
+      href: routes.makeAddressSearch(1),
+    },
     {
       className: classes.button,
       id: 'assets',
